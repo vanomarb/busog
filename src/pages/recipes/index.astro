@@ -2,26 +2,26 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import RecipeCard from '../../components/site/RecipeCard.astro';
 import { recipes } from '../../data/catalog';
-/** The kitchen, grouped by cuisine: the Filipino table first, then dishes from everywhere else. */
+/** The kitchen, grouped by cuisine: dishes from kitchens everywhere, then the Filipino table. */
 const shelves = [
+  {
+    id: 'international',
+    title: 'From kitchens everywhere.',
+    note: 'Breakfast bowls, pasta, tacos and soups, each counted from its ingredients.',
+  },
   {
     id: 'filipino',
     title: 'From the Filipino table.',
-    note: 'Ulam, gulay, sabaw and merienda, each with its English name alongside.',
-  },
-  {
-    id: 'international',
-    title: 'From everywhere else.',
-    note: 'Breakfast bowls, pasta, tacos and soups, counted the same way.',
+    note: 'Ulam, gulay, sabaw and merienda, counted the same way, each with its English name alongside.',
   },
 ].map((shelf) => ({ ...shelf, recipes: recipes.filter((recipe) => recipe.cuisine === shelf.id) }));
-const description = `${recipes.length} original recipes, Filipino and international, with USDA-computed nutrition.`;
+const description = `${recipes.length} original recipes, international and Filipino, with USDA-computed nutrition.`;
 ---
 
 <SiteLayout title="The Busog kitchen" {description}
   ><section class="page-intro">
     <p class="mono">The kitchen / {recipes.length} recipes</p><h1>Familiar food.<br />Open recipes.</h1><p>
-      Ulam for the table, a bowl for the desk, and the ingredient math on the side.
+      A bowl for the desk, a plate for the table, and the ingredient math on the side.
     </p>
   </section>
   <nav class="actions shelf-links" aria-label="Cuisines">

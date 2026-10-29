@@ -7,13 +7,13 @@ kind: 'guide'
 
 ## One diary, three entrances.
 
-Point at dishes in Turo-turo, log from a photo, or find a USDA ingredient and scan a packaged food. Each entry keeps its
-gram weight, source and meal. Tap any row to change the serving.
+Point at dishes at the counter, log from a photo, or find a USDA ingredient and scan a packaged food. Each entry keeps
+its gram weight, source and meal. Tap any row to change the serving.
 
 ## See the source behind the serving.
 
 A curated shelf of 110 everyday USDA foods searches instantly, even offline. Each keeps its original description and FDC
-ID. Twenty-five recipes, Filipino and international, calculate their totals from those ingredients, and "How we counted
+ID. Twenty-five recipes, international and Filipino, calculate their totals from those ingredients, and "How we counted
 this" shows the work.
 
 ## Notice the pattern.

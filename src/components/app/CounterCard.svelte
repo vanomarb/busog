@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ArrowUpRight } from '@lucide/svelte';
   import { recipes } from '../../data/catalog';
-  import { homeCuisine, recipeName } from '../../domain/names';
+  import { counterName, homeCuisine, recipeName } from '../../domain/names';
   import { region } from '../../lib/region';
   import DishPhoto from './DishPhoto.svelte';
   /** The counter at a glance: today's dishes as photos, one tap from building a plate. */
@@ -17,10 +17,10 @@
 <section class="card aqua counter-card">
   <header class="card-heading">
     <div>
-      <h2>Turo-turo</h2>
+      <h2>{counterName($region)}</h2>
       <p class="muted">Point, pick, plate.</p>
     </div>
-    <button class="round" {onclick} aria-label="Build a turo-turo plate"><ArrowUpRight size={21} /></button>
+    <button class="round" {onclick} aria-label="Build a plate at the counter"><ArrowUpRight size={21} /></button>
   </header>
   <div class="counter-dishes">
     {#each dishes as dish (dish.id)}

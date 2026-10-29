@@ -5,10 +5,11 @@ eyebrow: 'How it works'
 kind: 'story'
 ---
 
-## At the counter: Turo-turo.
+## At the counter.
 
-Open Log, then Turo-turo. Tap your ulam, choose half, regular or extra, and set your cups of rice. The plate total uses
-weighed USDA ingredients. Tap a dish's info button to follow the arithmetic.
+Open Log, then Counter (Turo-turo in the Philippines region). Tap your dishes, choose half, regular or extra, and add
+cups of rice if you like. The plate total uses weighed USDA ingredients. Tap a dish's info button to follow the
+arithmetic.
 
 ## At home: snap, then check.
 
@@ -17,7 +18,7 @@ anything is added. In this preview the photos are sample plates, and nothing is 
 
 ## On the go: search and scan.
 
-Search USDA ingredients by Filipino or English names; the bundled foods work offline and live search adds more. For
+Search USDA ingredients by English or Filipino names; the bundled foods work offline and live search adds more. For
 packaged food, scan the barcode with your camera or type it in to look it up on Open Food Facts.
 
 ## At the plate: review and confirm.

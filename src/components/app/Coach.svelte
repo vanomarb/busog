@@ -2,17 +2,23 @@
   import BrandMark from '../site/BrandMark.svelte';
   import { ArrowUpRight, ArrowUp, AudioLines } from '@lucide/svelte';
   import { number } from '../../domain/nutrition';
+  import { counterName, dishWord } from '../../domain/names';
+  import { region } from '../../lib/region';
   /** Scripted local replies make the coaching demonstration honest and deterministic. */
   let { protein, target }: { protein: number; target: number } = $props();
   let input = $state('');
-  let reply = $state('Your diary has room for dinner. ' + 'Want to look at protein or plan tomorrow’s ulam?');
+  const meals = $derived($region === 'ph' ? 'ulam' : 'meals');
+  const opening = `plan tomorrow’s ${$region === 'ph' ? 'ulam' : 'meals'}`;
+  let reply = $state(`Your diary has room for dinner. Want to look at protein or ${opening}?`);
   function ask(question: string) {
     reply = /protein/i.test(question)
       ? `Your plate has ${number(protein)} g protein against a ${number(target)} g target. ` +
-        'Open Turo-turo to compare dishes.'
-      : /tomorrow|ulam|plan/i.test(question)
-        ? 'Try the ginisang munggo composition with rice and greens. You can review every ingredient in the kitchen.'
-        : 'For now I can show your protein or suggest tomorrow’s ulam. Your numbers always come from your diary.';
+        `Open ${counterName($region)} to compare ${dishWord($region)}.`
+      : /tomorrow|ulam|meal|plan/i.test(question)
+        ? $region === 'ph'
+          ? 'Try the ginisang munggo composition with rice and greens. You can review every ingredient in the kitchen.'
+          : 'Try the lentil and tomato soup. You can review every ingredient in the kitchen.'
+        : `For now I can show your protein or suggest tomorrow’s ${meals}. Your numbers always come from your diary.`;
     input = '';
   }
 </script>
@@ -29,7 +35,7 @@
   </div>
   <div class="coach-suggestions">
     <button onclick={() => ask('protein')}>Show my protein</button><button onclick={() => ask('plan tomorrow')}
-      >Plan tomorrow’s ulam</button
+      >Plan tomorrow’s {meals}</button
     >
   </div>
   <form

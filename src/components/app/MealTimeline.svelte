@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { foodName } from '../../domain/names';
+  import { foodName, mealName } from '../../domain/names';
   import { region } from '../../lib/region';
   import { Plus } from '@lucide/svelte';
-  import type { Entry } from '../../domain/types';
+  import type { Entry, Meal } from '../../domain/types';
   /** The phone timeline mirrors the dial's actual meal timestamps and offers a local next action. */
   let { entries, time, onlog }: { entries: Entry[]; time: string; onlog: () => void } = $props();
   const moments = $derived([...new Set(entries.map((entry) => `${entry.time}|${entry.meal}`))].sort());
@@ -14,7 +14,7 @@
     <div class="timeline-moment">
       <time>{logged}</time>
       <div>
-        <h3>{meal}</h3>
+        <h3>{mealName(meal as Meal, $region)}</h3>
         <p>
           {entries
             .filter((entry) => entry.time === logged && entry.meal === meal)

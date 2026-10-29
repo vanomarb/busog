@@ -6,16 +6,16 @@ import RecipeCard from '../components/site/RecipeCard.astro';
 import PhoneShot from '../components/site/PhoneShot.astro';
 import { recipeById } from '../data/catalog';
 import '../styles/home.css';
-const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById);
+const counter = ['spaghetti-bolognese', 'black-bean-tacos', 'adobong-manok'].map(recipeById);
 ---
 
 <SiteLayout title="Your food. Your way. Your plate.">
   <section class="home-hero">
     <div class="hero-copy">
-      <p class="hero-label"><span></span> For rice, ulam & real life</p>
+      <p class="hero-label"><span></span> For everyday meals, anywhere</p>
       <h1>Your food.<br />Your way.<br />Your plate.</h1>
       <p class="hero-description">
-        The calorie and macro tracker that starts with what’s already on your table. Point at your ulam, snap a plate or
+        The calorie and macro tracker that starts with what’s already on your table. Point at the dish, snap a plate or
         scan a pack, and see where every number comes from.
       </p>
       <AppButtons />
@@ -25,11 +25,13 @@ const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById)
     </div>
     <div class="hero-phones">
       <PhoneShot shot="today" alt="Busog Today: calories this week, protein and carbs, and the day's meals" eager />
-      <PhoneShot shot="counter" alt="The Turo-turo counter: tap the dishes you'd point at" />
+      <PhoneShot shot="counter" alt="The counter: tap the dishes you'd point at" />
     </div>
   </section>
   <div class="home-principles">
-    <span>Built around Filipino food</span><span>Every number has a source</span><span>Always room for rice</span>
+    <span>Dishes from around the world</span><span>Every number has a source</span><span
+      >Your region, your food names</span
+    >
   </div>
   <section class="section" id="three-ways">
     <header class="section-heading">
@@ -41,7 +43,9 @@ const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById)
     <div class="source-bento">
       <a class="source-card source-turo" href="/busog/app/?frame=phone">
         <div class="source-title"><h3>Just point.<br />We’ll count it.</h3><span class="round">↗</span></div>
-        <p>Turo-turo brings the carinderia counter to your phone. Pick your ulam, scoop your rice, done.</p>
+        <p>
+          The counter puts everyday dishes on your phone. Pick a dish, choose a portion, add rice if you like, done.
+        </p>
         <div class="source-dishes">
           {
             counter.map((dish) => (
@@ -56,7 +60,7 @@ const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById)
       <div class="source-secondary">
         <a class="source-card source-snap" href="/busog/app/?frame=phone">
           <figure class="snap-frame">
-            <img src="/busog/images/tinolang-manok-480.webp" alt="" width="480" height="360" loading="lazy" />
+            <img src="/busog/images/salmon-rice-bowl-480.webp" alt="" width="480" height="360" loading="lazy" />
             <span class="snap-chip">Reading your plate…</span>
           </figure>
           <div>
@@ -66,7 +70,7 @@ const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById)
         </a>
         <a class="source-card source-search" href="/busog/app/">
           <div class="source-title"><h3>Search and scan.</h3><span class="round">↗</span></div>
-          <p>Look up any USDA ingredient by its Filipino or English name, or scan a packaged-food barcode.</p>
+          <p>Look up any USDA ingredient by its English or Filipino name, or scan a packaged-food barcode.</p>
           <ul class="source-facts"><li>110 everyday foods</li><li>Open Food Facts barcodes</li></ul>
         </a>
       </div>
@@ -75,14 +79,14 @@ const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById)
   <section class="section food-story">
     <div class="food-story-image">
       <img
-        src="/busog/images/munggo-960.webp"
-        srcset="/busog/images/munggo-480.webp 480w, /busog/images/munggo-960.webp 960w"
+        src="/busog/images/lentil-tomato-soup-960.webp"
+        srcset="/busog/images/lentil-tomato-soup-480.webp 480w, /busog/images/lentil-tomato-soup-960.webp 960w"
         sizes="(max-width: 900px) 92vw, 45vw"
-        alt="A bowl of ginisang munggo"
+        alt="A bowl of lentil and tomato soup"
         width="960"
         height="720"
         loading="lazy"
-      /><span class="photo-note">Ginisang munggo · Friday, or any day</span>
+      /><span class="photo-note">Lentil and tomato soup · any weekday</span>
     </div><div class="food-story-copy">
       <p class="eyebrow">Familiar food. A clearer picture.</p><h2>You don’t need<br />a different lunch.</h2><p>
         You need a diary that makes room for this one. Busog starts with familiar ingredients, practical portions, and
@@ -96,7 +100,7 @@ const counter = ['adobong-manok', 'ginisang-munggo', 'pinakbet'].map(recipeById)
         >See all recipes <span>↗</span></a
       >
     </header><div class="content-grid">
-      {['adobong-manok', 'tinolang-manok', 'salmon-rice-bowl'].map((id) => <RecipeCard recipe={recipeById(id)} />)}
+      {['spaghetti-bolognese', 'salmon-rice-bowl', 'adobong-manok'].map((id) => <RecipeCard recipe={recipeById(id)} />)}
     </div>
   </section>
   <section class="section home-compare">

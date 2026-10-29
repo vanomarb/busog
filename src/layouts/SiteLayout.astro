@@ -11,8 +11,10 @@ interface Props {
   title: string;
   description?: string;
 }
-const { title, description = 'Three ways in, one plate. A nutrition tracker for rice, ulam and real life.' } =
-  Astro.props;
+const {
+  title,
+  description = 'Three ways in, one plate. A calorie and macro tracker for everyday meals from around the world.',
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 

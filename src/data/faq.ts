@@ -3,9 +3,7 @@ export const faq = [
   {
     group: 'Getting started',
     question: 'What does Busog mean?',
-    answer:
-      'Busog is Filipino for pleasantly full. It starts with ordinary meals and makes room for ' +
-      'rice, ulam and merienda.',
+    answer: 'Busog is Filipino for pleasantly full. It starts with the meals you already eat, ' + 'wherever you are.',
   },
   {
     group: 'Getting started',
@@ -26,15 +24,15 @@ export const faq = [
   },
   {
     group: 'Your plate',
-    question: 'How does Turo-turo work?',
+    question: 'How does the counter work?',
     answer:
-      'Choose the dishes you would point to at a carinderia, set half, regular or extra ' +
-      'portions, and choose rice cups. The review total is computed from weighed USDA ' +
-      'ingredients.',
+      'Choose the dishes you would point to at a counter, set half, regular or extra ' +
+      'portions, and add rice cups if you like. The review total is computed from weighed USDA ' +
+      'ingredients. In the Philippines region the counter is called Turo-turo.',
   },
   {
     group: 'Your plate',
-    question: 'Is a dish exactly like my carinderia’s?',
+    question: 'Is a dish exactly like the one I ate?',
     answer:
       'No. Busog supplies one explicit ingredient composition. Recipes, sauces and portions ' +
       'differ between cooks. Open How we counted this to decide whether the composition fits ' +

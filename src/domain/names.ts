@@ -32,6 +32,16 @@ export function mealName(meal: Meal, region: Region): string {
   return meal === 'Merienda' && region === 'intl' ? 'Snack' : meal;
 }
 
+/** The dish counter is a turo-turo in the Philippines; elsewhere it is simply the counter. */
+export function counterName(region: Region): string {
+  return region === 'ph' ? 'Turo-turo' : 'Counter';
+}
+
+/** What goes beside the rice: ulam in the Philippines, dishes elsewhere. */
+export function dishWord(region: Region): string {
+  return region === 'ph' ? 'ulam' : 'dishes';
+}
+
 /** The cuisine a region treats as its own. */
 export function homeCuisine(region: Region): Recipe['cuisine'] {
   return region === 'ph' ? 'filipino' : 'international';
