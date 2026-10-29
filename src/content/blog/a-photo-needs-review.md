@@ -1,0 +1,31 @@
+---
+title: 'A photo deserves a second look'
+description: 'An original Busog guide to photo review.'
+category: 'Using Busog'
+image: 'adobo'
+---
+
+## A photo starts a conversation
+
+Pictures can make food entry feel approachable. They do not tell the full story of cooking oil, ingredients hidden in
+sauce or the weight of a serving. The review step is where you decide what belongs in your diary.
+
+## What the demo really does
+
+Busog does not run a recognition model. Its Snap flow offers three licensed sample images and a short staged reading
+sequence. Each sample maps to the ingredients of one of Busog’s compositions. The simulated recognition label stays
+visible throughout.
+
+## Check the mapping
+
+The next screen lists ingredients with their USDA IDs and gram amounts. You can change each amount, including setting an
+unwanted item to zero. Confirming adds the reviewed items with a Snap demo source label. Nothing is uploaded, and the
+sequence makes no accuracy promise.
+
+## Why show the limitation
+
+A concept can demonstrate the shape of a useful interaction without claiming technology it does not contain. A clear
+review step and visible source records are worth testing on their own. They are the parts Busog actually implements.
+
+Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+[USDA FoodData Central](https://fdc.nal.usda.gov/).

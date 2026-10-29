@@ -1,0 +1,81 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import FinalCta from '../components/site/FinalCta.astro';
+const rows = [
+  [
+    'Getting started',
+    'Choose your own format and fill every field.',
+    'Open an editable mock diary. No account required.',
+  ],
+  ['An everyday dish', 'Write a name, then look up its parts.', 'Start from one transparent ingredient composition.'],
+  ['Photo logging', 'Describe the meal yourself.', 'Review a simulated sample mapping; no actual recognition.'],
+  [
+    'Nutrition arithmetic',
+    'Find values, scale grams and add totals.',
+    'Source records and serving math stay linked to entries.',
+  ],
+  [
+    'Packaged food',
+    'Copy the label or find a product elsewhere.',
+    'Look up complete Open Food Facts records by barcode.',
+  ],
+  ['Keeping a copy', 'Keep your chosen file or notebook.', 'Export JSON; local browser storage can be cleared.'],
+  ['Flexibility', 'Completely open-ended.', 'Four meal groups, core macros and a curated starting set.'],
+];
+---
+
+<SiteLayout
+  title="A place to begin"
+  description="An honest comparison between Busog's working concept and a blank food diary."
+  ><section class="page-intro">
+    <p class="mono">Busog vs a blank food diary</p><h1>A place to begin.<br />Room to make it yours.</h1><p>
+      A blank page is wonderfully flexible. Busog adds a few useful starting points, with the limits in view.
+    </p>
+  </section><div class="table-wrap comparison">
+    <table>
+      <thead><tr><th>At the table</th><th>A blank diary</th><th>Busog concept</th></tr></thead><tbody
+        >{
+          rows.map(([name, blank, busog]) => (
+            <tr>
+              <>
+                <th>{name}</th>
+                <td>{blank}</td>
+                <td>{busog}</td>
+              </>
+            </tr>
+          ))
+        }</tbody
+      >
+    </table>
+  </div><article class="reading">
+    <h2>Choose what helps you.</h2><p>
+      A notebook does not need a battery, API or browser cache. It also does not calculate nutrition for you. Busog is a
+      different tool with explicit compositions, a local demonstration and a narrower set of features.
+    </p><p>
+      The concept has not been tested against other trackers for accuracy, speed or outcomes. There are no competitor
+      claims or fabricated performance statistics here.
+    </p>
+  </article><FinalCta /></SiteLayout
+>
+<style>
+  .comparison {
+    border-radius: 28px;
+    background: var(--raised);
+  }
+  .comparison th:first-child {
+    min-width: 140px;
+  }
+  .comparison td {
+    min-width: 220px;
+    width: 37%;
+  }
+  .comparison td:last-child,
+  .comparison th:last-child {
+    background: var(--sage);
+    color: #20231f;
+  }
+  .comparison th:last-child,
+  .comparison td:last-child {
+    border-color: #20231f30;
+  }
+</style>

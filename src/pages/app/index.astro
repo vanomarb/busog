@@ -1,0 +1,62 @@
+---
+import '../../styles/tokens.css';
+import '../../styles/global.css';
+import '../../styles/app.css';
+import '../../styles/sheets.css';
+import '../../styles/charts.css';
+import App from '../../components/app/App.svelte';
+import FontPreloads from '../../components/site/FontPreloads.astro';
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <FontPreloads />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#232522" />
+    <meta
+      name="description"
+      content="Try Busog's local nutrition demo: turo-turo, simulated photos and sourced food search."
+    />
+    <title>Your plate · Busog demo</title>
+    <link rel="icon" type="image/svg+xml" href="/busog/brand/mark.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/busog/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/busog/brand/icon-192.png" />
+    <link rel="manifest" href="/busog/manifest.webmanifest" />
+    <script is:inline>
+      (() => {
+        const detect = () => {
+          const coarse = matchMedia('(pointer: coarse)').matches || !matchMedia('(hover: hover)').matches;
+          const smallScreen = Math.min(screen.width, screen.height) < 700;
+          const physicalPhone = smallScreen && (coarse || navigator.maxTouchPoints > 0);
+          const framed = new URLSearchParams(location.search).get('frame') === 'phone' && !physicalPhone;
+          const phone = physicalPhone || framed || innerWidth < 600;
+          const zoom = physicalPhone && innerWidth > screen.width * 1.3 ? innerWidth / screen.width : 1;
+          document.documentElement.dataset.device = phone ? 'phone' : 'web';
+          document.documentElement.dataset.framed = String(framed);
+          document.documentElement.style.setProperty('--zoom', String(zoom));
+          dispatchEvent(new CustomEvent('busog:device', { detail: { phone, framed } }));
+        };
+        try {
+          document.documentElement.dataset.theme = localStorage.getItem('busog-theme') || 'dark';
+        } catch {
+          /* The signature theme remains usable without storage. */
+        }
+        detect();
+        addEventListener('resize', detect);
+        matchMedia('(pointer: coarse)').addEventListener('change', detect);
+      })();
+    </script>
+  </head>
+  <body class="app-body">
+    <App client:only="svelte" />
+    <script>
+      if (import.meta.env.PROD && 'serviceWorker' in navigator)
+        navigator.serviceWorker.register('/busog/sw.js').catch(() => {});
+    </script>
+  </body>
+</html>

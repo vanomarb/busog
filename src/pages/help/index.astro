@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import CollectionSearch from '../../components/tools/CollectionSearch.svelte';
+const articles = (await getCollection('help')).map((article) => ({
+  ...article.data,
+  href: `/busog/help/${article.id}/`,
+}));
+---
+
+<SiteLayout title="A hand at the table"
+  ><section class="page-intro">
+    <p class="mono">The help shelf</p><h1>A hand<br />at the table.</h1><p>
+      Practical steps for your next plate, portion edit or offline visit.
+    </p>
+  </section><CollectionSearch items={articles} placeholder="Search the help shelf" client:load /><p
+    class="notice"
+    style="margin-top: 40px"
+  >
+    Looking for a quick answer? <a href="/busog/faq/">Browse common questions</a> or <a href="/busog/contact/"
+      >try the concept contact form</a
+    >.
+  </p></SiteLayout
+>

@@ -1,0 +1,123 @@
+.home-hero {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 42px;
+  align-items: center;
+  padding: 70px 0 68px;
+}
+.hero-label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: var(--text-xs);
+  margin-bottom: 24px;
+}
+.hero-label span {
+  width: 7px;
+  height: 7px;
+  background: var(--aqua);
+  border-radius: 50%;
+}
+.hero-copy h1 {
+  font-size: var(--text-display);
+  line-height: 0.91;
+}
+.hero-description {
+  font-size: var(--text-md);
+  color: var(--muted);
+  max-width: 405px;
+  margin: 30px 0;
+}
+.hero-footnote {
+  font-size: var(--text-2xs);
+  color: var(--muted);
+  margin-top: 20px;
+}
+.hero-product {
+  min-width: 0;
+}
+.preview-caption {
+  text-align: right;
+  margin: 25px 0 0;
+  font-size: var(--text-2xs);
+  color: var(--muted);
+}
+.home-principles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-block: 1px solid var(--line);
+  padding: 25px 0;
+  font: var(--text-xs) var(--mono);
+}
+.home-principles span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.home-principles span::before {
+  content: '+';
+  color: var(--coral);
+  font-size: var(--text-lg);
+}
+.source-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.source-bento a {
+  text-decoration: none;
+  padding: 36px;
+  border-radius: 30px;
+}
+.source-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.source-title h3 {
+  font-size: var(--text-3xl);
+}
+.source-bento p {
+  font-size: var(--text-base);
+  max-width: 430px;
+}
+.source-bento small {
+  font-size: var(--text-2xs);
+  margin-top: 25px;
+  display: block;
+}
+.source-secondary {
+  display: grid;
+  gap: 22px;
+}
+.source-secondary h3 {
+  font-size: var(--text-3xl);
+}
+.pointing-scene {
+  position: relative;
+  min-height: 215px;
+  display: grid;
+  place-content: center;
+  padding-top: 30px;
+}
+.floating-food {
+  position: absolute;
+  top: 35px;
+  right: 3%;
+  padding: 10px 18px;
+  border-radius: 22px;
+  background: #f6f8f3;
+  color: #20231f;
+  font: var(--text-xs) var(--mono);
+  transform: rotate(7deg);
+}
+.floating-food.second {
+  right: auto;
+  left: 4%;
+  top: 140px;
+  transform: rotate(-7deg);
+}

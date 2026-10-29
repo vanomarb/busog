@@ -1,0 +1,7 @@
+node_modules
+dist
+.astro
+.research
+package-lock.json
+src/data/foods.json
+public/images

@@ -1,0 +1,22 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ConceptForm from '../components/tools/ConceptForm.svelte';
+---
+
+<SiteLayout title="Good food is a shared effort"
+  ><section class="page-intro">
+    <p class="mono">Partnerships / concept</p><h1>Good food is<br />a shared effort.</h1><p>
+      A proposal for the people who know everyday eating best: cooks, food researchers and Filipino communities.
+    </p>
+  </section><div class="split">
+    <div class="stack">
+      <h2>Build with context.</h2><p>
+        Future work could explore locally documented ingredient compositions, accessible portion guides and better
+        language around familiar meals. These are directions for collaboration, not existing partnerships.
+      </p><h3>Start with the evidence.</h3><p class="muted">
+        Any future food database contribution would need a source, a reproducible method and a clear license. Local
+        familiarity matters; so does showing where a number came from.
+      </p>
+    </div><ConceptForm partnership client:only="svelte" />
+  </div></SiteLayout
+>

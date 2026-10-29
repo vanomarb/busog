@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+/** Generate a static page for every validated content entry. */
+export async function getStaticPaths() {
+  return (await getCollection('help')).map((article) => ({ params: { slug: article.id }, props: { article } }));
+}
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<SiteLayout title={article.data.title} description={article.data.description}
+  ><nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/busog/help/">Help shelf</a><span>/</span><span>{article.data.category}</span>
+  </nav><article class="reading">
+    <p class="mono muted">{article.data.category}</p><h1 style="font-size: var(--text-4xl)">
+      {article.data.title}
+    </h1><Content />
+  </article><a class="button accent" href="/busog/app/">Try it in the demo ↗</a></SiteLayout
+>

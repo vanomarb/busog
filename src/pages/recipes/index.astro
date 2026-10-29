@@ -1,0 +1,70 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import RecipeCard from '../../components/site/RecipeCard.astro';
+import { recipes } from '../../data/catalog';
+/** The kitchen, grouped by cuisine: the Filipino table first, then dishes from everywhere else. */
+const shelves = [
+  {
+    id: 'filipino',
+    title: 'From the Filipino table.',
+    note: 'Ulam, gulay, sabaw and merienda, each with its English name alongside.',
+  },
+  {
+    id: 'international',
+    title: 'From everywhere else.',
+    note: 'Breakfast bowls, pasta, tacos and soups, counted the same way.',
+  },
+].map((shelf) => ({ ...shelf, recipes: recipes.filter((recipe) => recipe.cuisine === shelf.id) }));
+const description = `${recipes.length} original recipes, Filipino and international, with USDA-computed nutrition.`;
+---
+
+<SiteLayout title="The Busog kitchen" {description}
+  ><section class="page-intro">
+    <p class="mono">The kitchen / {recipes.length} recipes</p><h1>Familiar food.<br />Open recipes.</h1><p>
+      Ulam for the table, a bowl for the desk, and the ingredient math on the side.
+    </p>
+  </section>
+  <nav class="actions shelf-links" aria-label="Cuisines">
+    {
+      shelves.map((shelf) => (
+        <a class="chip" href={`#${shelf.id}`}>
+          {shelf.id === 'filipino' ? 'Filipino' : 'International'} · {shelf.recipes.length}
+        </a>
+      ))
+    }
+  </nav>
+  {
+    shelves.map((shelf) => (
+      <section class="section shelf" id={shelf.id}>
+        <header class="section-heading">
+          <h2>{shelf.title}</h2>
+          <p class="muted">{shelf.note}</p>
+        </header>
+        <div class="content-grid">
+          {shelf.recipes.map((recipe) => (
+            <RecipeCard {recipe} />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+  <p class="notice">
+    Recipes list weighed ingredients in their USDA state. Nutrition is calculated, not laboratory-tested. Each card's
+    plate is drawn from the recipe's own ingredients. <a href="/busog/credits/">Credits</a>.
+  </p></SiteLayout
+>
+<style>
+  .shelf-links {
+    margin-bottom: 35px;
+  }
+  .shelf-links .chip {
+    background: var(--raised);
+    padding: 12px 18px;
+    min-height: 44px;
+    font-size: var(--text-xs);
+  }
+  .shelf {
+    padding-top: 25px;
+    scroll-margin-top: 90px;
+  }
+</style>

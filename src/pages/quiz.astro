@@ -1,0 +1,18 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Quiz from '../components/tools/Quiz.svelte';
+---
+
+<SiteLayout
+  title="Set your table"
+  description="Three short questions, an educational calorie estimate and a prefilled Busog demo."
+  ><section class="page-intro">
+    <p class="mono">Set your table</p><h1>Start where<br />you are.</h1><p>
+      Three short questions. One editable starting point. No sign-up required.
+    </p>
+  </section><Quiz client:load /><p class="notice" style="margin-top: 40px">
+    The estimate uses Mifflin–St Jeor and an activity assumption. <a href="/busog/tdee-calculator/"
+      >See the formula and limitations</a
+    >.
+  </p></SiteLayout
+>

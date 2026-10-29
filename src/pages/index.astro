@@ -1,0 +1,127 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import DemoButtons from '../components/site/DemoButtons.astro';
+import ProductPreview from '../components/site/ProductPreview.svelte';
+import FinalCta from '../components/site/FinalCta.astro';
+import RecipeCard from '../components/site/RecipeCard.astro';
+import FoodCharacter from '../components/app/FoodCharacter.svelte';
+import { recipeById } from '../data/catalog';
+import '../styles/charts.css';
+import '../styles/home.css';
+---
+
+<SiteLayout title="Your food. Your way. Your plate.">
+  <section class="home-hero">
+    <div class="hero-copy">
+      <p class="hero-label mono"><span></span> For rice, ulam & real life</p><h1>
+        Your food.<br />Your way.<br />Your plate.
+      </h1><p class="hero-description">
+        A little more understanding on the side. Meet the nutrition tracker that starts with what’s already on your
+        table.
+      </p><DemoButtons /><p class="hero-footnote mono">No account. A full demo. Your kind of everyday.</p>
+    </div>
+    <div class="hero-product">
+      <ProductPreview /><p class="mono preview-caption">Real Busog screens. Fictional Mara. Real food data.</p>
+    </div>
+  </section>
+  <div class="home-principles">
+    <span>Built around Filipino food</span><span>Every number has a source</span><span>Always room for rice</span>
+  </div>
+  <section class="section" id="three-ways">
+    <header class="section-heading">
+      <h2>Three ways in.<br />One plate.</h2><p>
+        At the counter, at home, or on the go. Start where you are. Every route meets the same diary and the same
+        nutrition math.
+      </p>
+    </header>
+    <div class="source-bento">
+      <a class="source-turo aqua" href="/busog/app/?frame=phone"
+        ><div class="source-title"><h3>Just point.<br />We get it.</h3><span class="round">↗</span></div><p>
+          Turo-turo brings the carinderia counter to your phone. Pick your ulam, scoop your rice, see your plate come
+          together.
+        </p><div class="pointing-scene">
+          <FoodCharacter size={135} /><span class="floating-food">Adobong manok ↗</span><span
+            class="floating-food second">One cup of kanin</span
+          >
+        </div><small>Ingredient-based dishes / open calculations</small></a
+      >
+      <div class="source-secondary">
+        <a class="coral source-snap" href="/busog/app/?frame=phone"
+          ><div class="source-title"><h3>A photo.<br />Then a second look.</h3><span class="round">↗</span></div><p>
+            Pick a sample plate, review its mapped ingredients, and adjust what’s yours.
+          </p><small>Demo: recognition is simulated</small></a
+        ><a class="violet source-search" href="/busog/app/"
+          ><div class="source-title"><h3>Find it.<br />Scan it. Add it.</h3><span class="round">↗</span></div><p>
+            Search USDA ingredients or look up a packaged-food barcode with Open Food Facts.
+          </p><small>USDA / Open Food Facts</small></a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="section food-story">
+    <div class="food-story-image">
+      <img
+        src="/busog/images/munggo-960.webp"
+        srcset="/busog/images/munggo-480.webp 480w, /busog/images/munggo-960.webp 960w"
+        sizes="(max-width: 600px) 90vw, 45vw"
+        alt="A bowl of ginisang munggo"
+        width="960"
+        height="720"
+        loading="lazy"
+      /><span class="photo-note mono">Ginisang munggo / Friday, or any day.</span>
+    </div><div class="food-story-copy">
+      <p class="mono muted">Familiar food. A clearer picture.</p><h2>You don’t need<br />a different lunch.</h2><p>
+        You need a diary that makes room for this one. Busog starts with familiar ingredients, practical portions, and
+        numbers you can follow back to their source.
+      </p><div class="story-line">
+        <span class="chip">Your food</span><span aria-hidden="true">+</span><span class="chip">A little context</span
+        ><span aria-hidden="true">=</span><span class="chip">Your plate</span>
+      </div><a class="inline-link" href="/busog/about/">The thinking behind Busog <span>↗</span></a>
+    </div>
+  </section>
+  <section class="section">
+    <header class="section-heading">
+      <h2>From our kitchen<br />to your diary.</h2><a class="inline-link" href="/busog/recipes/"
+        >See all recipes <span>↗</span></a
+      >
+    </header><div class="content-grid">
+      {['adobong-manok', 'tinolang-manok', 'salmon-rice-bowl'].map((id) => <RecipeCard recipe={recipeById(id)} />)}
+    </div><p class="kitchen-note mono">Original compositions. USDA ingredients. Photos for inspiration.</p>
+  </section>
+  <section class="section home-compare">
+    <h2>A blank diary<br />asks a lot of you.</h2><div>
+      <p>Busog gives you a place to begin.</p><ul>
+        <li><span>Instead of remembering every ingredient</span><strong>Start with a familiar dish.</strong></li><li>
+          <span>Instead of accepting a mystery total</span><strong>See the ingredient math.</strong>
+        </li><li><span>Instead of another account to make</span><strong>Open a local, editable demo.</strong></li>
+      </ul><a class="inline-link" href="/busog/compare/">See the honest comparison ↗</a>
+    </div>
+  </section>
+  <section class="section home-faq">
+    <header>
+      <h2>A few things<br />you might wonder.</h2><a class="inline-link" href="/busog/faq/">All questions ↗</a>
+    </header><div>
+      <details>
+        <summary>Is Busog a real app?</summary><p>
+          It’s a working portfolio concept. The local diary, food calculations and live lookups work. Photo recognition
+          and coach replies are clearly labelled simulations.
+        </p>
+      </details><details>
+        <summary>Where do the nutrition numbers come from?</summary><p>
+          The bundled ingredients are USDA FoodData Central records. Recipe totals are calculated from those
+          ingredients; packaged-food lookups come from Open Food Facts.
+        </p>
+      </details><details>
+        <summary>Can I keep using it offline?</summary><p>
+          After the app is installed and cached, the diary, recipes and bundled food search work offline. Live food and
+          barcode requests need a connection.
+        </p>
+      </details>
+    </div>
+  </section>
+  <FinalCta />
+</SiteLayout>
+<script>
+  import { scaleAllPreviews } from '../lib/preview';
+  scaleAllPreviews();
+</script>

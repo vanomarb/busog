@@ -1,0 +1,39 @@
+---
+import { recipeFood } from '../../data/catalog';
+import { number, serving } from '../../domain/nutrition';
+import type { Recipe } from '../../domain/types';
+import DishPhoto from '../app/DishPhoto.svelte';
+/** The kitchen preview: a photo of the dish, and nutrition derived from its ingredients. */
+interface Props {
+  recipe: Recipe;
+}
+const { recipe } = Astro.props;
+const food = recipeFood(recipe);
+const total = serving(food, food.portions[0].grams);
+---
+
+<a class="content-card recipe-card" href={`/busog/recipes/${recipe.id}/`}>
+  <div class="recipe-card-art"><DishPhoto {recipe} sizes="(max-width: 600px) 92vw, 400px" /></div>
+  <div class="content">
+    <small class="mono">{recipe.category} · {recipe.minutes} min</small>
+    <h3>{recipe.name}</h3>
+    {recipe.english && <p>{recipe.english}</p>}
+    <div class="actions">
+      <span class="chip">{number(total.kcal)} kcal</span><span class="chip">{number(total.protein)} g protein</span
+      ><span class="round" aria-hidden="true">↗</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .recipe-card-art {
+    height: 220px;
+    overflow: hidden;
+  }
+  .recipe-card-art :global(img) {
+    transition: transform var(--slow) var(--ease-out);
+  }
+  .recipe-card:hover .recipe-card-art :global(img) {
+    transform: scale(1.04);
+  }
+</style>

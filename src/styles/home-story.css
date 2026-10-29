@@ -1,0 +1,164 @@
+.food-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.food-story-image {
+  position: relative;
+}
+.food-story-image img {
+  border-radius: 32px;
+  width: 100%;
+  height: 510px;
+}
+.photo-note {
+  position: absolute;
+  bottom: 22px;
+  left: 20px;
+  right: 20px;
+  background: #f6f8f3;
+  color: #20231f;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-size: var(--text-2xs);
+}
+.food-story-copy > p:first-child {
+  font-size: var(--text-xs);
+}
+.food-story-copy h2 {
+  margin: 25px 0;
+}
+.food-story-copy > p {
+  color: var(--muted);
+}
+.story-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 28px 0;
+  flex-wrap: wrap;
+}
+.story-line .chip {
+  background: var(--raised);
+}
+.kitchen-note {
+  margin-top: 24px;
+  font-size: var(--text-2xs);
+  color: var(--muted);
+}
+.home-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  border-block: 1px solid var(--line);
+}
+.home-compare ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+.home-compare li {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.home-compare li span,
+.home-compare li strong {
+  display: block;
+}
+.home-compare li span {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.home-compare li strong {
+  font-weight: 500;
+  font-size: var(--text-lg);
+}
+.home-faq {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+}
+.home-faq .inline-link {
+  margin-top: 28px;
+}
+.home-faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.home-faq summary {
+  cursor: pointer;
+  font-size: var(--text-md);
+  min-height: 44px;
+}
+.home-faq details p {
+  color: var(--muted);
+  margin: 15px 0;
+  font-size: var(--text-sm);
+}
+@media (max-width: 1100px) {
+  .home-hero {
+    gap: 25px;
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .hero-copy .demo-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .home-hero h1 {
+    font-size: var(--text-4xl);
+  }
+  .food-story {
+    gap: 35px;
+  }
+}
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding-top: 42px;
+  }
+  .hero-copy h1 {
+    font-size: var(--text-display);
+  }
+  .hero-copy .demo-buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+  .hero-description {
+    max-width: 550px;
+  }
+  .hero-product {
+    margin-top: 25px;
+  }
+  .source-bento,
+  .food-story,
+  .home-compare,
+  .home-faq {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .home-principles {
+    flex-wrap: wrap;
+    font-size: var(--text-2xs);
+    gap: 14px;
+  }
+  .food-story-image img {
+    height: 380px;
+  }
+}
+@media (max-width: 420px) {
+  .hero-copy .demo-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-copy h1 {
+    font-size: var(--text-4xl);
+  }
+  .source-bento a {
+    padding: 26px;
+  }
+  .source-title h3 {
+    font-size: var(--text-3xl);
+  }
+}

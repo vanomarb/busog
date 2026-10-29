@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+/** Generate a static page for every validated content entry. */
+export async function getStaticPaths() {
+  return (await getCollection('blog')).map((article) => ({ params: { slug: article.id }, props: { article } }));
+}
+const { article } = Astro.props;
+const { Content } = await render(article);
+const related = (await getCollection('blog')).filter((item) => item.id !== article.id).slice(0, 3);
+---
+
+<SiteLayout title={article.data.title} description={article.data.description}
+  ><nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/busog/blog/">Notes from the table</a><span>/</span><span>{article.data.category}</span>
+  </nav><article class="reading">
+    <header>
+      <p class="mono muted">{article.data.category} / Busog editorial</p><h1 style="font-size: var(--text-4xl)">
+        {article.data.title}
+      </h1><p style="font-size: var(--text-lg)">{article.data.description}</p>
+    </header><img
+      style="border-radius: 28px; width: 100%; height: 350px"
+      src={`/busog/images/${article.data.image}-960.webp`}
+      alt="Illustrative Filipino meal"
+      width="960"
+      height="640"
+    /><p class="muted" style="font-size: var(--text-xs)">
+      Illustrative photograph. <a href="/busog/credits/">Credits and sources</a>.
+    </p><Content /><div class="notice">
+      <p>This article explains a portfolio concept. It does not provide individual medical or dietary advice.</p>
+    </div>
+  </article><section class="section">
+    <header class="section-heading"><h2>Keep a seat.</h2></header><div class="content-grid">
+      {
+        related.map((item) => (
+          <a class="card" style="text-decoration: none" href={`/busog/blog/${item.id}/`}>
+            <>
+              <small>{item.data.category}</small>
+              <h3 style="margin-top: 20px">{item.data.title}</h3>
+            </>
+          </a>
+        ))
+      }
+    </div>
+  </section></SiteLayout
+>

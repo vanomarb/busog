@@ -1,0 +1,44 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import DemoButtons from '../components/site/DemoButtons.astro';
+import InstallButton from '../components/tools/InstallButton.svelte';
+import FoodCharacter from '../components/app/FoodCharacter.svelte';
+---
+
+<SiteLayout title="A seat on your home screen"
+  ><section class="page-intro">
+    <p class="mono">Take Busog with you.</p><h1>A seat on your<br />home screen.</h1><p>
+      Open the demo now, or install the same site as a web app. No store badge. No account to create.
+    </p>
+  </section><div class="split">
+    <div class="stack">
+      <DemoButtons /><InstallButton client:load /><div class="notice">
+        <p>
+          Concept project. Busog is a portfolio demonstration, with real source data and clearly simulated photo
+          recognition and coach replies. There is no native App Store or Google Play release.
+        </p>
+      </div><div class="aqua" style="display: grid; place-items: center; border-radius: 30px; padding: 30px">
+        <FoodCharacter kind="rice" size={180} />
+      </div>
+    </div><div class="stack">
+      <section class="card">
+        <h2>On iPhone.</h2><ol>
+          <li>Open this site in Safari over HTTPS.</li><li>Tap the Share button in the browser toolbar.</li><li>
+            Choose Add to Home Screen, then Add.
+          </li><li>Open Busog from your home screen and let its first load finish online.</li>
+        </ol>
+      </section><section class="card">
+        <h2>On Android.</h2><ol>
+          <li>Open this site in Chrome over HTTPS.</li><li>
+            Choose Install app or Add to Home screen from the browser menu.
+          </li><li>Confirm, then open Busog from your home screen.</li><li>
+            After the shell is cached, try the local diary and bundled search offline.
+          </li>
+        </ol>
+      </section><p class="muted">
+        On desktop, use the browser’s install control when offered. Live barcode lookup and live USDA results need a
+        connection. Browser support and install menu wording vary.
+      </p>
+    </div>
+  </div></SiteLayout
+>

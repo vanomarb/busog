@@ -1,0 +1,14 @@
+{
+  "id": "/busog/",
+  "name": "Busog — Three ways in, one plate",
+  "short_name": "Busog",
+  "start_url": "/busog/app/",
+  "scope": "/busog/",
+  "display": "standalone",
+  "background_color": "#232522",
+  "theme_color": "#232522",
+  "icons": [
+    { "src": "/busog/brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/busog/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

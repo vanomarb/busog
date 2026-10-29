@@ -1,0 +1,133 @@
+.app-body {
+  overflow: hidden;
+  touch-action: manipulation;
+}
+.app-stage {
+  display: grid;
+  place-content: center;
+  min-height: 100dvh;
+  padding: 28px;
+}
+.app-frame {
+  width: min(1540px, calc(100vw - 56px));
+  height: calc(100dvh - 56px);
+  min-height: 640px;
+  background: var(--surface);
+  border-radius: 40px;
+  overflow: clip;
+  position: relative;
+  box-shadow: 0 0 0 3px #20231f25;
+}
+.web-shell {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  height: 100%;
+}
+.icon-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid var(--line);
+  padding: 22px 12px;
+  gap: 28px;
+}
+.monogram {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  color: var(--card-ink);
+  --mark-cut: var(--sage);
+  border-radius: 50%;
+  text-decoration: none;
+}
+.icon-rail nav {
+  display: grid;
+  gap: 20px;
+}
+.icon-rail nav button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 17px;
+  color: var(--muted);
+}
+.icon-rail nav .active {
+  color: var(--card-ink);
+  background: var(--aqua);
+}
+.rail-bottom {
+  display: grid;
+  justify-items: center;
+  margin-top: auto;
+  border-radius: 35px;
+  background: #f6f8f3;
+  color: #20231f;
+  padding: 8px;
+  gap: 8px;
+}
+.rail-bottom button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--warning);
+  color: var(--card-ink);
+  font-family: var(--mono);
+}
+.web-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.app-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 30px;
+  gap: 24px;
+}
+.app-topbar p {
+  text-transform: capitalize;
+  font-size: var(--text-sm);
+}
+.topbar-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.day-selector {
+  background: #f6f8f3;
+  color: #20231f;
+  border-radius: 999px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 15px;
+  min-width: 260px;
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+}
+.day-selector span {
+  flex: 1;
+  text-align: left;
+}
+.notification {
+  position: relative;
+}
+.notification i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #b02d20;
+  border-radius: 50%;
+  right: 12px;
+  top: 10px;
+}

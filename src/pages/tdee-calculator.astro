@@ -1,0 +1,29 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Calculator from '../components/tools/Calculator.svelte';
+---
+
+<SiteLayout
+  title="A calorie starting point"
+  description="An educational Mifflin–St Jeor calorie tool with metric and imperial inputs."
+  ><section class="page-intro">
+    <p class="mono">The calorie calculator</p><h1>A starting point.<br />With the workings.</h1><p>
+      Estimate your daily energy needs, understand the assumptions, and carry the result into the demo.
+    </p>
+  </section><Calculator client:load /><article class="reading">
+    <h2>Here’s the equation.</h2><p>
+      Mifflin–St Jeor estimates resting energy: 10 × weight in kg + 6.25 × height in cm − 5 × age, plus 5 for the male
+      constant or minus 161 for the female constant. Multiply by the chosen activity factor to estimate maintenance.
+    </p><p>
+      A selected small deficit subtracts 250 kcal; a small surplus adds 250 kcal. These are demo adjustments. They are
+      not part of the original resting-energy equation.
+    </p><p>
+      The formula predicts a population-level estimate. It is not a measurement, diagnosis or individual dietary
+      prescription. The tool is an adult educational example.
+    </p><p>
+      Equation source: <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noreferrer"
+        >Mifflin et al., 1990, A new predictive equation for resting energy expenditure</a
+      >.
+    </p><a href="/busog/quiz/">Prefer a short guided quiz? ↗</a>
+  </article></SiteLayout
+>

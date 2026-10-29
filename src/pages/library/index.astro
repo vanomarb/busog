@@ -1,0 +1,18 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import LibrarySearch from '../../components/tools/LibrarySearch.svelte';
+import { foods, libraryItems } from '../../data/catalog';
+---
+
+<SiteLayout title="Food, with its sources"
+  ><section class="page-intro">
+    <p class="mono">The food library</p><h1>Know what’s<br />on your plate.</h1><p>
+      A curated shelf of {foods.length} everyday USDA foods. Familiar names first, original records always in reach.
+    </p>
+  </section><LibrarySearch items={libraryItems()} client:load /><div class="notice" style="margin-top: 40px">
+    <p>
+      USDA FoodData Central · SR Legacy and Foundation Foods · public domain / CC0. Values describe the listed edible
+      food state, not every variety or recipe.
+    </p><a class="inline-link" href="/busog/credits/">Sources and snapshot details ↗</a>
+  </div></SiteLayout
+>

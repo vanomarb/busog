@@ -1,0 +1,77 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import provenance from '../data/provenance.json';
+import photos from '../data/photos.json';
+const photoList = Object.entries(photos);
+---
+
+<SiteLayout title="Every source has a seat"
+  ><section class="page-intro">
+    <p class="mono">Credits & sources</p><h1>Every source<br />has a seat.</h1><p>
+      Food records, photography and the visual references behind this concept.
+    </p>
+  </section><article class="reading">
+    <h2>The food.</h2><p>
+      USDA Agricultural Research Service, <a href="https://fdc.nal.usda.gov/">FoodData Central</a>. The snapshot has {
+        provenance.count
+      } foods, per 100 g. USDA data is public domain / <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+        >CC0</a
+      >. Sources: SR Legacy 2018 and Foundation Foods 2025. IDs and serving weights are preserved.
+    </p><p>
+      Packaged-food lookup uses <a href="https://world.openfoodfacts.org/">Open Food Facts</a>, whose database is
+      licensed under <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL</a>, with individual contents under
+      DbCL. OFF-derived diary records retain this attribution in the local export. They are not merged into the CC0
+      snapshot.
+    </p><h2>The photographs.</h2><p>
+      Every dish photo comes from Wikimedia Commons under an open license, resized and cropped to WebP at 480 and 960
+      pixels. Each shows the dish it illustrates; the recipe's ingredient list defines the calculated nutrition.
+      Share-alike derivatives remain under their original compatible license.
+    </p><div class="credit-grid">
+      {
+        photoList.map(([image, photo]) => (
+          <figure class="credit">
+            <img src={`/busog/images/${image}-480.webp`} alt={photo.title} width="480" height="360" loading="lazy" />
+            <figcaption>
+              <a href={photo.source}>{photo.title}</a> by {photo.author}.{' '}
+              {photo.licenseUrl ? <a href={photo.licenseUrl}>{photo.license}</a> : photo.license}.
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div><h2>The design.</h2><p>
+      The owner-directed visual study is <a
+        href="https://dribbble.com/shots/26787072-AI-Powered-Mobile-App-for-Restaurant-Operations"
+        >AI-Powered Mobile App for Restaurant Operations by tubik</a
+      >. Busog adapts the shell, card and typographic vocabulary with its own brand, artwork and nutrition interactions.
+      No reference character art, photos or copy are reused.
+    </p><p>
+      <a href="https://nutrola.app/en">Nutrola</a> informed the page types.
+    </p><p>
+      Busog wrote its own copy. Self-hosted fonts are Barlow Condensed, IBM Plex Mono and DM Sans under SIL OFL; icons
+      are Lucide under ISC.
+    </p><h2>The boundaries.</h2><p>
+      Mock history represents a fictional person. Photo recognition and coach replies are simulated. Food data is
+      traceable, but a record or recipe composition cannot measure your actual restaurant portion. This concept makes no
+      medical, user-count or outcome claims.
+    </p>
+  </article></SiteLayout
+>
+<style>
+  .credit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 28px 0 48px;
+  }
+  .credit img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+  }
+  .credit figcaption {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+  }
+</style>

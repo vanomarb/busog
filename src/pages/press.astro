@@ -1,0 +1,97 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ProductPreview from '../components/site/ProductPreview.svelte';
+import '../styles/charts.css';
+const colors = [
+  ['Charcoal', '#232522'],
+  ['Sage', '#c5d4ca'],
+  ['Coral', '#ff705e'],
+  ['Periwinkle', '#9690ff'],
+  ['Aqua', '#bce9e7'],
+  ['Sunflower', '#f5d369'],
+];
+---
+
+<SiteLayout title="The Busog press shelf"
+  ><section class="page-intro">
+    <p class="mono">Press kit / concept</p><h1>The essentials.<br />Nicely plated.</h1><p>
+      Busog is a Filipino-first calorie and macro tracking concept. Three ways to log a meal meet one source-traceable
+      plate.
+    </p>
+  </section><div class="split">
+    <section class="card stack">
+      <img src="/busog/brand/wordmark.svg" alt="Busog wordmark" width="360" height="100" /><h2>
+        A happily full bowl.
+      </h2><p>
+        The original mark pairs a bowl with two small rising strokes. Keep space around it and preserve its colors.
+      </p><div class="actions">
+        <a class="button accent" download href="/busog/brand/wordmark.svg">Wordmark SVG ↓</a><a
+          class="button outline"
+          download
+          href="/busog/brand/mark.svg">Mark SVG ↓</a
+        ><a class="inline-link" download href="/busog/brand/social.png">Social card PNG ↓</a>
+      </div>
+    </section><section class="stack">
+      <h2>In a sentence.</h2><p>
+        A little more clarity for rice, ulam and real life: Busog combines a visual carinderia counter, staged photo
+        review and sourced food search in one local diary.
+      </p><p class="muted">
+        Please describe it as a portfolio concept. Do not imply actual users, clinical approval, investment, press
+        coverage or an app-store launch.
+      </p><a class="inline-link" href="/busog/about/">The full concept story ↗</a>
+    </section>
+  </div><section class="section">
+    <header class="section-heading">
+      <h2>The palette.</h2><p>Flat fills. Charcoal text on every colored card.</p>
+    </header><div class="palette-grid">
+      {
+        colors.map(([name, hex]) => (
+          <div style={`background: ${hex}; color: ${name === 'Charcoal' ? '#f6f8f3' : '#20231f'}`}>
+            <>
+              <strong>{name}</strong>
+              <span class="mono">{hex}</span>
+            </>
+          </div>
+        ))
+      }
+    </div>
+  </section><section class="section">
+    <header class="section-heading">
+      <h2>Actual product screens.</h2><p>
+        These are the demo’s own components. Open either view for a full screen capture.
+      </p>
+    </header><ProductPreview /><div class="actions" style="margin-top: 30px">
+      <a class="button accent" href="/busog/app/?frame=phone">Phone screen ↗</a><a
+        class="button outline"
+        href="/busog/app/">Web screen ↗</a
+      >
+    </div>
+  </section></SiteLayout
+>
+<style>
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .palette-grid > div {
+    padding: 28px;
+    border-radius: 22px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .palette-grid .mono {
+    font-size: var(--text-xs);
+  }
+  @media (max-width: 600px) {
+    .palette-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+<script>
+  import { scaleAllPreviews } from '../lib/preview';
+  scaleAllPreviews();
+</script>

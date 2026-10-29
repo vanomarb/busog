@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#c5d4ca"/>
+  <rect x="30" y="30" width="1140" height="570" rx="42" fill="#232522"/>
+  <text x="80" y="115" font-family="sans-serif" font-size="40" font-weight="700" fill="#f6f8f3">busog.</text>
+  <text x="80" y="270" font-family="sans-serif" font-size="80" font-weight="700" fill="#f6f8f3">THREE WAYS IN.</text>
+  <text x="80" y="365" font-family="sans-serif" font-size="80" font-weight="700" fill="#bce9e7">ONE PLATE.</text>
+  <rect x="80" y="450" width="260" height="70" rx="35" fill="#ff705e"/>
+  <text x="110" y="494" font-family="monospace" font-size="24" fill="#20231f">Rice. Ulam. Life.</text>
+  <circle cx="960" cy="300" r="150" fill="#9690ff"/>
+  <path d="M850 310h220c-8 70-43 110-110 110s-102-40-110-110Z" fill="#bce9e7"/>
+  <path d="M910 270c-25-55 35-60 35-20m40-5c0-50 55-45 45-5" fill="none" stroke="#20231f" stroke-width="10"
+    stroke-linecap="round"/>
+</svg>

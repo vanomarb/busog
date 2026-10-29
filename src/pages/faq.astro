@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import FaqSearch from '../components/tools/FaqSearch.svelte';
+---
+
+<SiteLayout title="A little clarity" description="Answers about Busog's food sources, diary, goals and local-only demo."
+  ><section class="page-intro">
+    <p class="mono">Questions, welcome.</p><h1>A little clarity<br />on the side.</h1><p>
+      From rice cups to source records. Here’s how Busog works, and where the concept draws its limits.
+    </p>
+  </section><FaqSearch client:load /></SiteLayout
+>

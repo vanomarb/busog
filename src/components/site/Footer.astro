@@ -1,0 +1,91 @@
+---
+import Logo from './Logo.astro';
+/** The footer makes the full concept breadth accessible without filling the main navigation. */
+const groups = {
+  'Meet Busog': ['about', 'features', 'how-it-works', 'compare', 'community', 'partnerships'],
+  'Good to know': ['blog', 'help', 'faq', 'contact', 'press', 'download'],
+  'At your table': ['recipes', 'library', 'tdee-calculator', 'quiz', 'supplements', 'credits'],
+};
+---
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div><Logo /><p class="muted">A little more clarity.<br />A happily full plate.</p></div>
+    {
+      Object.entries(groups).map(([name, links]) => (
+        <div>
+          <>
+            <p class="mono">{name}</p>
+            <nav aria-label={name}>
+              {links.map((link) => (
+                <a href={`/busog/${link}/`}>{link.replaceAll('-', ' ').replace('tdee', 'TDEE')}</a>
+              ))}
+            </nav>
+          </>
+        </div>
+      ))
+    }
+  </div>
+  <div class="footer-bottom">
+    <small>Concept project · Made for the way we eat.</small>
+    <div><a href="/busog/privacy/">Privacy</a><a href="/busog/terms/">Terms</a></div>
+    <small>Manila, Philippines</small>
+  </div>
+</footer>
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 56px 0 24px;
+    margin-top: 100px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  .footer-top p {
+    margin: 16px 0;
+  }
+  nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  nav {
+    display: grid;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+    font-size: var(--text-sm);
+    text-transform: capitalize;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    margin-top: 48px;
+    color: var(--muted);
+  }
+  .footer-bottom div {
+    display: flex;
+    gap: 20px;
+  }
+  small {
+    font-size: var(--text-xs);
+  }
+  @media (max-width: 700px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>

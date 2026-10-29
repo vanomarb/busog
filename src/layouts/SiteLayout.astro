@@ -1,0 +1,70 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import '../styles/site.css';
+import Header from '../components/site/Header.astro';
+import Footer from '../components/site/Footer.astro';
+import FontPreloads from '../components/site/FontPreloads.astro';
+/** Shared metadata, reading shell and landmarks for all static marketing pages. */
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Three ways in, one plate. A nutrition tracker for rice, ulam and real life.' } =
+  Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <FontPreloads />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#232522" />
+    <title>{title} · Busog</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/busog/brand/mark.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/busog/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/busog/brand/icon-192.png" />
+    <link rel="manifest" href="/busog/manifest.webmanifest" />
+    <meta property="og:title" content={`${title} · Busog`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/busog/brand/social.png', Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      (() => {
+        const detect = () => {
+          const coarse = matchMedia('(pointer: coarse)').matches || !matchMedia('(hover: hover)').matches;
+          const small = Math.min(screen.width, screen.height) < 700;
+          const phone = (small && (coarse || navigator.maxTouchPoints > 0)) || innerWidth < 600;
+          document.documentElement.dataset.device = phone ? 'phone' : 'web';
+        };
+        detect();
+        addEventListener('resize', detect);
+        matchMedia('(pointer: coarse)').addEventListener('change', detect);
+      })();
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('busog-theme') || 'dark';
+      } catch {
+        /* Default theme works without storage. */
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="site-shell"><Header /><main id="main"><slot /></main><Footer /></div>
+    <script>
+      if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/busog/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

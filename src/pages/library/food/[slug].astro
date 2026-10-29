@@ -1,0 +1,85 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import NutritionPanel from '../../../components/tools/NutritionPanel.svelte';
+import { foods, foodSlug, categorySlug } from '../../../data/catalog';
+import { foodName } from '../../../domain/names';
+import { serving, number } from '../../../domain/nutrition';
+/** Generate source-backed static reference routes with stable identifiers. */
+export function getStaticPaths() {
+  return foods.map((food) => ({ params: { slug: foodSlug(food) }, props: { food } }));
+}
+const { food } = Astro.props;
+const name = foodName(food, 'ph');
+const related = foods.filter((item) => item.category === food.category && item.id !== food.id).slice(0, 3);
+const description = `Explore ${name.toLowerCase()} with USDA nutrition and servings. FDC ${food.fdcId}.`;
+---
+
+<SiteLayout title={`${name} nutrition`} {description}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/busog/library/">Food library</a><span>/</span><a
+      href={`/busog/library/category/${categorySlug(food.category)}/`}>{food.category}</a
+    >
+  </nav>
+  <section class="page-intro">
+    <p class="mono">USDA FDC {food.fdcId}</p><h1 style="font-size: var(--text-4xl)">{name}.</h1><p>
+      A reference for this ingredient’s listed edible state. Compare the gram weight with your own portion before
+      logging.
+    </p>
+  </section>
+  <div class="split">
+    <div class="stack">
+      <NutritionPanel {food} client:visible /><div class="notice">
+        <h2 style="font-size: var(--text-2xl)">The original record</h2><p>{food.description}</p><p class="mono">
+          {food.dataType} / FDC {food.fdcId} / per 100 g
+        </p><a class="inline-link" href={food.sourceUrl} target="_blank" rel="noreferrer">Open USDA source ↗</a><p>
+          USDA FoodData Central · CC0. No nutrient values were invented for this record.
+        </p>
+      </div>
+    </div>
+    <div class="stack">
+      <h2 style="font-size: var(--text-2xl)">A portion you can follow.</h2><p>
+        Divide grams by 100, then multiply by the source value. Busog uses this same calculation in its diary and
+        recipes.
+      </p><div class="table-wrap">
+        <table>
+          <thead><tr><th>Source serving</th><th>Grams</th><th>kcal</th></tr></thead><tbody
+            ><tr><td>Reference</td><td>100</td><td>{number(food.nutrition.kcal)}</td></tr>{
+              food.portions.map((portion) => (
+                <tr>
+                  <>
+                    <td>{portion.label}</td>
+                    <td>{portion.grams}</td>
+                    <td>{number(serving(food, portion.grams).kcal)}</td>
+                  </>
+                </tr>
+              ))
+            }</tbody
+          >
+        </table>
+      </div><p class="muted">
+        Raw, cooked, drained and salted records are distinct. A matching food name alone does not guarantee a matching
+        portion.
+      </p><a class="button accent" href={`/busog/app/?food=${food.id}`}>Try this in your diary ↗</a>
+    </div>
+  </div>
+  <section class="section">
+    <header class="section-heading">
+      <h2>On the same shelf.</h2><a href={`/busog/library/category/${categorySlug(food.category)}/`}
+        >All {food.category.toLowerCase()} ↗</a
+      >
+    </header><div class="content-grid">
+      {
+        related.map((item) => (
+          <a class="card" style="text-decoration: none" href={`/busog/library/food/${foodSlug(item)}/`}>
+            <>
+              <h3>{foodName(item, 'ph')}</h3>
+              <p class="mono" style="margin-top: 20px">
+                {number(item.nutrition.kcal)} kcal / 100 g
+              </p>
+            </>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</SiteLayout>

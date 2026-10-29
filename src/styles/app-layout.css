@@ -1,0 +1,205 @@
+.app-scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+  flex: 1;
+}
+.app-scroll.locked {
+  overflow: hidden;
+}
+.app-page {
+  padding: 10px 30px 35px;
+}
+.app-page h1 {
+  font-size: var(--text-3xl);
+}
+.app-page-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.app-page-intro p {
+  font-size: var(--text-sm);
+}
+.phone-heading {
+  display: none;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+}
+.dashboard-left,
+.dashboard-right {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+.dashboard-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.dashboard-grid .card {
+  border-radius: 32px;
+  padding: 24px;
+  min-width: 0;
+}
+.card-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.card-heading h2 {
+  font-size: var(--text-2xl);
+}
+.card-heading .round {
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+}
+.card-heading select {
+  width: auto;
+  border: 0;
+  border-radius: 999px;
+  background: #20231f12;
+  color: #20231f;
+  padding: 10px 14px;
+  font: var(--text-base) var(--mono);
+}
+.toast {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--surface);
+  padding: 14px 20px;
+  border-radius: 20px;
+  width: max-content;
+  max-width: 90%;
+  z-index: 100;
+  font-size: var(--text-sm);
+  box-shadow: 0 5px 20px #0003;
+}
+.storage-notice {
+  padding: 14px 30px;
+  color: var(--danger);
+  font-size: var(--text-sm);
+}
+.phone-shell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.phone-tabs {
+  position: absolute;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: 14px;
+  right: 14px;
+  height: 68px;
+  padding: 8px;
+  border: 1px solid #687063;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #232522;
+  color: #f6f8f3;
+  box-shadow: 0 6px 25px #0004;
+  z-index: 20;
+}
+/* Icon-only, like the desktop rail: each button carries its name in aria-label. */
+.phone-tabs button {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  color: #bbc5b8;
+}
+.phone-tabs .active {
+  background: var(--aqua);
+  color: #20231f;
+}
+.phone-tabs .raised-log {
+  background: var(--coral);
+  color: #20231f;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-10px);
+  border-radius: 50%;
+  border: 4px solid #232522;
+}
+.frame-caption {
+  text-align: center;
+  font: var(--text-xs) / 1.8 var(--mono);
+  color: #20231f;
+  margin-top: 18px;
+}
+[data-device='phone'] .app-stage {
+  padding: 0;
+  display: block;
+}
+[data-device='phone'] .app-frame {
+  width: calc(100vw / var(--zoom));
+  height: calc(100dvh / var(--zoom));
+  min-height: 0;
+  border-radius: 0;
+  zoom: var(--zoom);
+}
+[data-device='phone'] .app-page {
+  padding: max(28px, env(safe-area-inset-top)) 18px 118px;
+}
+[data-device='phone'] .phone-heading {
+  display: flex;
+}
+[data-device='phone'] .app-page-intro h1 {
+  font-size: var(--text-3xl);
+}
+[data-device='phone'] .dashboard-grid,
+[data-device='phone'] .dashboard-small {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+[data-device='phone'] .dashboard-left,
+[data-device='phone'] .dashboard-right {
+  gap: 16px;
+}
+[data-device='phone'] .dashboard-grid .card {
+  padding: 22px;
+  border-radius: 28px;
+}
+[data-device='phone'] .card-heading h2 {
+  font-size: var(--text-2xl);
+}
+[data-framed='true'] .app-stage {
+  display: grid;
+  padding: 16px;
+}
+[data-framed='true'] .app-frame {
+  width: min(390px, calc(100vw - 32px));
+  height: min(844px, calc(100dvh - 115px));
+  border: 9px solid #171916;
+  border-radius: 46px;
+  box-shadow: 0 20px 60px #20231f30;
+}
+@media (max-width: 1000px) {
+  [data-device='web'] .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-topbar {
+    flex-wrap: wrap;
+  }
+  .app-stage {
+    padding: 15px;
+  }
+  .app-frame {
+    width: calc(100vw - 30px);
+    height: calc(100dvh - 30px);
+  }
+}
