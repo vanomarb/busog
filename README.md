@@ -125,7 +125,7 @@ nutrition JSON is exempt.
 - `src/content/`, `src/content.config.ts`: blog, help and page Markdown. Recipes come straight from `src/data/`.
 - `src/components/app/`: one responsive app with separately mounted phone/web shells, shared screens and sheets.
 - `src/domain/`: pure typed nutrition, goals, date, diary and region-naming logic.
-- `src/lib/`: versioned store, history, drag/focus, mock data and food clients.
+- `src/lib/`: versioned store, history, drag/focus, sample data and food clients.
 - `scripts/`: reproducible data, domain/state verification, source limits and post-build offline/sitemap output.
 
 See [the implementation map](docs/implementation.md), [design rules](docs/design.md), [research](docs/research.md),
