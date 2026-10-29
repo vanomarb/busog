@@ -3,6 +3,7 @@
   import { createDemoStore } from '../../lib/store';
   import { createNavigation } from '../../lib/navigation';
   import { region } from '../../lib/region';
+  import { toast, showToast } from '../../lib/toast';
   import { today } from '../../domain/dates';
   import { recipes, recipeFood, foods } from '../../data/catalog';
   import PhoneShell from './PhoneShell.svelte';
@@ -15,7 +16,6 @@
   let phone = $state(document.documentElement.dataset.device === 'phone');
   let framed = $state(document.documentElement.dataset.framed === 'true');
   let date = $state(today());
-  let message = $state('');
   $effect(() => region.set($store.profile.region));
   onMount(() => {
     const update = () => {
@@ -49,16 +49,8 @@
     {:else}
       <WebShell {nav} {date} locked={$nav.layers.length > 0} children={content} />
     {/if}
-    <SheetHost
-      {store}
-      {nav}
-      {date}
-      onmessage={(value) => {
-        message = value;
-        setTimeout(() => (message = ''), 4000);
-      }}
-    />
-    {#if message}<div class="toast" role="status">{message}</div>{/if}
+    <SheetHost {store} {nav} {date} onmessage={showToast} />
+    {#if $toast}<div class="toast" role="status">{$toast}</div>{/if}
   </div>
   {#if framed}
     <p class="frame-caption">Busog in your pocket<br /><a href="/busog/app/">Switch to web view</a></p>

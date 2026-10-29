@@ -2,7 +2,7 @@
   import { Search, Bell, ChevronLeft, ChevronRight, Droplets, Flame } from '@lucide/svelte';
   import type { DemoStore } from '../../lib/store';
   import type { Navigation } from '../../lib/navigation';
-  import { dayTotal } from '../../domain/diary';
+  import { dayTotal, streak as loggedStreak } from '../../domain/diary';
   import { dateLabel, shiftDate, today } from '../../domain/dates';
   import { macroTargets } from '../../domain/goals';
   import WeeklyCalories from './WeeklyCalories.svelte';
@@ -20,11 +20,7 @@
   const targets = $derived(
     macroTargets($store.profile.kcal, $store.profile.proteinPercent, $store.profile.carbsPercent),
   );
-  const streak = $derived.by(() => {
-    let count = 0;
-    while (count < 90 && $store.entries.some((entry) => entry.date === shiftDate(today(), -count))) count++;
-    return count;
-  });
+  const streak = $derived(loggedStreak($store.entries, today()));
 </script>
 
 <div class="app-page">

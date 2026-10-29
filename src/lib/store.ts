@@ -8,17 +8,39 @@ import { loadDemo, saveDemo } from './storage';
 export function createDemoStore() {
   const data = writable<DemoData>(generateDemo());
   const status = writable({ loaded: false, persistent: true, recovered: false });
+  // Serialising the whole diary is the slowest part of a change, so it waits until the screen has updated and
+  // repeated changes (typing, toggling) are written once. Leaving the page writes anything still waiting.
+  let pending: DemoData | undefined;
+  let scheduled = false;
+  let listening = false;
+  const flush = () => {
+    scheduled = false;
+    if (!pending) return;
+    const persistent = saveDemo(pending);
+    pending = undefined;
+    status.update((state) => (state.persistent === persistent ? state : { ...state, persistent }));
+  };
   const update = (change: (value: DemoData) => DemoData) =>
     data.update((value) => {
       const next = change(value);
-      const persistent = saveDemo(next);
-      status.update((state) => ({ ...state, persistent }));
+      pending = next;
+      if (!scheduled) {
+        scheduled = true;
+        if (typeof requestIdleCallback === 'function') requestIdleCallback(flush, { timeout: 500 });
+        else setTimeout(flush, 0);
+      }
       return next;
     });
   return {
     subscribe: data.subscribe,
     status,
+    flush,
     hydrate() {
+      if (!listening && typeof addEventListener === 'function') {
+        listening = true;
+        addEventListener('pagehide', flush);
+        addEventListener('visibilitychange', () => document.visibilityState === 'hidden' && flush());
+      }
       const loaded = loadDemo();
       const delta = Math.round((Date.parse(today()) - Date.parse(loaded.data.anchor)) / 86400000);
       if (delta !== 0) {

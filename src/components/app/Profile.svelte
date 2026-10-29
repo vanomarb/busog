@@ -5,10 +5,10 @@
   import type { DemoStore } from '../../lib/store';
   import type { Navigation } from '../../lib/navigation';
   import ProfileForm from './ProfileForm.svelte';
+  import { showToast } from '../../lib/toast';
   /** Settings exposes goals, local-only API keys, portability and a reversible demo reset. */
   let { store, nav }: { store: DemoStore; nav: Navigation } = $props();
   let theme = $state('dark');
-  let message = $state('');
   let confirmReset = $state(false);
   let formVersion = $state(0);
   onMount(() => (theme = document.documentElement.dataset.theme || 'dark'));
@@ -33,7 +33,7 @@
     link.download = 'busog-diary.json';
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    message = 'Export ready. Your personal API key is excluded.';
+    showToast('Export ready. Your personal API key is excluded.');
   }
 </script>
 
@@ -53,7 +53,7 @@
           profile={$store.profile}
           onsave={(profile) => {
             store.profile(profile);
-            message = 'Goals saved to this browser.';
+            showToast('Goals saved to this browser.');
           }}
         />{/key}
     </section>
@@ -67,7 +67,7 @@
             value={$store.profile.region}
             onchange={(event) => {
               store.region(event.currentTarget.value as Region);
-              message = 'Names and suggestions updated. Start fresh for a matching sample diary.';
+              showToast('Names and suggestions updated. Start fresh for a matching sample diary.');
             }}
             ><option value="ph">Philippines · Filipino names first</option><option value="intl"
               >International · English names first</option
@@ -100,7 +100,7 @@
               store.reset();
               formVersion++;
               confirmReset = false;
-              message = 'Sample diary restored.';
+              showToast('Sample diary restored.');
             }}>Restore the sample diary</button
           >{/if}
       </section>
@@ -113,7 +113,7 @@
             value={$store.profile.apiKey}
             onchange={(event) => {
               store.profile({ ...$store.profile, apiKey: event.currentTarget.value.trim() });
-              message = 'Key saved locally.';
+              showToast('Key saved locally.');
             }}
             placeholder="Optional; DEMO_KEY works too"
           /></label
@@ -131,7 +131,6 @@
       </section>
     </aside>
   </div>
-  {#if message}<p class="settings-message" role="status">{message}</p>{/if}
 </div>
 
 <style>
@@ -163,15 +162,6 @@
     padding: 12px 0;
     border-bottom: 1px solid currentColor;
     text-align: left;
-  }
-  .settings-message {
-    position: sticky;
-    bottom: 15px;
-    background: var(--primary);
-    color: var(--surface);
-    padding: 18px;
-    border-radius: 18px;
-    margin-top: 25px;
   }
   :global([data-device='phone']) .profile-layout {
     grid-template-columns: 1fr;
