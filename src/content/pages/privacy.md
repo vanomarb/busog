@@ -19,7 +19,7 @@ USDA. Barcode lookup sends only the digits to Open Food Facts. Your diary, weigh
 ## Photos and the coach.
 
 Photo logging in this preview uses sample plates, so no photo is uploaded. Busog Coach answers on your device from your
-own diary; it makes no AI-service requests.
+own diary; it makes no AI-service requests. The contact and partnership forms send nothing until Busog's inbox opens.
 
 ## Your choices.
 

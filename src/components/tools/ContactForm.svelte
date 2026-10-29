@@ -1,26 +1,26 @@
 <script lang="ts">
-  import { CONTACT_EMAIL } from '../../data/contact';
   /**
-   * Busog has no mail server, so the form composes the message in the visitor's own email app: nothing is sent behind
-   * their back, and they see exactly what goes out.
+   * Busog's inbox isn't open yet, so the form never sends anything: it validates, then says plainly that the message
+   * stayed on the visitor's device. No address is shown, so no message can reach the wrong inbox.
    */
   let { partnership = false }: { partnership?: boolean } = $props();
-  let composed = $state(false);
-  function compose(event: SubmitEvent) {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget as HTMLFormElement);
-    const subject = `${partnership ? 'Partnership' : 'Busog'}: ${data.get('topic')}`;
-    const body = `${data.get('message')}\n\n${data.get('name')}`;
-    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    composed = true;
-  }
+  let submitted = $state(false);
 </script>
 
-{#if composed}<div class="form-confirmation" role="status">
-    <h2>Your email app has it.</h2>
-    <p>Your message is ready to send from your own email app. If nothing opened, write to {CONTACT_EMAIL}.</p>
-    <button class="button outline" onclick={() => (composed = false)}>Write another message</button>
-  </div>{:else}<form class="contact-form" onsubmit={compose}>
+{#if submitted}<div class="form-confirmation" role="status">
+    <h2>Thanks for writing.</h2>
+    <p>
+      Busog's inbox opens after the early preview, so this message stayed on your device and nothing was sent. Keep a
+      copy if you'd like to send it later.
+    </p>
+    <button class="button outline" onclick={() => (submitted = false)}>Back to the form</button>
+  </div>{:else}<form
+    class="contact-form"
+    onsubmit={(event) => {
+      event.preventDefault();
+      submitted = true;
+    }}
+  >
     <div class="form-fields">
       <label>Your name<input name="name" autocomplete="name" required maxlength="80" /></label><label
         >Email<input name="email" type="email" autocomplete="email" required /></label
@@ -33,8 +33,8 @@
         maxlength="120"
       /></label
     ><label>Your message<textarea name="message" rows="6" required minlength="10" maxlength="2000"></textarea></label>
-    <p class="muted">This opens your email app with the message ready to send.</p>
-    <button class="button accent">Write the email ↗</button>
+    <p class="muted">Our inbox opens after the early preview; until then, messages aren't sent.</p>
+    <button class="button accent">Send ↗</button>
   </form>{/if}
 
 <style>
