@@ -155,6 +155,7 @@ assets are cache-first. Post-build output includes a complete offline asset list
 
 Captured in Chrome after the checks in [docs/qa.md](docs/qa.md).
 
+- `docs/screenshots/cover.png` — portfolio card image (the home hero).
 - `docs/screenshots/site-1.png` — home hero, desktop.
 - `docs/screenshots/site-2.png` — the kitchen, desktop.
 - `docs/screenshots/app-phone-1.png` — Today, phone.
