@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import NutritionPanel from '../../../components/tools/NutritionPanel.svelte';
+import Card from '../../../components/site/Card.astro';
 import { foods, foodSlug, categorySlug } from '../../../data/catalog';
 import { foodName } from '../../../domain/names';
 import { serving, number } from '../../../domain/nutrition';
@@ -70,14 +71,12 @@ const description = `Explore ${name.toLowerCase()} with USDA nutrition and servi
     </header><div class="content-grid">
       {
         related.map((item) => (
-          <a class="card" style="text-decoration: none" href={`/busog/library/food/${foodSlug(item)}/`}>
-            <>
-              <h3>{foodName(item, 'ph')}</h3>
-              <p class="mono" style="margin-top: 20px">
-                {number(item.nutrition.kcal)} kcal / 100 g
-              </p>
-            </>
-          </a>
+          <Card
+            href={`/busog/library/food/${foodSlug(item)}/`}
+            meta={item.category}
+            title={foodName(item, 'ph')}
+            facts={[`${number(item.nutrition.kcal)} kcal / 100 g`, `FDC ${item.fdcId}`]}
+          />
         ))
       }
     </div>

@@ -29,24 +29,31 @@
 <style>
   .help-results {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 16px;
   }
   .help-results a {
     position: relative;
-    padding: 28px 55px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 64px 20px 22px;
     background: var(--raised);
-    border-radius: 24px;
+    border-radius: 22px;
     text-decoration: none;
-    display: grid;
-    gap: 16px;
+    transition: transform var(--base) var(--ease-out);
+  }
+  .help-results a:hover {
+    transform: translateY(-3px);
   }
   h2 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
+    line-height: 1.02;
   }
   p {
     color: var(--muted);
     font-size: var(--text-sm);
+    line-height: 1.45;
   }
   small {
     font-size: var(--text-2xs);
@@ -54,12 +61,15 @@
   }
   a > span {
     position: absolute;
-    right: 25px;
-    top: 25px;
-  }
-  @media (max-width: 600px) {
-    .help-results {
-      grid-template-columns: 1fr;
-    }
+    right: 20px;
+    top: 20px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f6f8f3;
+    color: #20231f;
+    font-size: var(--text-sm);
   }
 </style>

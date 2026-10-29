@@ -1,0 +1,45 @@
+---
+/**
+ * The one card used across the site: optional photo with a tag on it, a short meta line, the title, an optional
+ * two-line subtitle, and a single row of facts with an arrow, pinned to the bottom so cards in a row line up.
+ */
+interface Props {
+  href: string;
+  title: string;
+  meta?: string;
+  subtitle?: string;
+  tag?: string;
+  facts?: string[];
+  image?: { src: string; srcset?: string; alt: string };
+}
+const { href, title, meta, subtitle, tag, facts = [], image } = Astro.props;
+---
+
+<a class="content-card" href={href}>
+  {
+    image && (
+      <div class="card-media">
+        <img
+          src={image.src}
+          srcset={image.srcset}
+          sizes="(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 420px"
+          alt={image.alt}
+          width="480"
+          height="300"
+          loading="lazy"
+          decoding="async"
+        />
+        {tag && <span class="card-tag">{tag}</span>}
+      </div>
+    )
+  }
+  <div class="card-body">
+    {meta && <p class="card-meta">{meta}</p>}
+    <h3>{title}</h3>
+    {subtitle && <p class="card-sub">{subtitle}</p>}
+    <div class="card-foot">
+      <span class="card-facts">{facts.map((fact) => <span>{fact}</span>)}</span>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </div>
+  </div>
+</a>

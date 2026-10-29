@@ -1,0 +1,98 @@
+/* Cards (components/site/Card.astro): compact, with the facts row pinned to the bottom so a row lines up. */
+.content-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--raised);
+  text-decoration: none;
+  transition: transform var(--base) var(--ease-out);
+}
+.content-card:hover {
+  transform: translateY(-3px);
+}
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--slow) var(--ease-out);
+}
+.content-card:hover .card-media img {
+  transform: scale(1.04);
+}
+.card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #20231f;
+  color: #f6f8f3;
+  font: var(--text-2xs) var(--mono);
+}
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px 20px;
+}
+.card-meta {
+  color: var(--muted);
+  font: var(--text-2xs) var(--mono);
+}
+.content-card h3 {
+  font-size: var(--text-xl);
+  line-height: 1.02;
+}
+.card-sub {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: var(--text-xs) var(--mono);
+}
+.card-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 0;
+}
+.card-facts > span {
+  white-space: nowrap;
+}
+.card-facts > span + span::before {
+  content: '·';
+  margin: 0 8px;
+  color: var(--muted);
+}
+.card-arrow {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f6f8f3;
+  color: #20231f;
+  font: var(--text-sm) var(--body);
+  transition: transform var(--base) var(--ease-out);
+}
+.content-card:hover .card-arrow {
+  transform: rotate(45deg);
+}

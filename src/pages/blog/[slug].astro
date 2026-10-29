@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import Card from '../../components/site/Card.astro';
 /** Generate a static page for every validated content entry. */
 export async function getStaticPaths() {
   return (await getCollection('blog')).map((article) => ({ params: { slug: article.id }, props: { article } }));
@@ -33,12 +34,12 @@ const related = (await getCollection('blog')).filter((item) => item.id !== artic
     <header class="section-heading"><h2>Keep a seat.</h2></header><div class="content-grid">
       {
         related.map((item) => (
-          <a class="card" style="text-decoration: none" href={`/busog/blog/${item.id}/`}>
-            <>
-              <small>{item.data.category}</small>
-              <h3 style="margin-top: 20px">{item.data.title}</h3>
-            </>
-          </a>
+          <Card
+            href={`/busog/blog/${item.id}/`}
+            meta={item.data.category}
+            title={item.data.title}
+            facts={['Read the story']}
+          />
         ))
       }
     </div>
