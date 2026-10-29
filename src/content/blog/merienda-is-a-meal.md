@@ -25,8 +25,8 @@ label.
 
 ## Make room for ordinary days
 
-You can add water, edit a food and return later without creating an account. This concept explores how a nutrition tool
-could fit around everyday eating. It does not promise a particular outcome or prescribe what your merienda should be.
+You can add water, edit a food and return later without creating an account. Busog is built to fit around everyday
+eating. It does not promise a particular outcome or prescribe what your merienda should be.
 
-Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+Open [Busog](/busog/app/) and the [food library](/busog/library/). Ingredient references:
 [USDA FoodData Central](https://fdc.nal.usda.gov/).

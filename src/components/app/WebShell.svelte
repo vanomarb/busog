@@ -54,10 +54,8 @@
         <button class="day-selector" onclick={() => nav.open({ kind: 'log' })}
           ><CookingPot size={22} /><span>{dateLabel(date)}</span><ChevronDown size={18} /></button
         >
-        <button
-          class="round notification"
-          onclick={() => nav.open({ kind: 'notice' })}
-          aria-label="Read demo notifications"><Bell size={22} /><i></i></button
+        <button class="round notification" onclick={() => nav.open({ kind: 'notice' })} aria-label="Notifications"
+          ><Bell size={22} /><i></i></button
         >
       </div>
     </header>

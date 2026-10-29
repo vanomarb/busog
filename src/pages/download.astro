@@ -1,24 +1,24 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import DemoButtons from '../components/site/DemoButtons.astro';
+import AppButtons from '../components/site/AppButtons.astro';
 import InstallButton from '../components/tools/InstallButton.svelte';
-import FoodCharacter from '../components/app/FoodCharacter.svelte';
+import PhoneShot from '../components/site/PhoneShot.astro';
 ---
 
 <SiteLayout title="A seat on your home screen"
   ><section class="page-intro">
     <p class="mono">Take Busog with you.</p><h1>A seat on your<br />home screen.</h1><p>
-      Open the demo now, or install the same site as a web app. No store badge. No account to create.
+      Open Busog in your browser, or install it as an app on your home screen. No account to create.
     </p>
   </section><div class="split">
     <div class="stack">
-      <DemoButtons /><InstallButton client:load /><div class="notice">
+      <AppButtons /><InstallButton client:load /><div class="notice">
         <p>
-          Concept project. Busog is a portfolio demonstration, with real source data and clearly simulated photo
-          recognition and coach replies. There is no native App Store or Google Play release.
+          Busog installs straight from your browser, so there is nothing to download from an app store. It updates
+          itself and keeps working offline.
         </p>
-      </div><div class="aqua" style="display: grid; place-items: center; border-radius: 30px; padding: 30px">
-        <FoodCharacter kind="rice" size={180} />
+      </div><div style="max-width: 280px">
+        <PhoneShot shot="today" alt="Busog Today screen on a phone" />
       </div>
     </div><div class="stack">
       <section class="card">

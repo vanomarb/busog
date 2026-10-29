@@ -68,8 +68,8 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: #f6f8f3;
-    color: #20231f;
+    background: var(--raised-2);
+    color: var(--ink);
     font-size: var(--text-sm);
   }
 </style>

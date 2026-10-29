@@ -12,7 +12,7 @@
         'Open Turo-turo to compare dishes.'
       : /tomorrow|ulam|plan/i.test(question)
         ? 'Try the ginisang munggo composition with rice and greens. You can review every ingredient in the kitchen.'
-        : 'In this demo I can show your protein or suggest tomorrow’s ulam. Your numbers always come from the diary.';
+        : 'For now I can show your protein or suggest tomorrow’s ulam. Your numbers always come from your diary.';
     input = '';
   }
 </script>
@@ -22,7 +22,7 @@
     <h2>Busog coach</h2>
     <span class="round" aria-hidden="true"><ArrowUpRight size={21} /></span>
   </header>
-  <small class="muted">Demo: replies are scripted</small>
+  <small class="muted">Early preview · answers from your diary</small>
   <div class="coach-message">
     <span class="avatar" aria-hidden="true"><BrandMark size={24} /></span>
     <p aria-live="polite">{reply}</p>
@@ -84,8 +84,8 @@
     border-radius: 20px;
     padding: 7px 11px;
     font: var(--text-2xs) var(--mono);
-    background: var(--aqua);
-    color: #20231f;
+    background: var(--raised-2);
+    color: var(--ink);
   }
   .coach-suggestions button:last-child {
     background: var(--sage);

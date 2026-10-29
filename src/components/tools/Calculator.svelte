@@ -106,9 +106,7 @@
           <dd>{number(tdee(result))} kcal</dd>
         </div>
       </dl>
-      <p>
-        One calculated starting point, rounded to 10 kcal. Needs and food records vary. You can edit this in the demo.
-      </p>
+      <p>One calculated starting point, rounded to 10 kcal. Needs and food records vary. You can edit it in Busog.</p>
       <a class="button" href={onboardingUrl(result)}>Bring this to Busog ↗</a>{:else}<p class="mono">
         An estimate, with the workings.
       </p>
@@ -158,8 +156,8 @@
     font-size: var(--text-xs);
   }
   .calculator-result .button {
-    background: #20231f;
-    color: #f6f8f3;
+    background: var(--accent);
+    color: var(--on-accent);
   }
   dl {
     margin: 0;
@@ -167,7 +165,7 @@
   dl > div {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #20231f40;
+    border-bottom: 1px solid var(--line);
     padding: 15px 0;
     font-size: var(--text-sm);
     gap: 15px;

@@ -7,8 +7,8 @@ image: 'munggo'
 
 ## The local core
 
-Food logs, mock weights, water and goals live in this browser. The bundled food snapshot and recipes ship with the app.
-Once its shell and assets are cached, those parts can work without a connection.
+Food logs, weights, water and goals live in this browser. The bundled food snapshot and recipes ship with the app. Once
+its shell and assets are cached, those parts can work without a connection.
 
 ## What needs the internet
 
@@ -18,8 +18,8 @@ product.
 
 ## Storage is not a backup
 
-Local browser data can disappear when you clear site storage or use a private session. Busog offers a JSON export for
-the demonstration. Export excludes the personal USDA API key and keeps the food-source attribution on the records.
+Local browser data can disappear when you clear site storage or use a private session. Busog offers a JSON export of
+everything. Export excludes the personal USDA API key and keeps the food-source attribution on the records.
 
 ## Try the boundary
 
@@ -27,5 +27,5 @@ Install the web app, allow its first load to finish, then switch off your connec
 bundled ingredient such as kangkong. Try a barcode too: its unavailable state should explain why that path needs a
 connection.
 
-Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+Open [Busog](/busog/app/) and the [food library](/busog/library/). Ingredient references:
 [USDA FoodData Central](https://fdc.nal.usda.gov/).

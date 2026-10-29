@@ -1,36 +1,33 @@
 ---
 title: 'Your diary stays at your table.'
-description: 'Plain-language privacy notes for the Busog portfolio concept.'
-eyebrow: 'Privacy / concept'
+description: 'Plain-language privacy: what Busog keeps, where, and what it sends.'
+eyebrow: 'Privacy'
 kind: 'legal'
 ---
 
-## What lives here.
+## What lives on your device.
 
-Busog stores edited mock food logs, profile settings, weights and water in this browser’s localStorage when it is
-available. A separate local preference stores the theme. There are no accounts, analytics, ad trackers or cloud diary
-service.
+Busog keeps your food log, goals, weights, water and theme in your browser's local storage. There are no accounts,
+analytics, ad trackers or cloud diary.
 
-## When the browser makes a request.
+## When Busog makes a request.
 
-Opening the site requests its static files from the hosting service, which may keep standard server access logs. Fonts
-and food images are hosted with the site. Live ingredient search sends query text and the public DEMO_KEY, or your
-optional personal key, directly to USDA. Barcode lookup sends its digits directly to Open Food Facts. The diary, weight
-history and water records are not included in those food requests.
+Opening the site loads its files from the host, which may keep standard access logs. Fonts and food images are served
+with the site. Live ingredient search sends your search text, with the public DEMO_KEY or your own key, directly to
+USDA. Barcode lookup sends only the digits to Open Food Facts. Your diary, weights and water never leave your device.
 
-## What is simulated.
+## Photos and the coach.
 
-Snap uses bundled sample photos and predefined ingredient mappings. It does not upload a photo. Busog Coach uses
-scripted local replies and makes no AI-service requests. Contact and partnership forms validate in the browser and send
-no data. This concept has no live newsletter or support inbox.
+Photo logging in this preview uses sample plates, so no photo is uploaded. Busog Coach answers on your device from your
+own diary; it makes no AI-service requests.
 
 ## Your choices.
 
-You can export the demonstration as JSON. The export excludes a personal USDA key. Reset restores the mock diary;
-clearing site storage removes local data, theme preferences and offline caches. Browser storage is not a backup. Private
-browsing or blocked storage can limit persistence; the app remains usable in memory.
+Export everything as JSON at any time (your personal USDA key is left out). Reset starts a fresh sample diary. Clearing
+site data removes your diary, preferences and offline files. Browser storage is not a backup, and private browsing can
+limit what is kept.
 
-## Outside services.
+## Other services.
 
-USDA and Open Food Facts have their own policies for requests sent to their APIs. Following an external source link also
-visits that service. This short notice describes this portfolio build, not a future commercial product.
+USDA and Open Food Facts have their own policies for requests sent to their APIs, and source links take you to their
+sites.

@@ -82,10 +82,9 @@
       <button class="button accent" onclick={() => (step = 3)}>See my starting point</button>
     {:else}<h2 class="quiz-total">{number(target(profile))}<span>kcal / day</span></h2>
       <p>Mifflin–St Jeor × your activity assumption, with the chosen adjustment. A starting point you can edit.</p>
-      <a class="button accent" href={onboardingUrl(profile)}>Set my table in the demo ↗</a>
+      <a class="button accent" href={onboardingUrl(profile)}>Set my table in Busog ↗</a>
       <p class="source-line">
-        Educational concept, not medical advice. Your answers travel only in the demo link and are editable before
-        saving.
+        An estimate, not medical advice. Your answers travel only in the link to Busog and are editable before saving.
       </p>{/if}
     {#if step > 0}<button class="quiz-back" onclick={() => step--}>Back</button>{/if}
   </section>
@@ -136,8 +135,8 @@
     background: var(--raised);
   }
   .quiz-directions .chosen {
-    background: var(--aqua);
-    color: #20231f;
+    background: var(--ink);
+    color: var(--surface);
     border-color: transparent;
   }
   .quiz-directions strong,

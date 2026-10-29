@@ -1,27 +1,25 @@
 ---
 title: 'The label comes first.'
-description: 'How the concept handles supplements without selling or recommending them.'
-eyebrow: 'Supplements / a note'
+description: 'How Busog handles supplements: honestly, and without selling any.'
+eyebrow: 'Supplements'
 kind: 'guide'
 ---
 
 ## Nothing to buy here.
 
-Busog does not sell supplements, promote a stack or collect a waitlist. The nutrition demonstration centers on food
-records and transparent portions. This page explains the boundary rather than inventing a product range.
+Busog does not sell supplements, promote a stack or run a waitlist. It is about food records and honest portions.
 
 ## A barcode is not a recommendation.
 
-A packaged product may appear in Open Food Facts if the database has complete calories and macronutrients. Finding a
-record does not establish safety, suitability, benefit or appropriate dosage. Check the actual packaging and source.
+A packaged product may appear through Open Food Facts when the database has complete calories and macronutrients.
+Finding a record does not establish safety, suitability, benefit or dosage. Check the packaging and its source.
 
-## Know what is outside the demo.
+## What Busog tracks.
 
-The current diary tracks energy, protein, carbohydrate and fat, plus water. It does not evaluate supplement
-interactions, medication interactions, micronutrient adequacy or clinical needs. Incomplete source values are not
-guessed.
+Busog tracks energy, protein, carbohydrate, fat and water. It does not evaluate supplement or medication interactions,
+micronutrient adequacy or clinical needs, and it never guesses a value a source leaves out.
 
 ## Bring individual questions to a professional.
 
-This portfolio concept cannot decide whether a supplement belongs in your routine. A qualified clinician or registered
-nutrition professional can discuss your circumstances and the product itself.
+Whether a supplement belongs in your routine is a question for a qualified clinician or registered nutrition
+professional who knows your circumstances.

@@ -87,8 +87,8 @@
     padding-bottom: 0;
   }
   .diary-symbol {
-    background: var(--sage);
-    color: #20231f;
+    background: var(--raised-2);
+    color: var(--muted);
     border-radius: 16px;
     width: 46px;
     height: 46px;

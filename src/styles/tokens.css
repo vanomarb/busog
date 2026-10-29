@@ -1,49 +1,56 @@
-/* Latin subsets only (Filipino and English, including ñ), at the weights the design uses. */
-@import '@fontsource/barlow-condensed/latin-600.css';
-@import '@fontsource/ibm-plex-mono/latin-400.css';
-@import '@fontsource/ibm-plex-mono/latin-500.css';
-@import '@fontsource/dm-sans/latin-400.css';
-@import '@fontsource/dm-sans/latin-500.css';
-@import '@fontsource/dm-sans/latin-600.css';
+/* One family, latin subset (Filipino and English, including ñ), at the weights the design uses. */
+@import '@fontsource/plus-jakarta-sans/latin-400.css';
+@import '@fontsource/plus-jakarta-sans/latin-500.css';
+@import '@fontsource/plus-jakarta-sans/latin-600.css';
+@import '@fontsource/plus-jakarta-sans/latin-700.css';
 @import './reset.css';
 
+/*
+ * Dark is the signature theme: near-black surfaces, one warm accent for actions and the selected state, and
+ * three macro colours used only for data. Cards are dark; colour lives in what they show.
+ */
 :root {
   color-scheme: dark;
-  --background: #c5d4ca;
-  --surface: #232522;
-  --raised: #343632;
-  --ink: #f6f8f3;
-  --muted: #bbc5b8;
-  --line: #5b6259;
-  --primary: #bce9e7;
-  --accent: #ff705e;
-  --success: #b5d9ba;
-  --warning: #f5d369;
-  --danger: #ff9788;
-  --protein: #bce9e7;
-  --carbs: #f5d369;
-  --fat: #cac4ff;
-  --coral: #ff705e;
-  --violet: #9690ff;
-  --aqua: #bce9e7;
-  --sage: #c5d4ca;
-  --card-ink: #20231f;
+  --background: #0e0f11;
+  --surface: #161719;
+  --raised: #212226;
+  --raised-2: #2c2d32;
+  --ink: #f4f4f5;
+  --muted: #a3a5ac;
+  --line: #34363c;
+  --accent: #ff6b3d;
+  --on-accent: #161719;
+  --primary: var(--accent);
+  --success: #6fd3a0;
+  --warning: #f6c445;
+  --danger: #ff7a6b;
+  --protein: #6fd3c9;
+  --carbs: #f6c445;
+  --fat: #a99fff;
+  /* Card tones: the tint a card's accent elements use. */
+  --coral: var(--accent);
+  --violet: var(--fat);
+  --aqua: var(--protein);
+  --sage: #9fbca9;
+  --yellow: var(--carbs);
+  --card-ink: var(--ink);
   --zoom: 1;
-  --display: 'Barlow Condensed', sans-serif;
-  --mono: 'IBM Plex Mono', monospace;
-  --body: 'DM Sans', sans-serif;
-  /* One type scale for site and app. Nothing is set below 12px; mono labels sit at 12–13px. */
+  --display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  /* Labels and figures share the family; figures use tabular numbers. */
+  --mono: 'Plus Jakarta Sans', system-ui, sans-serif;
+  /* One type scale for site and app. Nothing is set below 12px. */
   --text-2xs: 0.75rem;
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: 1rem;
   --text-md: 1.125rem;
-  --text-lg: 1.375rem;
-  --text-xl: 1.75rem;
-  --text-2xl: 2.25rem;
-  --text-3xl: clamp(2.5rem, 2rem + 2vw, 3.5rem);
-  --text-4xl: clamp(3rem, 2rem + 4vw, 5rem);
-  --text-display: clamp(3.5rem, 1.6rem + 6.4vw, 7.5rem);
+  --text-lg: 1.25rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  --text-display: clamp(2.75rem, 1.4rem + 5vw, 5.5rem);
   /* Motion: short and decisive. Everything is disabled under prefers-reduced-motion. */
   --fast: 160ms;
   --base: 260ms;
@@ -53,11 +60,18 @@
 }
 :root[data-theme='light'] {
   color-scheme: light;
-  --surface: #eef3ec;
+  --background: #ececee;
+  --surface: #f7f7f8;
   --raised: #ffffff;
-  --ink: #20231f;
-  --muted: #505b50;
-  --line: #a2ada0;
-  --primary: #234c43;
-  --danger: #a5281a;
+  --raised-2: #efeff1;
+  --ink: #161719;
+  --muted: #5d5f66;
+  --line: #dedfe3;
+  --accent: #e8552a;
+  --on-accent: #161719;
+  --danger: #b4321f;
+  --protein: #0f8f86;
+  --carbs: #b98500;
+  --fat: #6a5ce0;
+  --sage: #4d7a5e;
 }

@@ -114,8 +114,8 @@ th {
   max-width: 600px;
 }
 .final-cta .outline {
-  border-color: #20231f;
-  color: #20231f;
+  border-color: var(--line);
+  color: var(--ink);
 }
 @media (max-width: 900px) {
   .split {

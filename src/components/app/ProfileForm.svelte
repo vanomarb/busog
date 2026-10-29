@@ -45,13 +45,13 @@
   <label>First name<input required maxlength="30" bind:value={draft.name} autocomplete="given-name" /></label>
   <div class="profile-fields">
     <label>Age<input required type="number" min="18" max="90" bind:value={draft.age} /></label><label
-      >Equation input<select bind:value={draft.sex}
-        ><option value="female">Female constant</option><option value="male">Male constant</option></select
+      >Sex<select bind:value={draft.sex}
+        ><option value="female">Female</option><option value="male">Male</option></select
       ></label
     >
   </div>
   <p class="source-line">
-    Mifflin–St Jeor uses sex-specific constants. Choose the calculation input appropriate for this educational example.
+    Used only by the Mifflin–St Jeor formula, which has different constants for female and male bodies.
   </p>
   <div class="profile-fields">
     <label>Weight · kg<input required type="number" min="25" max="350" step="0.1" bind:value={draft.weight} /></label
@@ -87,8 +87,8 @@
     >
   </div>
   <p class="source-line">
-    Fat: {100 - draft.proteinPercent - draft.carbsPercent}%. Percentages describe energy share. This is an editable
-    demonstration, not a medical plan.
+    Fat: {100 - draft.proteinPercent - draft.carbsPercent}%. Percentages describe energy share. An estimate to start
+    from, not a medical plan.
   </p>
   {#if error}<p role="alert" class="status-note">{error}</p>{/if}
   <button class="button accent" type="submit">{label}</button>
@@ -107,8 +107,8 @@
   .suggested-target {
     padding: 24px;
     border-radius: 24px;
-    background: var(--sage);
-    color: #20231f;
+    background: var(--raised-2);
+    color: var(--ink);
     display: grid;
     gap: 15px;
   }
@@ -119,8 +119,8 @@
     font-size: var(--text-xs);
   }
   .suggested-target .button {
-    background: #20231f;
-    color: #f6f8f3;
+    background: var(--accent);
+    color: var(--on-accent);
     justify-self: start;
     font-size: var(--text-sm);
   }

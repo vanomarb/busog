@@ -1,22 +1,22 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import ConceptForm from '../components/tools/ConceptForm.svelte';
+import ContactForm from '../components/tools/ContactForm.svelte';
 ---
 
 <SiteLayout title="Good food is a shared effort"
   ><section class="page-intro">
-    <p class="mono">Partnerships / concept</p><h1>Good food is<br />a shared effort.</h1><p>
-      A proposal for the people who know everyday eating best: cooks, food researchers and Filipino communities.
+    <p class="mono">Partnerships</p><h1>Good food is<br />a shared effort.</h1><p>
+      For the people who know everyday eating best: cooks, food researchers and Filipino communities.
     </p>
   </section><div class="split">
     <div class="stack">
       <h2>Build with context.</h2><p>
-        Future work could explore locally documented ingredient compositions, accessible portion guides and better
-        language around familiar meals. These are directions for collaboration, not existing partnerships.
+        We want to grow Busog with locally documented ingredient lists, accessible portion guides and better language
+        around familiar meals. If that is your work too, let's talk.
       </p><h3>Start with the evidence.</h3><p class="muted">
-        Any future food database contribution would need a source, a reproducible method and a clear license. Local
-        familiarity matters; so does showing where a number came from.
+        Every food contribution needs a source, a reproducible method and a clear license. Local familiarity matters; so
+        does showing where a number came from.
       </p>
-    </div><ConceptForm partnership client:only="svelte" />
+    </div><ContactForm partnership client:only="svelte" />
   </div></SiteLayout
 >

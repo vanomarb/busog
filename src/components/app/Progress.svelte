@@ -99,11 +99,13 @@
         viewBox="0 0 700 200"
         role="img"
         aria-label={`Weight from ${number(weights[0].kg, 1)} to ${number(weights[weights.length - 1].kg, 1)} kilograms`}
-        ><path d="M20 170h660M20 100h660M20 30h660" stroke="#20231f35" stroke-dasharray="2 7" /><polyline
+        ><path d="M20 170h660M20 100h660M20 30h660" style="stroke: var(--line)" stroke-dasharray="2 7" /><polyline
           {points}
           fill="none"
-          stroke="#20231f"
+          style="stroke: var(--tone, var(--accent))"
           stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         /></svg
       >
       <div class="weight-list">
@@ -131,7 +133,7 @@
   }
   .history-bar {
     flex: 1;
-    background: #20231f;
+    background: var(--tone, var(--accent));
     border-radius: 6px 6px 0 0;
     min-height: 2px;
   }
@@ -139,7 +141,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    border-top: 2px dotted #20231f90;
+    border-top: 2px dotted var(--muted);
     pointer-events: none;
   }
   .goal-guide span {
@@ -153,9 +155,6 @@
     justify-content: space-between;
     font-size: var(--text-2xs);
     margin: 15px 0;
-  }
-  .progress-card .source-line {
-    color: #20231f;
   }
   summary {
     padding: 12px 0;
@@ -190,7 +189,7 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    background: #f6f8f350;
+    background: var(--raised-2);
     padding: 12px 16px;
     border-radius: 14px;
     font: var(--text-xs) var(--mono);

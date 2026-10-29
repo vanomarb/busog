@@ -56,7 +56,8 @@
     width: 50px;
     height: 58px;
     border-radius: 18px;
-    background: #20231f12;
+    background: color-mix(in srgb, var(--tone) 18%, transparent);
+    color: var(--tone);
   }
   :global([data-device='phone']) .nudge-icon {
     display: none;

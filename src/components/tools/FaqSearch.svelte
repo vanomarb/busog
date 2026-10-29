@@ -65,8 +65,8 @@
     font: var(--text-xs) var(--mono);
   }
   .faq-filters .chosen {
-    background: var(--aqua);
-    color: #20231f;
+    background: var(--ink);
+    color: var(--surface);
   }
   details {
     border-bottom: 1px solid var(--line);

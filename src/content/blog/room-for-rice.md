@@ -28,5 +28,5 @@ change the value of the meal or the person eating it.
 Open Turo-turo, choose one dish and one cup of rice, then compare half and extra portions. Open the dish detail to see
 the ingredient weights. This is a transparent model of a meal, not a measurement of every carinderia’s recipe.
 
-Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+Open [Busog](/busog/app/) and the [food library](/busog/library/). Ingredient references:
 [USDA FoodData Central](https://fdc.nal.usda.gov/).

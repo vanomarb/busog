@@ -11,7 +11,7 @@
 <section class="card summary-card">
   <header>
     <h2>Your plate, today</h2>
-    <small class="muted">Mock diary · editable</small>
+    <small class="muted">Sample diary · editable</small>
   </header>
   <div class="calorie-ring">
     <svg viewBox="0 0 180 180" aria-hidden="true"

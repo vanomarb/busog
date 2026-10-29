@@ -30,7 +30,7 @@
     const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'busog-demo.json';
+    link.download = 'busog-diary.json';
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     message = 'Export ready. Your personal API key is excluded.';
@@ -48,7 +48,7 @@
   <div class="profile-layout">
     <section class="card">
       <h2>Your goals</h2>
-      <p class="muted">Mara is a fictional demo profile. Adjust anything below.</p>
+      <p class="muted">Adjust anything below; your targets update as you go.</p>
       {#key formVersion}<ProfileForm
           profile={$store.profile}
           onsave={(profile) => {
@@ -67,7 +67,7 @@
             value={$store.profile.region}
             onchange={(event) => {
               store.region(event.currentTarget.value as Region);
-              message = 'Names and suggestions updated. Reset the demo for a matching history.';
+              message = 'Names and suggestions updated. Start fresh for a matching sample diary.';
             }}
             ><option value="ph">Philippines · Filipino names first</option><option value="intl"
               >International · English names first</option
@@ -89,9 +89,9 @@
         <p class="muted">Diary data stays in this browser. No account or syncing service.</p>
         <button class="setting-row" onclick={exportData}><Download size={20} /> Export JSON</button><button
           class="setting-row"
-          onclick={() => (confirmReset = !confirmReset)}><RotateCcw size={20} /> Reset demo data</button
+          onclick={() => (confirmReset = !confirmReset)}><RotateCcw size={20} /> Start fresh</button
         >{#if confirmReset}<p>
-            This restores Mara’s mock diary and goals, with
+            This restores the sample diary and default goals, with
             {$store.profile.region === 'ph' ? 'Filipino' : 'international'} meals.
           </p>
           <button
@@ -100,8 +100,8 @@
               store.reset();
               formVersion++;
               confirmReset = false;
-              message = 'Fresh demo restored.';
-            }}>Restore fresh demo</button
+              message = 'Sample diary restored.';
+            }}>Restore the sample diary</button
           >{/if}
       </section>
       <section class="card settings-card">
@@ -163,11 +163,6 @@
     padding: 12px 0;
     border-bottom: 1px solid currentColor;
     text-align: left;
-  }
-  .aqua select {
-    color: #20231f;
-    background: #f6f8f3;
-    border-color: #20231f40;
   }
   .settings-message {
     position: sticky;

@@ -18,7 +18,7 @@
     }
   }}
 >
-  <p class="muted">Choose a date to add or edit its mock weigh-in.</p>
+  <p class="muted">Choose a date to add or edit a weigh-in.</p>
   <label>Date<input type="date" required max={today()} bind:value={date} /></label><label
     >Weight · kg<input type="number" required min="25" max="350" step="0.1" bind:value={kg} /></label
   ><button class="button accent">Save weigh-in</button>

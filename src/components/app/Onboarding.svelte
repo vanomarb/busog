@@ -33,9 +33,7 @@
     <FoodCharacter kind="banana" size={120} />
   </header>
   <div class="onboard-content">
-    <p class="muted">
-      Start with Mara’s mock diary, or make the goals your own. No account, email or weigh-in required to explore.
-    </p>
+    <p class="muted">Start with a sample diary, or make the goals your own. No account, email or weigh-in needed.</p>
     {#if initial}<ProfileForm
         profile={initial}
         label="Set my table"
@@ -45,7 +43,7 @@
         }}
       />{:else}<p role="status">Loading your starting point…</p>{/if}<button
       class="button outline"
-      onclick={() => nav.screen('today')}>Skip and explore the demo</button
+      onclick={() => nav.screen('today')}>Skip for now</button
     >
   </div>
 </div>

@@ -1,26 +1,26 @@
 ---
 title: 'A table worth sharing.'
-description: 'A proposed community around everyday food and transparent records.'
-eyebrow: 'Community / concept'
+description: 'How Busog thinks about community around everyday food.'
+eyebrow: 'Community'
 kind: 'community'
 ---
 
-## A proposal, not an audience claim.
+## Built around context, not comparison.
 
-There are no public groups, member counts or live feeds in this concept. This page describes the kind of community Busog
-could support: people sharing cooking context, useful portion references and thoughtful questions.
+The best food conversations are about context: how a household serves munggo, which rice a recipe means, why one cook's
+adobo differs from another's. That is the kind of community Busog wants to grow.
 
 ## Bring context to the table.
 
-A helpful contribution might explain how a household serves munggo, which ingredient state a recipe uses, or why one
-cook’s adobo differs from another. Familiarity is useful evidence of context, not a substitute for sourced nutrition.
+A helpful contribution explains the state of an ingredient, a useful portion reference, or a question worth asking.
+Familiarity is great context; it is not a substitute for sourced nutrition.
 
 ## Leave the judgment outside.
 
-No before-and-after competitions, food shaming or weight-loss promises. Discuss the record and its assumptions. Respect
-that health, appetite and eating circumstances differ. Do not share another person’s diary or private information.
+No before-and-after contests, no food shaming and no weight-loss promises. Discuss the record and its assumptions.
+Health, appetite and circumstances differ. Never share another person's diary or private information.
 
-## Test the idea today.
+## Start at your own table.
 
-The local demo is ready to explore. Try the counter, inspect a recipe and see whether the language makes sense to your
-everyday meals. The concept contact form demonstrates feedback without sending anything.
+Try the counter, open a recipe and see whether the language fits your meals. Then tell us what we should learn next
+through the contact page.

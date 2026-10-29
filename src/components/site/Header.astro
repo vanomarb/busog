@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 /**
- * Compact site navigation keeps the demo one action away. The phone menu is a native popover: Escape, tapping
+ * Compact site navigation keeps the app one action away. The phone menu is a native popover: Escape, tapping
  * outside and focus return all come from the browser, so the marketing pages ship no framework JavaScript.
  */
 const links = [
@@ -19,7 +19,7 @@ const links = [
   </nav>
   <div class="header-actions">
     <button class="round theme-toggle" aria-label="Toggle light and dark theme">◐</button>
-    <a class="button small-demo" href="/busog/app/">Open demo <span aria-hidden="true">↗</span></a>
+    <a class="button small-app" href="/busog/app/">Open Busog <span aria-hidden="true">↗</span></a>
     <button class="round menu-button" popovertarget="site-menu" aria-label="Open navigation">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
     </button>
@@ -30,7 +30,7 @@ const links = [
     </button>
     <nav aria-label="Mobile navigation">
       {links.map(([path, title]) => <a href={`/busog/${path}/`}>{title}</a>)}
-      <a class="menu-demo" href="/busog/app/">Open demo ↗</a>
+      <a class="menu-app" href="/busog/app/">Open Busog ↗</a>
     </nav>
   </div>
 </header>
@@ -78,7 +78,7 @@ const links = [
     gap: 12px;
     align-items: center;
   }
-  .small-demo {
+  .small-app {
     font-size: var(--text-sm);
     padding: 12px 20px;
   }
@@ -127,7 +127,7 @@ const links = [
     }
   }
   .site-menu::backdrop {
-    background: #10120f55;
+    background: #0008;
   }
   .site-menu > button {
     display: flex;
@@ -148,7 +148,7 @@ const links = [
   .site-menu nav a:hover {
     background: var(--surface);
   }
-  .site-menu .menu-demo {
+  .site-menu .menu-app {
     margin-top: 6px;
     background: var(--coral);
     color: var(--card-ink);
@@ -156,7 +156,7 @@ const links = [
   }
   @media (max-width: 900px) {
     .desktop-nav,
-    .small-demo {
+    .small-app {
       display: none;
     }
     .menu-button {

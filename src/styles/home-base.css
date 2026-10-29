@@ -1,46 +1,60 @@
 .home-hero {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 42px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
   align-items: center;
-  padding: 70px 0 68px;
+  padding: 56px 0 64px;
 }
 .hero-label {
   display: flex;
   gap: 9px;
   align-items: center;
-  font-size: var(--text-xs);
-  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 .hero-label span {
-  width: 7px;
-  height: 7px;
-  background: var(--aqua);
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
   border-radius: 50%;
-}
-.hero-copy h1 {
-  font-size: var(--text-display);
-  line-height: 0.91;
 }
 .hero-description {
   font-size: var(--text-md);
   color: var(--muted);
-  max-width: 405px;
-  margin: 30px 0;
+  max-width: 460px;
+  margin: 24px 0 28px;
 }
-.hero-footnote {
-  font-size: var(--text-2xs);
-  color: var(--muted);
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
   margin-top: 20px;
-}
-.hero-product {
-  min-width: 0;
-}
-.preview-caption {
-  text-align: right;
-  margin: 25px 0 0;
-  font-size: var(--text-2xs);
   color: var(--muted);
+  font-size: var(--text-sm);
+}
+.hero-facts li::before {
+  content: '✓';
+  margin-right: 6px;
+  color: var(--accent);
+}
+/* Two real app screens, the second tucked behind and offset, like phones set down on a table. */
+.hero-phones {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 300px);
+  justify-content: center;
+  align-items: start;
+}
+.hero-phones .phone-shot-today {
+  position: relative;
+  z-index: 1;
+  margin-right: -60px;
+}
+.hero-phones .phone-shot-counter {
+  margin-top: 70px;
+  margin-left: -10px;
+  transform: rotate(4deg);
 }
 .home-principles {
   display: flex;
@@ -48,8 +62,9 @@
   justify-content: space-between;
   gap: 25px;
   border-block: 1px solid var(--line);
-  padding: 25px 0;
-  font: var(--text-xs) var(--mono);
+  padding: 22px 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
 }
 .home-principles span {
   display: flex;
@@ -58,66 +73,112 @@
 }
 .home-principles span::before {
   content: '+';
-  color: var(--coral);
+  color: var(--accent);
   font-size: var(--text-lg);
 }
 .source-bento {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
 }
-.source-bento a {
+.source-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px;
+  border-radius: 28px;
+  background: var(--raised);
   text-decoration: none;
-  padding: 36px;
-  border-radius: 30px;
+  transition: transform var(--base) var(--ease-out);
+}
+.source-card:hover {
+  transform: translateY(-3px);
 }
 .source-title {
   display: flex;
   justify-content: space-between;
   align-items: start;
   gap: 16px;
-  margin-bottom: 22px;
 }
 .source-title h3 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
 }
-.source-bento p {
-  font-size: var(--text-base);
-  max-width: 430px;
+.source-card p {
+  color: var(--muted);
+  max-width: 440px;
 }
-.source-bento small {
-  font-size: var(--text-2xs);
-  margin-top: 25px;
-  display: block;
+/* The photos take whatever height the card has, so the card never shows an empty band. */
+.source-dishes {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  min-height: 220px;
+  padding-top: 8px;
+}
+.source-dishes figure {
+  position: relative;
+  min-height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.source-dishes img {
+  width: 100%;
+  height: 100%;
+}
+/* A dark scrim behind each name keeps it legible on any photo. */
+.source-dishes figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 26px 12px 12px;
+  background: linear-gradient(transparent, #000c);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 600;
 }
 .source-secondary {
   display: grid;
-  gap: 22px;
+  gap: 16px;
 }
-.source-secondary h3 {
-  font-size: var(--text-3xl);
-}
-.pointing-scene {
-  position: relative;
-  min-height: 215px;
+.source-snap {
   display: grid;
-  place-content: center;
-  padding-top: 30px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
 }
-.floating-food {
+.snap-frame {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.snap-frame img {
+  width: 100%;
+  height: 100%;
+}
+.snap-chip {
   position: absolute;
-  top: 35px;
-  right: 3%;
-  padding: 10px 18px;
-  border-radius: 22px;
-  background: #f6f8f3;
-  color: #20231f;
-  font: var(--text-xs) var(--mono);
-  transform: rotate(7deg);
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #000b;
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  white-space: nowrap;
 }
-.floating-food.second {
-  right: auto;
-  left: 4%;
-  top: 140px;
-  transform: rotate(-7deg);
+.source-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+.source-facts li {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--raised-2);
+  font-size: var(--text-xs);
+  font-weight: 500;
 }

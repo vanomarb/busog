@@ -22,7 +22,7 @@
   const days = $derived(weekDays(today()));
   const goals = $derived(macroTargets(profile.kcal, profile.proteinPercent, profile.carbsPercent));
   const series = ['protein', 'carbs', 'fat'] as const;
-  const colors = ['#234c43', '#614b00', '#20231f'];
+  const colors = ['var(--protein)', 'var(--carbs)', 'var(--fat)'];
   const points = (macro: (typeof series)[number]) =>
     days
       .filter((day) => day <= today())
@@ -50,18 +50,17 @@
     {/each}
   </div>
   <svg viewBox="0 0 320 95" class="macro-lines" role="img" aria-label="Macro grams as a proportion of each daily goal">
-    <path d="M0 65h320M0 30h320" stroke="#20231f35" stroke-dasharray="2 5" />
+    <path d="M0 65h320M0 30h320" style="stroke: var(--line)" stroke-dasharray="2 5" />
     {#each series as macro, index (macro)}<polyline
         points={points(macro)}
         fill="none"
-        stroke={colors[index]}
+        style:stroke={colors[index]}
         stroke-width="2.5"
-        stroke-dasharray={index === 2 ? '2 4' : index === 1 ? '8 4' : undefined}
+        stroke-linecap="round"
+        stroke-dasharray={index === 2 ? '2 5' : index === 1 ? '8 5' : undefined}
       />{/each}
   </svg>
   <div class="macro-legend">
-    {#each series as macro, index (macro)}<span
-        ><i style:background={index === 2 ? 'var(--fat)' : colors[index]}></i>{macro}</span
-      >{/each}
+    {#each series as macro, index (macro)}<span><i style:background={colors[index]}></i>{macro}</span>{/each}
   </div>
 </section>

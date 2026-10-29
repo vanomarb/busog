@@ -1,20 +1,19 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import ConceptForm from '../components/tools/ConceptForm.svelte';
+import ContactForm from '../components/tools/ContactForm.svelte';
 ---
 
 <SiteLayout title="Pull up a chair"
   ><section class="page-intro">
     <p class="mono">Contact</p><h1>Pull up<br />a chair.</h1><p>
-      A thought about the concept, a food we should understand, or a question about the design. This form demonstrates
-      the conversation.
+      A food we should understand, an idea for the counter, or a question about how Busog counts. We'd love to hear it.
     </p>
   </section><div class="split">
     <div class="stack">
       <h2>A good place<br />to begin.</h2><p class="muted">
-        Busog is a portfolio concept, with no live support inbox. The form validates locally and shows a confirmation.
-        It sends nothing.
+        Write to us below and your email app opens with the message ready to send. For quick answers, try the help shelf
+        first.
       </p><a class="inline-link" href="/busog/help/">Find a practical answer on the help shelf ↗</a>
-    </div><ConceptForm client:only="svelte" />
+    </div><ContactForm client:only="svelte" />
   </div></SiteLayout
 >

@@ -1,0 +1,46 @@
+---
+/**
+ * A real screen of the Busog app in a phone frame. The screens are captured from the app itself
+ * (public/images/app/<shot>-<width>.webp), so the marketing pages ship an image instead of the app's code.
+ */
+interface Props {
+  shot: 'today' | 'counter';
+  alt: string;
+  eager?: boolean;
+}
+const { shot, alt, eager = false } = Astro.props;
+---
+
+<figure class={`phone-shot phone-shot-${shot}`}>
+  <img
+    src={`/busog/images/app/${shot}-760.webp`}
+    srcset={`/busog/images/app/${shot}-380.webp 380w, /busog/images/app/${shot}-760.webp 760w`}
+    sizes="(max-width: 600px) 62vw, 300px"
+    {alt}
+    width="390"
+    height="800"
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    decoding="async"
+  />
+</figure>
+
+<style>
+  .phone-shot {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 390 / 800;
+    padding: 8px;
+    border-radius: 46px;
+    background: #050506;
+    box-shadow:
+      0 0 0 1px #ffffff14,
+      0 30px 70px #000a;
+  }
+  .phone-shot img {
+    width: 100%;
+    height: 100%;
+    border-radius: 38px;
+    object-fit: cover;
+  }
+</style>

@@ -60,9 +60,9 @@
 </script>
 
 <div class="stack">
-  <p class="status-note">
-    Demo: recognition is simulated. Photos are illustrative; mappings use Busog’s recipe ingredients. Nothing is
-    uploaded.
+  <p class="muted">
+    Preview photo logging with a sample plate: Busog reads it, maps every ingredient to USDA data, and you confirm the
+    grams. Nothing is uploaded.
   </p>
   {#if stage === 'choose'}
     <h3>Pick a sample plate</h3>
@@ -119,24 +119,36 @@
 <style>
   .snap-samples {
     display: grid;
-    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
   .snap-samples button {
+    position: relative;
+    aspect-ratio: 1;
     padding: 0;
-    background: var(--raised);
     border-radius: 20px;
     overflow: hidden;
     text-align: left;
   }
-  .snap-samples img,
+  .snap-samples img {
+    width: 100%;
+    height: 100%;
+  }
   .snap-photo {
     width: 100%;
-    height: 170px;
+    height: 200px;
     border-radius: 20px;
   }
+  /* A dark scrim behind the name keeps it legible on any photo. */
   .snap-samples span {
-    display: block;
-    padding: 15px;
+    position: absolute;
+    inset: auto 0 0;
+    padding: 24px 12px 12px;
+    background: linear-gradient(transparent, #000c);
+    color: #fff;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1.25;
   }
   .snap-item {
     display: flex;

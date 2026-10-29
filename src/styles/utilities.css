@@ -65,13 +65,6 @@ html[data-device='phone'] :is(input, select, textarea) {
     font-size: var(--text-base) !important;
   }
 }
-.coral :focus-visible,
-.violet :focus-visible,
-.aqua :focus-visible,
-.sage :focus-visible,
-.yellow :focus-visible {
-  outline-color: #20231f;
-}
 .nowrap {
   white-space: nowrap;
 }

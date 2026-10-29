@@ -66,8 +66,8 @@
   width: auto;
   border: 0;
   border-radius: 999px;
-  background: #20231f12;
-  color: #20231f;
+  background: var(--raised-2);
+  color: var(--ink);
   padding: 10px 14px;
   font: var(--text-base) var(--mono);
 }
@@ -103,14 +103,14 @@
   right: 14px;
   height: 68px;
   padding: 8px;
-  border: 1px solid #687063;
+  border: 1px solid var(--line);
   border-radius: 26px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #232522;
-  color: #f6f8f3;
-  box-shadow: 0 6px 25px #0004;
+  background: var(--raised);
+  color: var(--ink);
+  box-shadow: 0 10px 30px #0006;
   z-index: 20;
 }
 /* Icon-only, like the desktop rail: each button carries its name in aria-label. */
@@ -120,25 +120,25 @@
   width: 52px;
   height: 52px;
   border-radius: 18px;
-  color: #bbc5b8;
+  color: var(--muted);
 }
 .phone-tabs .active {
-  background: var(--aqua);
-  color: #20231f;
+  background: var(--ink);
+  color: var(--surface);
 }
 .phone-tabs .raised-log {
-  background: var(--coral);
-  color: #20231f;
+  background: var(--accent);
+  color: var(--on-accent);
   width: 60px;
   height: 60px;
   transform: translateY(-10px);
   border-radius: 50%;
-  border: 4px solid #232522;
+  border: 4px solid var(--surface);
 }
 .frame-caption {
   text-align: center;
   font: var(--text-xs) / 1.8 var(--mono);
-  color: #20231f;
+  color: var(--muted);
   margin-top: 18px;
 }
 [data-device='phone'] .app-stage {
@@ -186,7 +186,7 @@
   height: min(844px, calc(100dvh - 115px));
   border: 9px solid #171916;
   border-radius: 46px;
-  box-shadow: 0 20px 60px #20231f30;
+  box-shadow: 0 20px 60px #0008;
 }
 @media (max-width: 1000px) {
   [data-device='web'] .dashboard-grid {

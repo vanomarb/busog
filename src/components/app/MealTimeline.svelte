@@ -36,7 +36,7 @@
 <style>
   .meal-timeline {
     display: none;
-    border-top: 1px solid #20231f40;
+    border-top: 1px solid var(--line);
     margin-top: 20px;
     padding-top: 20px;
   }
@@ -53,7 +53,7 @@
   .timeline-moment > div {
     padding: 15px;
     border-radius: 18px;
-    background: #f6f8f350;
+    background: var(--raised-2);
     min-width: 0;
   }
   h3 {
@@ -72,15 +72,15 @@
     margin-top: 25px;
   }
   .now-pill {
-    background: #20231f;
-    color: #f6f8f3;
+    background: var(--accent);
+    color: var(--on-accent);
     border-radius: 20px;
     padding: 7px 12px;
     font: var(--text-2xs) var(--mono);
   }
   footer .round {
-    background: var(--coral);
-    color: #20231f;
+    background: var(--accent);
+    color: var(--on-accent);
   }
   :global([data-device='phone']) .meal-timeline {
     display: block;

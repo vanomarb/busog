@@ -1,6 +1,6 @@
 ---
 title: 'Edit your target and macro split'
-description: 'Step-by-step help for edit your target and macro split.'
+description: 'Set a calorie target and macro split that fit you.'
 category: 'Goals'
 image: 'adobo'
 ---
@@ -17,7 +17,7 @@ percentages are energy shares; fat receives the remaining share.
 
 ## Save and revisit
 
-Save goals updates the diary summary. This is an educational formula, not a measured need or clinical plan. The mock
-history stays intact, so you can compare how different assumptions change the display.
+Save goals updates the diary summary. This is an educational formula, not a measured need or clinical plan. Your diary
+stays intact, so you can compare how different assumptions change the display.
 
-[Return to the demo](/busog/app/) or [browse common questions](/busog/faq/).
+[Back to Busog](/busog/app/) or [browse common questions](/busog/faq/).

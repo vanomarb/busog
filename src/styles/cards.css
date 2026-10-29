@@ -31,9 +31,9 @@
   left: 12px;
   padding: 6px 11px;
   border-radius: 999px;
-  background: #20231f;
-  color: #f6f8f3;
-  font: var(--text-2xs) var(--mono);
+  background: #000a;
+  color: #fff;
+  font: 600 var(--text-2xs) var(--mono);
 }
 .card-body {
   flex: 1;
@@ -88,8 +88,8 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #f6f8f3;
-  color: #20231f;
+  background: var(--raised-2);
+  color: var(--ink);
   font: var(--text-sm) var(--body);
   transition: transform var(--base) var(--ease-out);
 }

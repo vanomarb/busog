@@ -24,8 +24,8 @@ weight together. It is a record you can correct, not a promise that every prepar
 
 ## Follow food-safety guidance separately
 
-The nutrition demo is not a storage or reheating guide. Follow local food-safety advice for cooling, refrigeration and
-reheating. The recipe flow simply keeps the nutritional ingredients legible while you plan a familiar meal.
+Busog is not a storage or reheating guide. Follow local food-safety advice for cooling, refrigeration and reheating. The
+recipe flow simply keeps the nutritional ingredients legible while you plan a familiar meal.
 
-Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+Open [Busog](/busog/app/) and the [food library](/busog/library/). Ingredient references:
 [USDA FoodData Central](https://fdc.nal.usda.gov/).

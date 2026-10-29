@@ -1,6 +1,6 @@
 ---
 title: 'Find a packaged food by barcode'
-description: 'Step-by-step help for find a packaged food by barcode.'
+description: 'Scan or type a barcode to log a packaged food.'
 category: 'Food data'
 image: 'pinakbet'
 ---
@@ -20,4 +20,4 @@ product identity and compare its label before adding it.
 A missing, offline or incomplete product does not get invented nutrition. Check the digits, try later, or use USDA
 search for an appropriate ingredient. Open Food Facts attribution remains with logged records.
 
-[Return to the demo](/busog/app/) or [browse common questions](/busog/faq/).
+[Back to Busog](/busog/app/) or [browse common questions](/busog/faq/).

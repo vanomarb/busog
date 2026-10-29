@@ -113,7 +113,7 @@
     align-items: baseline;
     gap: 10px;
     font: var(--text-xs) var(--mono);
-    background: #f6f8f340;
+    background: var(--raised-2);
     padding: 12px 18px;
     border-radius: 15px;
   }

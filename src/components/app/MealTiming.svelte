@@ -26,21 +26,22 @@
     role="img"
     aria-label={`Eating window 07:00–21:00 on a 24-hour dial; ${meals.length} logged meal times marked by dots`}
   >
-    <circle cx="110" cy="110" r="88" fill="#f6f8f3" />
+    <circle cx="110" cy="110" r="88" style="fill: var(--raised-2)" />
     {#each Array.from({ length: 48 }, (_, i) => i) as tick (tick)}
       <path
         d={tick % 2 === 0 ? 'M110 25v9' : 'M110 25v4'}
-        stroke="#20231f50"
+        style="stroke: var(--line)"
         transform={`rotate(${tick * 7.5} 110 110)`}
       />
     {/each}
-    <circle cx="110" cy="110" r="57" fill="none" stroke="#c5d4ca" stroke-width="14" />
+    <circle cx="110" cy="110" r="57" fill="none" style="stroke: var(--line)" stroke-width="14" />
     <circle
       cx="110"
       cy="110"
       r="57"
       fill="none"
-      stroke="#ff705e"
+      style="stroke: var(--accent)"
+      stroke-linecap="round"
       stroke-width="14"
       pathLength="1440"
       stroke-dasharray={`${EATING_WINDOW.end - EATING_WINDOW.start} 1440`}
@@ -50,16 +51,17 @@
         cx="110"
         cy="53"
         r="5"
-        fill="#20231f"
+        style="fill: var(--ink)"
         transform={`rotate(${timeAngle(meal)} 110 110)`}
       />{/each}
     <path
       d="M110 110V48"
-      stroke="#20231f"
-      stroke-width="2"
+      style="stroke: var(--ink)"
+      stroke-width="2.5"
+      stroke-linecap="round"
       transform={`rotate(${(clock.hours + clock.minutes / 60) * 15} 110 110)`}
     />
-    <circle cx="110" cy="110" r="5" fill="#20231f" />
+    <circle cx="110" cy="110" r="5" style="fill: var(--ink)" />
     <text x="110" y="15" text-anchor="middle">00</text><text x="209" y="114" text-anchor="middle">06</text>
     <text x="110" y="216" text-anchor="middle">12</text><text x="10" y="114" text-anchor="middle">18</text>
   </svg>
@@ -71,7 +73,7 @@
     ><span class="chip">{String(clock.hours).padStart(2, '0')}:{String(clock.minutes).padStart(2, '0')}</span>
   </div>
   <p class="timing-note">
-    Demo window 07:00–21:00. Logged: {meals.length
+    Eating window 07:00–21:00. Logged: {meals.length
       ? meals.join(' / ')
       : 'No meals logged yet. Start with your next plate.'}
   </p>
@@ -91,7 +93,7 @@
   }
   text {
     font: var(--text-2xs) var(--mono);
-    fill: #20231f;
+    fill: var(--muted);
   }
   .timing-meta {
     display: flex;

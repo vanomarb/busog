@@ -1,34 +1,31 @@
 ---
-title: 'A concept, clearly stated.'
-description: 'Plain terms for using the Busog educational portfolio demonstration.'
-eyebrow: 'Terms / concept'
+title: 'Plain terms.'
+description: 'The terms for using Busog, in plain language.'
+eyebrow: 'Terms'
 kind: 'legal'
 ---
 
-## What you are trying.
+## Using Busog.
 
-Busog is a static portfolio concept with a working local demonstration. It is provided for exploration and educational
-use. There are no accounts, payments, subscriptions or promised service levels.
+Busog is free to use in your browser. There are no accounts, payments or subscriptions, and no promised service levels.
 
-## Food and target limitations.
+## Food data and estimates.
 
-Ingredient values come from USDA FoodData Central; packaged-food lookups come from Open Food Facts. They describe
-specific source records. Recipes are original illustrative compositions, and portions or ingredients may differ from
-your actual meal. The adult calorie tool predicts an estimate from stated assumptions; it does not prescribe an intake.
+Ingredient values come from USDA FoodData Central and packaged foods from Open Food Facts; each describes a specific
+source record. Recipes are Busog's own ingredient lists, and your meal may differ. Calorie targets are estimates from
+the assumptions you enter, not a prescription.
 
-## Medical decisions.
+## Not medical advice.
 
-This demonstration does not diagnose, treat or provide individual medical or dietary advice. Do not use a mock profile,
-scripted reply or calculated target as clinical guidance. Seek a qualified professional for individual needs.
+Busog does not diagnose, treat or give individual medical or dietary advice. Use a qualified professional for individual
+needs.
 
-## Local data and availability.
+## Your data.
 
-Your edited demonstration stays in this browser when storage is available. No continuity, backup or synchronization is
-promised. Export anything you want to keep. APIs may be unavailable or rate-limited; bundled ingredients remain useful
-offline.
+Your diary lives in your browser. Busog does not back it up or sync it, so export anything you want to keep. Live search
+and lookups depend on outside services and may be unavailable; the bundled foods keep working offline.
 
 ## Licenses and attribution.
 
-USDA data is public domain / CC0. Open Food Facts database material is ODbL, with individual contents under DbCL. Food
-images and their derivatives retain the licenses listed on the Credits page. Busog’s original brand is a concept
-identity; third-party references do not endorse this project.
+USDA data is public domain (CC0). Open Food Facts data is ODbL, with individual contents under DbCL. Food photos keep
+the licenses listed on the Credits page.

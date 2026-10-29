@@ -16,7 +16,7 @@
   border-radius: 40px;
   overflow: clip;
   position: relative;
-  box-shadow: 0 0 0 3px #20231f25;
+  box-shadow: 0 0 0 1px var(--line);
 }
 .web-shell {
   display: grid;
@@ -36,9 +36,9 @@
   height: 48px;
   display: grid;
   place-items: center;
-  background: var(--sage);
-  color: var(--card-ink);
-  --mark-cut: var(--sage);
+  background: var(--raised-2);
+  color: var(--ink);
+  --mark-cut: var(--raised-2);
   border-radius: 50%;
   text-decoration: none;
 }
@@ -55,16 +55,16 @@
   color: var(--muted);
 }
 .icon-rail nav .active {
-  color: var(--card-ink);
-  background: var(--aqua);
+  color: var(--surface);
+  background: var(--ink);
 }
 .rail-bottom {
   display: grid;
   justify-items: center;
   margin-top: auto;
   border-radius: 35px;
-  background: #f6f8f3;
-  color: #20231f;
+  background: var(--raised);
+  color: var(--ink);
   padding: 8px;
   gap: 8px;
 }
@@ -104,8 +104,8 @@
   align-items: center;
 }
 .day-selector {
-  background: #f6f8f3;
-  color: #20231f;
+  background: var(--raised);
+  color: var(--ink);
   border-radius: 999px;
   display: flex;
   gap: 12px;

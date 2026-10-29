@@ -61,6 +61,6 @@
     {#if message}<div class="toast" role="status">{message}</div>{/if}
   </div>
   {#if framed}
-    <p class="frame-caption">Busog in your pocket · Live demo<br /><a href="/busog/app/">Switch to web view</a></p>
+    <p class="frame-caption">Busog in your pocket<br /><a href="/busog/app/">Switch to web view</a></p>
   {/if}
 </div>

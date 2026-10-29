@@ -1,8 +1,8 @@
 ---
-import body from '@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2?url';
-import display from '@fontsource/barlow-condensed/files/barlow-condensed-latin-600-normal.woff2?url';
-/** The two faces every first screen uses start downloading with the HTML, so headlines don't reflow on load. */
+import regular from '@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2?url';
+import bold from '@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2?url';
+/** The two weights every first screen uses start downloading with the HTML, so headlines don't reflow on load. */
 ---
 
-<link rel="preload" href={body} as="font" type="font/woff2" crossorigin />
-<link rel="preload" href={display} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={regular} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={bold} as="font" type="font/woff2" crossorigin />

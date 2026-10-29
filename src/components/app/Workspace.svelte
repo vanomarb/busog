@@ -15,14 +15,14 @@
 {#if !$status.loaded}
   <section class="app-page">
     <h1>Setting the table.</h1>
-    <p role="status">Loading your demo diary…</p>
+    <p role="status">Loading your diary…</p>
   </section>
 {:else}
   {#if !$status.persistent}<p class="storage-notice" role="status">
-      Storage is unavailable. Your demo works for this visit.
+      Storage is unavailable, so changes last for this visit.
     </p>{/if}
   {#if $status.recovered}<p class="storage-notice" role="status">
-      Saved data couldn’t be read. A fresh demo is ready.
+      Saved data couldn’t be read, so a fresh sample diary is ready.
     </p>{/if}
   {#if $nav.screen === 'today'}<Today {store} {nav} bind:date />
   {:else if $nav.screen === 'progress'}<Progress {store} {nav} />

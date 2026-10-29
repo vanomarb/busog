@@ -5,7 +5,7 @@ const rows = [
   [
     'Getting started',
     'Choose your own format and fill every field.',
-    'Open an editable mock diary. No account required.',
+    'Open it and start logging. No account required.',
   ],
   ['An everyday dish', 'Write a name, then look up its parts.', 'Start from one transparent ingredient composition.'],
   ['Photo logging', 'Describe the meal yourself.', 'Review a simulated sample mapping; no actual recognition.'],
@@ -24,16 +24,14 @@ const rows = [
 ];
 ---
 
-<SiteLayout
-  title="A place to begin"
-  description="An honest comparison between Busog's working concept and a blank food diary."
+<SiteLayout title="A place to begin" description="An honest comparison between Busog and a blank food diary."
   ><section class="page-intro">
     <p class="mono">Busog vs a blank food diary</p><h1>A place to begin.<br />Room to make it yours.</h1><p>
       A blank page is wonderfully flexible. Busog adds a few useful starting points, with the limits in view.
     </p>
   </section><div class="table-wrap comparison">
     <table>
-      <thead><tr><th>At the table</th><th>A blank diary</th><th>Busog concept</th></tr></thead><tbody
+      <thead><tr><th>At the table</th><th>A blank diary</th><th>Busog</th></tr></thead><tbody
         >{
           rows.map(([name, blank, busog]) => (
             <tr>
@@ -50,10 +48,10 @@ const rows = [
   </div><article class="reading">
     <h2>Choose what helps you.</h2><p>
       A notebook does not need a battery, API or browser cache. It also does not calculate nutrition for you. Busog is a
-      different tool with explicit compositions, a local demonstration and a narrower set of features.
+      different tool: explicit compositions, sourced numbers and a focused set of features.
     </p><p>
-      The concept has not been tested against other trackers for accuracy, speed or outcomes. There are no competitor
-      claims or fabricated performance statistics here.
+      We haven't benchmarked Busog against other trackers for accuracy, speed or outcomes, so you won't find competitor
+      claims or performance statistics here.
     </p>
   </article><FinalCta /></SiteLayout
 >
@@ -71,11 +69,6 @@ const rows = [
   }
   .comparison td:last-child,
   .comparison th:last-child {
-    background: var(--sage);
-    color: #20231f;
-  }
-  .comparison th:last-child,
-  .comparison td:last-child {
-    border-color: #20231f30;
+    background: color-mix(in srgb, var(--accent) 12%, var(--raised));
   }
 </style>

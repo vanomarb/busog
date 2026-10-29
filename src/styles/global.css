@@ -27,20 +27,22 @@ h1,
 h2,
 h3 {
   font-family: var(--display);
-  font-weight: 600;
-  line-height: 0.98;
-  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 h1 {
   font-size: var(--text-display);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 h2 {
   font-size: var(--text-4xl);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.03em;
 }
 h3 {
   font-size: var(--text-xl);
+  font-weight: 600;
 }
 p {
   max-width: 70ch;
@@ -122,8 +124,8 @@ small,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 13px 23px;
+  gap: 10px;
+  padding: 13px 24px;
   border-radius: 999px;
   background: var(--ink);
   color: var(--surface);
@@ -132,8 +134,8 @@ small,
   line-height: 1.3;
 }
 .button.accent {
-  background: var(--coral);
-  color: var(--card-ink);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 .button.outline {
   background: transparent;
@@ -154,8 +156,8 @@ small,
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #f6f8f3;
-  color: #20231f;
+  background: var(--raised-2);
+  color: var(--ink);
 }
 .chip {
   display: inline-flex;
@@ -163,31 +165,38 @@ small,
   gap: 6px;
   border-radius: 999px;
   padding: 7px 12px;
-  background: #20231f12;
+  background: var(--raised-2);
   font-size: var(--text-xs);
 }
 .card {
-  padding: 28px;
-  border-radius: 32px;
+  padding: 22px;
+  border-radius: 28px;
   background: var(--raised);
 }
+/*
+ * Tones: every card is a dark surface; its tone colours the things it shows (bars, icons, highlights) through
+ * --tone, the way the reference keeps colour for data and actions.
+ */
+.coral,
+.violet,
+.aqua,
+.sage,
+.yellow {
+  background: var(--raised);
+  color: var(--ink);
+}
 .coral {
-  background: var(--coral);
-  color: var(--card-ink);
+  --tone: var(--accent);
 }
 .violet {
-  background: var(--violet);
-  color: var(--card-ink);
+  --tone: var(--fat);
 }
 .aqua {
-  background: var(--aqua);
-  color: var(--card-ink);
+  --tone: var(--protein);
 }
 .sage {
-  background: var(--sage);
-  color: var(--card-ink);
+  --tone: var(--sage);
 }
 .yellow {
-  background: var(--warning);
-  color: var(--card-ink);
+  --tone: var(--carbs);
 }

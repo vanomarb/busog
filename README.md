@@ -2,21 +2,21 @@ Three ways in. One plate. Made for rice, ulam and real life.
 
 **Category:** Health
 
-Busog is a Filipino-first calorie and macro tracker concept: a complete static marketing website and a working local app
-demo for phone and desktop. “Busog” means pleasantly full. The signature visual language pairs a charcoal shell with
-sage, coral, periwinkle, aqua and sunflower cards, condensed headlines and mono figures.
+Busog is a Filipino-first calorie and macro tracker: a marketing website and the app itself, for phone and desktop, on
+one static site. “Busog” means pleasantly full. The look is dark and photo-led: near-black cards, one warm accent, real
+dish photos and Plus Jakarta Sans in sentence case (see [docs/design.md](docs/design.md)).
 
 The product centers on **Three ways in, one plate**:
 
 - **Turo-turo:** point at the dishes on the counter, choose rice cups and a portion, and inspect the ingredient
   calculation.
-- **Snap:** choose a licensed photo of a real dish, watch a clearly simulated reading sequence, edit the mapped USDA
-  ingredients and confirm. No image recognition or upload is claimed.
+- **Snap:** pick a plate photo, review the USDA ingredients it maps to, adjust the grams and confirm. The preview uses
+  sample plates, and nothing is uploaded.
 - **Search and scan:** search USDA ingredients, with an offline snapshot fallback, or look up a packaged-food barcode
   using Open Food Facts. Supported browsers can scan with the camera; manual digits always work.
 
 Every route creates the same kind of diary entry, with grams and a visible source mark. Nutrition summaries, meal
-subtotals and progress charts use those same entries. The coach is a labelled, scripted demonstration.
+subtotals and progress charts use those same entries. Busog Coach is an early preview that answers from your own diary.
 
 The site includes 181 static pages: all marketing, help, legal and tool types, eight original articles, 25 original
 recipes (13 Filipino, 12 international), seven food categories and 110 food-reference pages. There are no accounts,
@@ -25,7 +25,7 @@ nothing.
 
 ### Region
 
-The demo has a **Region** setting (You → Make it yours), chosen automatically on the first visit from the browser's time
+Busog has a **Region** setting (You → Make it yours), chosen automatically on the first visit from the browser's time
 zone and language:
 
 - **Philippines:** Filipino names first ("Kanin (white rice) · cooked", "Adobong manok"), merienda, and a turo-turo
@@ -33,7 +33,7 @@ zone and language:
 - **International:** English names first ("White rice · cooked", "Chicken adobo"), "Snack" for merienda, and a counter
   of international dishes.
 
-Search understands both names in either region. Resetting the demo regenerates Mara's history for the chosen region.
+Search understands both names in either region. Starting fresh brings back a sample diary for the chosen region.
 
 ## Try and run
 
@@ -83,7 +83,7 @@ An optional personal data.gov key stays in the local versioned store and is excl
 barcode records retain **ODbL / DbCL** attribution separately from the CC0 snapshot. Lookup is explicit, cached and
 spaced below the documented request limit. Missing or incomplete records never receive guessed values.
 
-Mara is fictional. Her diary, water, weight history and streak are generated deterministically relative to the current
+The sample diary (diary, water, weight history and streak) is generated deterministically relative to the current
 Asia/Manila date. Edits live in localStorage behind one typed, versioned boundary, or in memory if storage is blocked.
 The target calculator is an adult educational Mifflin–St Jeor example, not individual medical advice.
 
@@ -135,9 +135,8 @@ See [the implementation map](docs/implementation.md), [design rules](docs/design
 
 The base is `/busog/`. `.github/workflows/pages.yml` runs quality checks, builds and supplies the repository owner's
 Pages origin through `SITE_URL`. For another host, set `SITE_URL` to its origin before building; preserve or
-deliberately update the base and absolute internal links. The checked-in default origin is a configuration placeholder,
-not a claim that this concept has been deployed. No commit, push, repository creation or deployment was performed in the
-build run.
+deliberately update the base and absolute internal links. The checked-in default origin is only a fallback for local
+builds.
 
 The service worker caches only namespaced Busog data. Navigation and food images are network-first; only hashed build
 assets are cache-first. Post-build output includes a complete offline asset list, sitemap, robots file and custom 404.
@@ -155,7 +154,7 @@ assets are cache-first. Post-build output includes a complete offline asset list
 
 Captured in Chrome after the checks in [docs/qa.md](docs/qa.md).
 
-- `docs/screenshots/cover.png` — portfolio card image (the home hero).
+- `docs/screenshots/cover.png` — cover image (the home hero).
 - `docs/screenshots/site-1.png` — home hero, desktop.
 - `docs/screenshots/site-2.png` — the kitchen, desktop.
 - `docs/screenshots/app-phone-1.png` — Today, phone.

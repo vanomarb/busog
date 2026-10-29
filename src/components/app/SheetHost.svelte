@@ -45,10 +45,9 @@
     {:else}<div class="stack">
         <h3>Your table is ready.</h3>
         <p>
-          Try the three logging paths, adjust a portion, or look at the mock history. Everything stays in this browser.
+          Try the three ways to log, adjust a portion, or look back at the sample week. Everything stays on your device.
         </p>
         <a href="/busog/download/">How to install Busog</a>
-        <p class="source-line">Concept project · This is a demonstration, with no accounts or live notifications.</p>
       </div>{/if}
   </SheetLayer>
 {/each}

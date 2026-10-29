@@ -28,5 +28,5 @@ with a defined ingredient list.
 The How we counted this panel exposes the calculation and source links. It gives you a way to judge a dish against your
 own meal. The goal is a traceable starting point, not a claim of laboratory accuracy.
 
-Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+Open [Busog](/busog/app/) and the [food library](/busog/library/). Ingredient references:
 [USDA FoodData Central](https://fdc.nal.usda.gov/).

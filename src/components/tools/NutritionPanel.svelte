@@ -39,9 +39,7 @@
     max-width: 170px;
   }
   input {
-    color: #20231f;
-    background: #f6f8f3;
-    border-color: #20231f40;
+    background: var(--raised-2);
   }
   .nutrition-values {
     display: grid;

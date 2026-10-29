@@ -16,7 +16,7 @@
     ><button class="coral" onclick={() => nav.open({ kind: 'snap' })}
       ><Camera size={27} />
       <h3>Snap a plate</h3>
-      <small>Simulated photo demo</small></button
+      <small>Photo to plate</small></button
     >
   </div>
   <button class="food-row" onclick={() => nav.open({ kind: 'search' })}

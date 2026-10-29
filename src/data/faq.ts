@@ -1,25 +1,23 @@
-/** Original task-oriented answers remain explicit about the concept's boundaries. */
+/** Task-oriented answers, plain about what Busog does and does not do. */
 export const faq = [
   {
     group: 'Getting started',
     question: 'What does Busog mean?',
     answer:
-      'Busog is Filipino for pleasantly full. This concept starts with ordinary meals and makes ' +
-      'room for rice, ulam and merienda.',
+      'Busog is Filipino for pleasantly full. It starts with ordinary meals and makes room for ' +
+      'rice, ulam and merienda.',
   },
   {
     group: 'Getting started',
     question: 'Do I need an account?',
     answer:
-      'No. The demo opens with Mara, a fictional person and mock diary. You can edit it ' +
-      'immediately. Data stays in this browser.',
+      'No. Busog opens with a sample diary you can edit right away, or you can set your own ' +
+      'goals first. Everything stays on your device.',
   },
   {
     group: 'Getting started',
-    question: 'Is the demo a subscription?',
-    answer:
-      'No payments, subscriptions or app-store releases are part of this concept. The working ' +
-      'browser demo is free to explore.',
+    question: 'Is Busog a subscription?',
+    answer: 'No. Busog is free in your browser, with no payments or subscriptions. Install it from the Download page.',
   },
   {
     group: 'Getting started',
@@ -46,8 +44,8 @@ export const faq = [
     group: 'Your plate',
     question: 'Does Snap recognize my own photos?',
     answer:
-      'Recognition is simulated. Choose a sample photo to see a staged USDA ingredient mapping, ' +
-      'edit its grams and confirm. Nothing is uploaded.',
+      'Not yet. The photo preview uses sample plates: pick one, review its USDA ingredients, ' +
+      'adjust the grams and confirm. Nothing is uploaded.',
   },
   {
     group: 'Your plate',
@@ -67,7 +65,7 @@ export const faq = [
     group: 'Your plate',
     question: 'What are the little source labels?',
     answer:
-      'The hand marks Turo-turo, the camera marks the Snap demo, the database marks USDA ' +
+      'The hand marks Turo-turo, the camera marks Snap, the database marks USDA ' +
       'search, and the barcode marks Open Food Facts. The label stays with the entry.',
   },
   {
@@ -109,15 +107,15 @@ export const faq = [
     group: 'Food data',
     question: 'Are recipes dietitian-approved?',
     answer:
-      'No such claim is made. They are original illustrative compositions with transparent ' +
-      'ingredient arithmetic. The concept has not been clinically validated.',
+      'No. They are Busog’s own ingredient lists with transparent arithmetic, and have not ' +
+      'been reviewed by a dietitian.',
   },
   {
     group: 'Privacy & install',
     question: 'What is saved?',
     answer:
-      'Your edited mock diary, weights, water and profile are saved to localStorage when ' +
-      'available. Clearing browser data removes them. Export JSON first if you want a copy.',
+      'Your diary, weights, water and profile are saved in your browser. Clearing browser ' +
+      'data removes them, so export JSON first if you want a copy.',
   },
   {
     group: 'Privacy & install',
@@ -130,8 +128,8 @@ export const faq = [
     group: 'Privacy & install',
     question: 'Can I use it without storage?',
     answer:
-      'Yes. If browser storage is blocked, the demo continues in memory and explains that ' +
-      'changes last for the visit.',
+      'Yes. If browser storage is blocked, Busog keeps working in memory and tells you ' +
+      'changes last for this visit.',
   },
   {
     group: 'Privacy & install',
@@ -165,7 +163,7 @@ export const faq = [
     group: 'Goals',
     question: 'Is the coach a live AI?',
     answer:
-      'No. Demo replies are scripted. They can read the displayed protein total and suggest a ' +
-      'recipe, but do not call an AI service.',
+      'Not yet. Busog Coach is an early preview that answers on your device from your own diary, ' +
+      'such as your protein so far or a recipe for tomorrow. It calls no AI service.',
   },
 ];

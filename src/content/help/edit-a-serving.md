@@ -1,6 +1,6 @@
 ---
 title: 'Change a serving without starting again'
-description: 'Step-by-step help for change a serving without starting again.'
+description: 'Change a serving without starting again.'
 category: 'Logging'
 image: 'talong'
 ---
@@ -20,4 +20,4 @@ portion returns to the review without moving the sheet below.
 Press Save portion. The diary, meal subtotal, summary and chart all use the same updated entry. Browser Back or a
 downward drag closes the top sheet one layer at a time.
 
-[Return to the demo](/busog/app/) or [browse common questions](/busog/faq/).
+[Back to Busog](/busog/app/) or [browse common questions](/busog/faq/).

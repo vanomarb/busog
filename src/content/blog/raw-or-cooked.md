@@ -28,5 +28,5 @@ converts raw weights into cooked portions.
 Choose a closer record or adjust the composition rather than treating a familiar dish name as proof of a match. Food
 records are useful references. They cannot describe every variety, cooking method and portion on their own.
 
-Explore the [Busog demo](/busog/app/) and the [food library](/busog/library/). Ingredient references:
+Open [Busog](/busog/app/) and the [food library](/busog/library/). Ingredient references:
 [USDA FoodData Central](https://fdc.nal.usda.gov/).

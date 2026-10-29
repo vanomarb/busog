@@ -46,7 +46,7 @@
     <button aria-label="Previous day" onclick={() => (date = shiftDate(date, -1))}><ChevronLeft size={20} /></button
     ><span>{dateLabel(date)}</span><button aria-label="Next day" onclick={() => (date = shiftDate(date, 1))}
       ><ChevronRight size={20} /></button
-    ><small>Demo diary</small>
+    ><small>Sample diary</small>
   </div>
   <div class="dashboard-grid">
     <div class="dashboard-left">
@@ -94,7 +94,7 @@
       </section>
       <p class="streak">
         <Flame size={19} />
-        {streak} days with a logged meal <span class="muted">· mock history</span>
+        {streak} days with a logged meal <span class="muted">· sample week</span>
       </p>
     </aside>
   </div>
@@ -164,7 +164,12 @@
   :global([data-device='phone']) .date-controls small {
     display: none;
   }
+  :global([data-device='phone']) .phone-heading > div:first-child {
+    min-width: 0;
+  }
   :global([data-device='phone']) .phone-heading .actions {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
     gap: 8px;
   }
   :global([data-device='phone']) .phone-heading .round {

@@ -1,31 +1,32 @@
 ---
 title: 'Start with what’s in front of you.'
-description: 'How three logging paths become one source-traceable plate.'
+description: 'How three ways of logging become one plate you can trust.'
 eyebrow: 'How it works'
 kind: 'story'
 ---
 
 ## At the counter: Turo-turo.
 
-Open Log, then Turo-turo. Tap your ulam, choose half, regular or extra, and set your cups of rice. The running plate
-total uses weighed ingredients from the USDA snapshot. Open a dish’s detail arrow to follow the arithmetic.
+Open Log, then Turo-turo. Tap your ulam, choose half, regular or extra, and set your cups of rice. The plate total uses
+weighed USDA ingredients. Tap a dish's info button to follow the arithmetic.
 
-## At home: Snap, with a second look.
+## At home: snap, then check.
 
-Choose a licensed sample food photo. The demo shows a short reading sequence, then a staged ingredient mapping. Adjust
-the grams before confirming. Recognition is simulated, and nothing is uploaded. The review is the real interaction.
+Pick a plate photo and Busog reads it, maps each ingredient to USDA data, and asks you to confirm the grams before
+anything is added. In this preview the photos are sample plates, and nothing is uploaded.
 
 ## On the go: search and scan.
 
-Search USDA ingredients by familiar or English names. Bundled results work offline; complete live results can expand the
-selection. For packaged food, use a supported camera scanner or enter a barcode for Open Food Facts lookup.
+Search USDA ingredients by Filipino or English names; the bundled foods work offline and live search adds more. For
+packaged food, scan the barcode with your camera or type it in to look it up on Open Food Facts.
 
 ## At the plate: review and confirm.
 
-Each route keeps a source mark on the entry. All routes scale per-100g nutrition by the chosen weight. Meal subtotals,
-the daily summary and progress charts add those same entries. Edit the weight and every total updates.
+Every route scales the same per-100g values by the weight you choose, and every entry keeps its source mark. Meal
+subtotals, your daily summary and your progress charts all add up the same entries. Change a weight and every total
+updates.
 
 ## Back to your day.
 
-Add water, look at the trend or simply close the app. The concept has no email gate, account setup or subscription step.
-The diary waits in this browser when local storage is available.
+Add water, check your trend, or just close the app. No email gate, no account, no subscription. Your diary waits on your
+device.
