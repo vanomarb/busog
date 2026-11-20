@@ -1,0 +1,155 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import NutritionPanel from '../../components/tools/NutritionPanel.svelte';
+import CountMath from '../../components/app/CountMath.svelte';
+import RecipeCard from '../../components/site/RecipeCard.astro';
+import { recipes, recipeFood, foodById } from '../../data/catalog';
+import photos from '../../data/photos.json';
+import { foodName } from '../../domain/names';
+import type { Recipe } from '../../domain/types';
+/** One static page per recipe, straight from the catalogue the app uses. */
+export function getStaticPaths() {
+  return recipes.map((recipe) => ({ params: { slug: recipe.id }, props: { recipe } }));
+}
+const { recipe } = Astro.props as { recipe: Recipe };
+const food = recipeFood(recipe);
+const related = recipes
+  .filter((item) => item.id !== recipe.id && item.cuisine === recipe.cuisine)
+  .sort((a, b) => Number(b.category === recipe.category) - Number(a.category === recipe.category))
+  .slice(0, 3);
+const photo = photos[recipe.image as keyof typeof photos];
+const serves = `${recipe.servings} ${recipe.servings === 1 ? 'serving' : 'servings'}`;
+const title = recipe.english ? `${recipe.name} (${recipe.english})` : recipe.name;
+---
+
+<SiteLayout {title} description={recipe.description}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/busog/recipes/">The kitchen</a><span>/</span><span>{recipe.name}</span>
+  </nav>
+  <section class="recipe-hero">
+    <div>
+      <p class="mono">{recipe.category} · {recipe.minutes} min · {serves}</p>
+      <h1>{recipe.name}.</h1>
+      {recipe.english && <p class="recipe-english">{recipe.english}</p>}
+      <p>{recipe.description}</p>
+      <a class="button accent" href={`/busog/app/?recipe=${recipe.id}`}>Log this recipe ↗</a>
+    </div>
+    <figure>
+      <img
+        src={`/busog/images/${recipe.image}-960.webp`}
+        srcset={`/busog/images/${recipe.image}-480.webp 480w, /busog/images/${recipe.image}-960.webp 960w`}
+        sizes="(max-width: 900px) 92vw, 46vw"
+        width="960"
+        height="720"
+        alt={`${recipe.name}, plated`}
+        fetchpriority="high"
+      />
+      <figcaption class="mono muted">
+        Photo: <a href={photo.source}>{photo.author}</a>, {photo.license}. The ingredients below define the nutrition.
+      </figcaption>
+    </figure>
+  </section>
+  <NutritionPanel {food} client:visible />
+  <div class="split section">
+    <section>
+      <h2>What goes in.</h2>
+      <p class="muted lead">Amounts for the whole recipe. Ingredient states matter.</p>
+      <ul class="ingredients">
+        {
+          recipe.ingredients.map((ingredient) => (
+            <li>
+              <span>{foodName(foodById(ingredient.foodId), 'ph')}</span>
+              <strong class="mono">{ingredient.grams} g</strong>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <h2>At the stove.</h2>
+      <ol class="recipe-steps">{recipe.steps.map((step) => <li>{step}</li>)}</ol>
+      <div class="notice">
+        <p>
+          Ingredients are weighed in the state listed, cooked where it says so. Share all the sauce and oil across the
+          servings. No cooking-yield adjustment is hidden in the calculation.
+        </p>
+      </div>
+    </section>
+  </div>
+  <CountMath {food} />
+  <section class="section">
+    <header class="section-heading">
+      <h2>Another good plate.</h2><a href="/busog/recipes/">Back to the kitchen ↗</a>
+    </header>
+    <div class="content-grid">{related.map((item) => <RecipeCard recipe={item} />)}</div>
+  </section>
+</SiteLayout>
+<style>
+  .recipe-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 45px 0 24px;
+  }
+  .recipe-hero h1 {
+    font-size: var(--text-4xl);
+    margin: 24px 0 8px;
+  }
+  .recipe-hero p:first-child {
+    font-size: var(--text-xs);
+  }
+  .recipe-english {
+    color: var(--muted);
+    font-size: var(--text-lg);
+    margin-bottom: 20px;
+  }
+  .recipe-hero .button {
+    margin-top: 28px;
+  }
+  .recipe-hero img {
+    border-radius: 30px;
+    width: 100%;
+    height: 420px;
+  }
+  figcaption {
+    margin-top: 12px;
+    font-size: var(--text-2xs);
+  }
+  .lead {
+    margin: 20px 0;
+  }
+  .ingredients li {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .ingredients strong {
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+  .recipe-steps {
+    list-style: decimal;
+    padding-left: 22px;
+    margin: 30px 0;
+  }
+  .recipe-steps li {
+    padding-left: 12px;
+    margin-bottom: 20px;
+  }
+  .recipe-steps li::marker {
+    font-family: var(--mono);
+    color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    .recipe-hero {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .recipe-hero img {
+      height: 300px;
+    }
+  }
+</style>

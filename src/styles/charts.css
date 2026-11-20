@@ -1,0 +1,188 @@
+.calorie-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 16px;
+}
+/* Weekly bars: solid tracks, the card's tone for what was eaten, future days hatched and quiet. */
+.weekly-bars {
+  display: flex;
+  min-width: 0;
+  gap: clamp(4px, 0.8vw, 8px);
+  height: 196px;
+  padding-top: 26px;
+  align-items: stretch;
+}
+.bar-button {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 8px;
+  align-items: center;
+}
+.bar-track {
+  width: 100%;
+  height: 140px;
+  border-radius: 12px;
+  position: relative;
+  background: var(--raised-2);
+}
+.bar-track.future {
+  background: repeating-linear-gradient(130deg, transparent 0 5px, var(--raised-2) 5px 7px);
+}
+.bar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--tone, var(--accent));
+  border-radius: 12px;
+}
+.bar-value {
+  position: absolute;
+  z-index: 1;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--surface);
+  padding: 3px 7px;
+  border-radius: 8px;
+  font: 600 var(--text-2xs) var(--mono);
+  white-space: nowrap;
+}
+.bar-day {
+  font: 500 var(--text-2xs) var(--mono);
+  color: var(--muted);
+  padding: 6px 2px;
+  border-radius: 999px;
+  width: 100%;
+  text-align: center;
+}
+.bar-day.selected {
+  background: var(--tone, var(--accent));
+  color: var(--on-accent);
+}
+.weekly-stats {
+  display: grid;
+  gap: 10px;
+}
+.weekly-stats > div {
+  min-width: 0;
+  background: var(--raised-2);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+.weekly-stats p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font: 500 var(--text-2xs) / 1.4 var(--mono);
+}
+.weekly-stats strong {
+  display: block;
+  font: 700 var(--text-2xl) / 1.1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  margin: 6px 0 2px;
+  letter-spacing: -0.02em;
+}
+.weekly-stats strong span {
+  font-size: var(--text-base);
+  letter-spacing: 0;
+}
+.weekly-stats small {
+  color: var(--muted);
+  font-size: var(--text-2xs);
+  display: block;
+}
+/* Tinted chip, ink text: the tint carries the colour, so the figure stays legible in both themes. */
+.delta {
+  background: color-mix(in srgb, var(--tone, var(--accent)) 24%, transparent);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 3px 8px;
+  font: 600 var(--text-2xs) var(--mono);
+  white-space: nowrap;
+}
+.macro-circles {
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+}
+.macro-day {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  color: var(--muted);
+  font: 500 var(--text-2xs) var(--mono);
+}
+.macro-day strong {
+  font: 600 var(--text-2xs) var(--mono);
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 44px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--raised-2);
+  color: var(--ink);
+}
+.macro-day.selected strong {
+  background: var(--tone, var(--accent));
+  color: var(--on-accent);
+}
+.macro-day.future strong {
+  background: repeating-linear-gradient(130deg, transparent 0 5px, var(--raised-2) 5px 7px);
+  color: var(--muted);
+}
+.macro-lines {
+  width: 100%;
+  height: 90px;
+  margin-top: 12px;
+  overflow: visible;
+}
+.macro-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.macro-legend span {
+  background: var(--raised-2);
+  color: var(--ink);
+  font: 500 var(--text-2xs) var(--mono);
+  padding: 5px 10px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.macro-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+@media (max-width: 1200px) {
+  .calorie-body {
+    grid-template-columns: 1fr;
+  }
+  .weekly-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+[data-device='phone'] .calorie-body {
+  grid-template-columns: 1fr;
+}
+[data-device='phone'] .weekly-stats {
+  grid-template-columns: 1fr 1fr;
+}
+[data-device='phone'] .weekly-stats strong {
+  font-size: var(--text-xl);
+}

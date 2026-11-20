@@ -1,0 +1,96 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PhoneShot from '../components/site/PhoneShot.astro';
+const colors = [
+  ['Night', '#161719'],
+  ['Card', '#212226'],
+  ['Ember', '#ff6b3d'],
+  ['Protein teal', '#6fd3c9'],
+  ['Carb yellow', '#f6c445'],
+  ['Fat violet', '#a99fff'],
+];
+---
+
+<SiteLayout title="The Busog press shelf"
+  ><section class="page-intro">
+    <p class="mono">Press kit</p><h1>The essentials.<br />Nicely plated.</h1><p>
+      Busog is a calorie and macro tracker for everyday meals from around the world. Three ways to log a meal, one plate
+      you can trace back to its sources.
+    </p>
+  </section><div class="split">
+    <section class="card stack">
+      <img src="/busog/brand/wordmark.svg" alt="Busog wordmark" width="360" height="100" /><h2>
+        A happily full bowl.
+      </h2><p>
+        The original mark pairs a bowl with two small rising strokes. Keep space around it and preserve its colors.
+      </p><div class="actions">
+        <a class="button accent" download href="/busog/brand/wordmark.svg">Wordmark SVG ↓</a><a
+          class="button outline"
+          download
+          href="/busog/brand/mark.svg">Mark SVG ↓</a
+        ><a class="inline-link" download href="/busog/brand/social.png">Social card PNG ↓</a>
+      </div>
+    </section><section class="stack">
+      <h2>In a sentence.</h2><p>
+        A little more clarity for everyday meals: Busog brings a dish counter, photo logging and sourced food search
+        together in one diary that lives on your phone.
+      </p><p class="muted">
+        Busog makes no clinical claims. Please don't describe it as medical advice or as dietitian-approved.
+      </p><a class="inline-link" href="/busog/about/">Our story ↗</a>
+    </section>
+  </div><section class="section">
+    <header class="section-heading">
+      <h2>The palette.</h2><p>Dark surfaces, one warm accent, and three colours kept for macros.</p>
+    </header><div class="palette-grid">
+      {
+        colors.map(([name, hex]) => (
+          <div style={`background: ${hex}; color: ${['Night', 'Card'].includes(name) ? '#f4f4f5' : '#161719'}`}>
+            <>
+              <strong>{name}</strong>
+              <span class="mono">{hex}</span>
+            </>
+          </div>
+        ))
+      }
+    </div>
+  </section><section class="section">
+    <header class="section-heading">
+      <h2>Product screens.</h2><p>Captured from the app. Open either view for a full-screen capture of your own.</p>
+    </header><div class="press-phones">
+      <PhoneShot shot="today" alt="Busog Today screen" /><PhoneShot shot="counter" alt="Busog dish counter" />
+    </div><div class="actions" style="margin-top: 30px">
+      <a class="button accent" href="/busog/app/?frame=phone">Phone screen ↗</a><a
+        class="button outline"
+        href="/busog/app/">Web screen ↗</a
+      >
+    </div>
+  </section></SiteLayout
+>
+<style>
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .palette-grid > div {
+    padding: 28px;
+    border-radius: 22px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .press-phones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 280px));
+    gap: 24px;
+  }
+  .palette-grid .mono {
+    font-size: var(--text-xs);
+  }
+  @media (max-width: 600px) {
+    .palette-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import BrandMark from './BrandMark.svelte';
+/** The wordmark: the shared bowl mark plus the name, used in the site navigation. */
+const { compact = false } = Astro.props;
+---
+
+<a href="/busog/" class="wordmark" aria-label="Busog home">
+  <BrandMark />
+  {
+    !compact && (
+      <span>
+        busog<span class="brand-dot">.</span>
+      </span>
+    )
+  }
+</a>
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+  .brand-dot {
+    color: var(--coral);
+  }
+</style>

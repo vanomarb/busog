@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import LibrarySearch from '../../../components/tools/LibrarySearch.svelte';
+import { foods, categorySlug, libraryItems } from '../../../data/catalog';
+/** Generate source-backed static reference routes with stable identifiers. */
+export function getStaticPaths() {
+  return [...new Set(foods.map((food) => food.category))].map((category) => ({
+    params: { slug: categorySlug(category) },
+    props: { category },
+  }));
+}
+const { category } = Astro.props;
+---
+
+<SiteLayout
+  title={`${category} food reference`}
+  description={`Browse USDA ${category.toLowerCase()} records with calories, macros, gram servings and source IDs.`}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/busog/library/">Food library</a><span>/</span><span>{category}</span>
+  </nav>
+  <section class="page-intro">
+    <h1>{category}.</h1><p>
+      Choose the food state that matches what you weighed. Every listing links back to its USDA record.
+    </p>
+  </section>
+  <LibrarySearch items={libraryItems(category)} {category} client:load />
+</SiteLayout>

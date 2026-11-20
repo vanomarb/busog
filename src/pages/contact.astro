@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ContactForm from '../components/tools/ContactForm.svelte';
+---
+
+<SiteLayout title="Pull up a chair"
+  ><section class="page-intro">
+    <p class="mono">Contact</p><h1>Pull up<br />a chair.</h1><p>
+      A food we should understand, an idea for the counter, or a question about how Busog counts. We'd love to hear it.
+    </p>
+  </section><div class="split">
+    <div class="stack">
+      <h2>A good place<br />to begin.</h2><p class="muted">
+        Busog's inbox opens after the early preview. Until then, the help shelf and FAQ answer the most common
+        questions.
+      </p><a class="inline-link" href="/busog/help/">Find a practical answer on the help shelf ↗</a>
+    </div><ContactForm client:only="svelte" />
+  </div></SiteLayout
+>

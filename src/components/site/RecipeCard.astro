@@ -1,0 +1,26 @@
+---
+import { recipeFood } from '../../data/catalog';
+import { number, serving } from '../../domain/nutrition';
+import type { Recipe } from '../../domain/types';
+import Card from './Card.astro';
+/** A recipe as a card: its photo, its English name, and per-serving numbers derived from its ingredients. */
+interface Props {
+  recipe: Recipe;
+}
+const { recipe } = Astro.props;
+const food = recipeFood(recipe);
+const total = serving(food, food.portions[0].grams);
+---
+
+<Card
+  href={`/busog/recipes/${recipe.id}/`}
+  title={recipe.name}
+  subtitle={recipe.english}
+  tag={`${recipe.category} · ${recipe.minutes} min`}
+  facts={[`${number(total.kcal)} kcal`, `${number(total.protein)} g protein`]}
+  image={{
+    src: `/busog/images/${recipe.image}-480.webp`,
+    srcset: `/busog/images/${recipe.image}-480.webp 480w, /busog/images/${recipe.image}-960.webp 960w`,
+    alt: recipe.name,
+  }}
+/>

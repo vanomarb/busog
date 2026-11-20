@@ -1,0 +1,44 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import AppButtons from '../components/site/AppButtons.astro';
+import InstallButton from '../components/tools/InstallButton.svelte';
+import PhoneShot from '../components/site/PhoneShot.astro';
+---
+
+<SiteLayout title="A seat on your home screen"
+  ><section class="page-intro">
+    <p class="mono">Take Busog with you.</p><h1>A seat on your<br />home screen.</h1><p>
+      Open Busog in your browser, or install it as an app on your home screen. No account to create.
+    </p>
+  </section><div class="split">
+    <div class="stack">
+      <AppButtons /><InstallButton client:load /><div class="notice">
+        <p>
+          Busog installs straight from your browser, so there is nothing to download from an app store. It updates
+          itself and keeps working offline.
+        </p>
+      </div><div style="max-width: 280px">
+        <PhoneShot shot="today" alt="Busog Today screen on a phone" />
+      </div>
+    </div><div class="stack">
+      <section class="card">
+        <h2>On iPhone.</h2><ol>
+          <li>Open this site in Safari over HTTPS.</li><li>Tap the Share button in the browser toolbar.</li><li>
+            Choose Add to Home Screen, then Add.
+          </li><li>Open Busog from your home screen and let its first load finish online.</li>
+        </ol>
+      </section><section class="card">
+        <h2>On Android.</h2><ol>
+          <li>Open this site in Chrome over HTTPS.</li><li>
+            Choose Install app or Add to Home screen from the browser menu.
+          </li><li>Confirm, then open Busog from your home screen.</li><li>
+            After the shell is cached, try the local diary and bundled search offline.
+          </li>
+        </ol>
+      </section><p class="muted">
+        On desktop, use the browser’s install control when offered. Live barcode lookup and live USDA results need a
+        connection. Browser support and install menu wording vary.
+      </p>
+    </div>
+  </div></SiteLayout
+>

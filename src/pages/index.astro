@@ -1,0 +1,138 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import AppButtons from '../components/site/AppButtons.astro';
+import FinalCta from '../components/site/FinalCta.astro';
+import RecipeCard from '../components/site/RecipeCard.astro';
+import PhoneShot from '../components/site/PhoneShot.astro';
+import { recipeById } from '../data/catalog';
+import '../styles/home.css';
+const counter = ['spaghetti-bolognese', 'black-bean-tacos', 'adobong-manok'].map(recipeById);
+---
+
+<SiteLayout title="Your food. Your way. Your plate.">
+  <section class="home-hero">
+    <div class="hero-copy">
+      <p class="hero-label"><span></span> For everyday meals, anywhere</p>
+      <h1>Your food.<br />Your way.<br />Your plate.</h1>
+      <p class="hero-description">
+        The calorie and macro tracker that starts with what’s already on your table. Point at the dish, snap a plate or
+        scan a pack, and see where every number comes from.
+      </p>
+      <AppButtons />
+      <ul class="hero-facts">
+        <li>Free</li><li>No account</li><li>Works offline</li>
+      </ul>
+    </div>
+    <div class="hero-phones">
+      <PhoneShot shot="today" alt="Busog Today: calories this week, protein and carbs, and the day's meals" eager />
+      <PhoneShot shot="counter" alt="The counter: tap the dishes you'd point at" />
+    </div>
+  </section>
+  <div class="home-principles">
+    <span>Dishes from around the world</span><span>Every number has a source</span><span
+      >Your region, your food names</span
+    >
+  </div>
+  <section class="section" id="three-ways">
+    <header class="section-heading">
+      <h2>Three ways in.<br />One plate.</h2><p>
+        At the counter, at home or on the go. Start where you are; every route lands in the same diary with the same
+        nutrition math.
+      </p>
+    </header>
+    <div class="source-bento">
+      <a class="source-card source-turo" href="/busog/app/?frame=phone">
+        <div class="source-title"><h3>Just point.<br />We’ll count it.</h3><span class="round">↗</span></div>
+        <p>
+          The counter puts everyday dishes on your phone. Pick a dish, choose a portion, add rice if you like, done.
+        </p>
+        <div class="source-dishes">
+          {
+            counter.map((dish) => (
+              <figure>
+                <img src={`/busog/images/${dish.image}-480.webp`} alt="" width="480" height="360" loading="lazy" />
+                <figcaption>{dish.name}</figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </a>
+      <div class="source-secondary">
+        <a class="source-card source-snap" href="/busog/app/?frame=phone">
+          <figure class="snap-frame">
+            <img src="/busog/images/salmon-rice-bowl-480.webp" alt="" width="480" height="360" loading="lazy" />
+            <span class="snap-chip">Reading your plate…</span>
+          </figure>
+          <div>
+            <div class="source-title"><h3>Snap a plate.</h3><span class="round">↗</span></div>
+            <p>Busog maps each ingredient to USDA data, then you confirm the grams.</p>
+          </div>
+        </a>
+        <a class="source-card source-search" href="/busog/app/">
+          <div class="source-title"><h3>Search and scan.</h3><span class="round">↗</span></div>
+          <p>Look up any USDA ingredient by its English or Filipino name, or scan a packaged-food barcode.</p>
+          <ul class="source-facts"><li>110 everyday foods</li><li>Open Food Facts barcodes</li></ul>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section food-story">
+    <div class="food-story-image">
+      <img
+        src="/busog/images/lentil-tomato-soup-960.webp"
+        srcset="/busog/images/lentil-tomato-soup-480.webp 480w, /busog/images/lentil-tomato-soup-960.webp 960w"
+        sizes="(max-width: 900px) 92vw, 45vw"
+        alt="A bowl of lentil and tomato soup"
+        width="960"
+        height="720"
+        loading="lazy"
+      /><span class="photo-note">Lentil and tomato soup · any weekday</span>
+    </div><div class="food-story-copy">
+      <p class="eyebrow">Familiar food. A clearer picture.</p><h2>You don’t need<br />a different lunch.</h2><p>
+        You need a diary that makes room for this one. Busog starts with familiar ingredients, practical portions, and
+        numbers you can follow back to their source.
+      </p><a class="inline-link" href="/busog/about/">The thinking behind Busog <span>↗</span></a>
+    </div>
+  </section>
+  <section class="section">
+    <header class="section-heading">
+      <h2>From our kitchen<br />to your diary.</h2><a class="inline-link" href="/busog/recipes/"
+        >See all recipes <span>↗</span></a
+      >
+    </header><div class="content-grid">
+      {['spaghetti-bolognese', 'salmon-rice-bowl', 'adobong-manok'].map((id) => <RecipeCard recipe={recipeById(id)} />)}
+    </div>
+  </section>
+  <section class="section home-compare">
+    <h2>A blank diary<br />asks a lot of you.</h2><div>
+      <p>Busog gives you a place to begin.</p><ul>
+        <li><span>Instead of remembering every ingredient</span><strong>Start with a familiar dish.</strong></li><li>
+          <span>Instead of accepting a mystery total</span><strong>See the ingredient math.</strong>
+        </li><li><span>Instead of another account to make</span><strong>Open it and start logging.</strong></li>
+      </ul><a class="inline-link" href="/busog/compare/">See how Busog compares ↗</a>
+    </div>
+  </section>
+  <section class="section home-faq">
+    <header>
+      <h2>A few things<br />you might wonder.</h2><a class="inline-link" href="/busog/faq/">All questions ↗</a>
+    </header><div>
+      <details>
+        <summary>Do I need an account?</summary><p>
+          No. Open Busog and start logging; everything stays on your device. Export your diary as JSON whenever you
+          like.
+        </p>
+      </details><details>
+        <summary>Where do the nutrition numbers come from?</summary><p>
+          Ingredients are USDA FoodData Central records. Recipe totals are calculated from those ingredients, and
+          packaged foods come from Open Food Facts.
+        </p>
+      </details><details>
+        <summary>Can I keep using it offline?</summary><p>
+          Yes. Install Busog to your home screen and the diary, recipes and bundled food search work offline. Live
+          search and barcode lookups need a connection.
+        </p>
+      </details>
+    </div>
+  </section>
+  <FinalCta />
+</SiteLayout>

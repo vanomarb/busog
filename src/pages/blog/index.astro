@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Card from '../../components/site/Card.astro';
+const articles = await getCollection('blog');
+const featured = articles.find((article) => article.id === 'room-for-rice')!;
+---
+
+<SiteLayout
+  title="Notes from the table"
+  description="Original Busog stories about everyday food, transparent nutrition data and practical logging."
+  ><section class="page-intro">
+    <p class="mono">Notes from the table</p><h1>A little food<br />for thought.</h1><p>
+      Everyday meals, open numbers, and a few ideas worth bringing to the table.
+    </p>
+  </section><a class="featured-story" href={`/busog/blog/${featured.id}/`}
+    ><img
+      src={`/busog/images/${featured.data.image}-960.webp`}
+      alt="Chicken adobo for an everyday meal"
+      width="960"
+      height="640"
+    /><div class="sage">
+      <small>{featured.data.category}</small><h2>{featured.data.title}</h2><p>{featured.data.description}</p><span
+        class="round">↗</span
+      >
+    </div></a
+  ><div class="content-grid section">
+    {
+      articles
+        .filter((article) => article.id !== featured.id)
+        .map((article) => (
+          <Card
+            href={`/busog/blog/${article.id}/`}
+            meta={article.data.category}
+            title={article.data.title}
+            subtitle={article.data.description}
+            facts={['Read the story']}
+          />
+        ))
+    }
+  </div></SiteLayout
+>
+<style>
+  .featured-story {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    border-radius: 30px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .featured-story img {
+    width: 100%;
+    height: 420px;
+  }
+  .featured-story > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 14px;
+    padding: 36px;
+    align-items: start;
+  }
+  .featured-story h2 {
+    font-size: var(--text-3xl);
+  }
+  .featured-story .round {
+    margin-top: 10px;
+  }
+  small {
+    font-size: var(--text-xs);
+  }
+  @media (max-width: 900px) {
+    .featured-story {
+      grid-template-columns: 1fr;
+    }
+    .featured-story img {
+      height: 240px;
+    }
+    .featured-story > div {
+      padding: 24px;
+    }
+  }
+</style>

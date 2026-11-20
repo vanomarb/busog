@@ -1,0 +1,956 @@
+[
+  {
+    "id": "adobong-manok",
+    "name": "Adobong manok",
+    "description": "Garlicky, vinegar-bright chicken. Keep the sauce with the chicken.",
+    "category": "Mains",
+    "cuisine": "filipino",
+    "minutes": 35,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "chicken",
+        "grams": 260
+      },
+      {
+        "foodId": "soy",
+        "grams": 24
+      },
+      {
+        "foodId": "vinegar",
+        "grams": 30
+      },
+      {
+        "foodId": "garlic",
+        "grams": 12
+      },
+      {
+        "foodId": "oil",
+        "grams": 8
+      }
+    ],
+    "steps": [
+      "Gently warm the garlic in coconut oil.",
+      "Add the chicken, soy and vinegar; simmer until hot through.",
+      "Divide the chicken and all of the sauce between two plates."
+    ],
+    "english": "Chicken adobo",
+    "image": "adobo"
+  },
+  {
+    "id": "ginisang-munggo",
+    "name": "Ginisang munggo",
+    "description": "Soft mung beans with tomato and malunggay for a slow Friday lunch.",
+    "category": "Vegetables",
+    "cuisine": "filipino",
+    "minutes": 25,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "munggo",
+        "grams": 320
+      },
+      {
+        "foodId": "malunggay",
+        "grams": 40
+      },
+      {
+        "foodId": "tomato",
+        "grams": 100
+      },
+      {
+        "foodId": "onion",
+        "grams": 40
+      },
+      {
+        "foodId": "garlic",
+        "grams": 6
+      },
+      {
+        "foodId": "oil",
+        "grams": 8
+      }
+    ],
+    "steps": [
+      "Soften the onion and garlic in oil, then stir in the tomato.",
+      "Add the mung beans and a splash of water.",
+      "Fold in the malunggay leaves until they wilt, then divide into two servings."
+    ],
+    "english": "Sautéed mung beans",
+    "image": "munggo"
+  },
+  {
+    "id": "tortang-talong",
+    "name": "Tortang talong",
+    "description": "Eggplant cooked in egg, with tomato and a cup of rice.",
+    "category": "Breakfast",
+    "cuisine": "filipino",
+    "minutes": 20,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "talong",
+        "grams": 140
+      },
+      {
+        "foodId": "egg-fried",
+        "grams": 92
+      },
+      {
+        "foodId": "tomato",
+        "grams": 60
+      },
+      {
+        "foodId": "rice",
+        "grams": 158
+      }
+    ],
+    "steps": [
+      "Flatten the cooked eggplant with a fork.",
+      "Cook it in the beaten egg until set on both sides.",
+      "Serve with the tomato and one cup of rice."
+    ],
+    "english": "Eggplant omelette with rice",
+    "image": "talong"
+  },
+  {
+    "id": "pinakbet",
+    "name": "Pinakbet",
+    "description": "Bitter gourd, squash, beans and eggplant, seasoned with patis.",
+    "category": "Vegetables",
+    "cuisine": "filipino",
+    "minutes": 30,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "ampalaya",
+        "grams": 60
+      },
+      {
+        "foodId": "sitaw",
+        "grams": 60
+      },
+      {
+        "foodId": "kalabasa",
+        "grams": 80
+      },
+      {
+        "foodId": "talong",
+        "grams": 80
+      },
+      {
+        "foodId": "okra",
+        "grams": 50
+      },
+      {
+        "foodId": "tomato",
+        "grams": 50
+      },
+      {
+        "foodId": "onion",
+        "grams": 25
+      },
+      {
+        "foodId": "garlic",
+        "grams": 5
+      },
+      {
+        "foodId": "fish-sauce",
+        "grams": 10
+      },
+      {
+        "foodId": "oil",
+        "grams": 6
+      }
+    ],
+    "steps": [
+      "Sauté the garlic, onion and tomato in oil.",
+      "Add the squash and beans first, then the remaining vegetables.",
+      "Season with fish sauce and cook until just tender. Serves two."
+    ],
+    "english": "Mixed vegetable stew",
+    "image": "pinakbet"
+  },
+  {
+    "id": "tinolang-manok",
+    "name": "Tinolang manok",
+    "description": "Chicken, chayote and malunggay in a clear ginger broth.",
+    "category": "Soup",
+    "cuisine": "filipino",
+    "minutes": 40,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "chicken",
+        "grams": 220
+      },
+      {
+        "foodId": "sayote",
+        "grams": 160
+      },
+      {
+        "foodId": "malunggay",
+        "grams": 30
+      },
+      {
+        "foodId": "ginger",
+        "grams": 12
+      },
+      {
+        "foodId": "onion",
+        "grams": 30
+      },
+      {
+        "foodId": "garlic",
+        "grams": 5
+      },
+      {
+        "foodId": "fish-sauce",
+        "grams": 10
+      },
+      {
+        "foodId": "oil",
+        "grams": 5
+      }
+    ],
+    "steps": [
+      "Sauté the ginger, garlic and onion in oil.",
+      "Add the chicken, fish sauce and water; simmer.",
+      "Add the chayote until tender, then the malunggay. Serves two."
+    ],
+    "english": "Chicken ginger soup",
+    "image": "tinolang-manok"
+  },
+  {
+    "id": "ginataang-kalabasa",
+    "name": "Ginataang kalabasa",
+    "description": "Squash and yardlong beans in coconut milk, with shrimp.",
+    "category": "Vegetables",
+    "cuisine": "filipino",
+    "minutes": 30,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "kalabasa",
+        "grams": 220
+      },
+      {
+        "foodId": "sitaw",
+        "grams": 100
+      },
+      {
+        "foodId": "coconut-milk",
+        "grams": 120
+      },
+      {
+        "foodId": "shrimp",
+        "grams": 80
+      },
+      {
+        "foodId": "onion",
+        "grams": 30
+      },
+      {
+        "foodId": "garlic",
+        "grams": 6
+      }
+    ],
+    "steps": [
+      "Simmer the garlic and onion in the coconut milk.",
+      "Add the squash, then the beans, until tender.",
+      "Stir in the cooked shrimp to warm through. Serves two."
+    ],
+    "english": "Squash and beans in coconut milk",
+    "image": "ginataang-kalabasa"
+  },
+  {
+    "id": "pancit-bihon",
+    "name": "Pancit bihon",
+    "description": "Rice noodles tossed with chicken, cabbage and carrots.",
+    "category": "Noodles & pasta",
+    "cuisine": "filipino",
+    "minutes": 30,
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "rice-noodles",
+        "grams": 300
+      },
+      {
+        "foodId": "chicken",
+        "grams": 120
+      },
+      {
+        "foodId": "cabbage",
+        "grams": 100
+      },
+      {
+        "foodId": "carrots",
+        "grams": 60
+      },
+      {
+        "foodId": "soy",
+        "grams": 20
+      },
+      {
+        "foodId": "oil",
+        "grams": 10
+      },
+      {
+        "foodId": "garlic",
+        "grams": 6
+      },
+      {
+        "foodId": "onion",
+        "grams": 30
+      }
+    ],
+    "steps": [
+      "Sauté the garlic and onion, then the chicken and vegetables.",
+      "Add soy sauce and a little water.",
+      "Toss in the cooked noodles until coated. Serves three."
+    ],
+    "english": "Rice noodles with chicken",
+    "image": "pancit-bihon"
+  },
+  {
+    "id": "bangus-at-kanin",
+    "name": "Bangus at kanin",
+    "description": "Milkfish with a fried egg, rice and a vinegar dip.",
+    "category": "Mains",
+    "cuisine": "filipino",
+    "minutes": 20,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "bangus",
+        "grams": 120
+      },
+      {
+        "foodId": "rice",
+        "grams": 158
+      },
+      {
+        "foodId": "egg-fried",
+        "grams": 46
+      },
+      {
+        "foodId": "vinegar",
+        "grams": 15
+      }
+    ],
+    "steps": [
+      "Pan-fry the opened milkfish until the skin crisps.",
+      "Fry the egg alongside.",
+      "Plate with the rice and a small dish of vinegar for dipping."
+    ],
+    "english": "Milkfish, egg and rice",
+    "image": "bangus-at-kanin"
+  },
+  {
+    "id": "pritong-tilapia",
+    "name": "Pritong tilapia",
+    "description": "Whole fried tilapia with broccoli, tomato and a cup of rice.",
+    "category": "Mains",
+    "cuisine": "filipino",
+    "minutes": 25,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "tilapia",
+        "grams": 140
+      },
+      {
+        "foodId": "oil",
+        "grams": 10
+      },
+      {
+        "foodId": "rice",
+        "grams": 158
+      },
+      {
+        "foodId": "broccoli",
+        "grams": 60
+      },
+      {
+        "foodId": "tomato",
+        "grams": 50
+      }
+    ],
+    "steps": [
+      "Score and fry the tilapia in the oil until crisp.",
+      "Warm the broccoli and tomato.",
+      "Serve with the rice."
+    ],
+    "english": "Fried tilapia with vegetables",
+    "image": "pritong-tilapia"
+  },
+  {
+    "id": "gulay-na-may-tokwa",
+    "name": "Gulay na may tokwa",
+    "description": "Pechay, mushrooms and tofu with a small splash of toyo.",
+    "category": "Vegetables",
+    "cuisine": "filipino",
+    "minutes": 20,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "tofu",
+        "grams": 240
+      },
+      {
+        "foodId": "pechay",
+        "grams": 200
+      },
+      {
+        "foodId": "mushrooms",
+        "grams": 100
+      },
+      {
+        "foodId": "soy",
+        "grams": 16
+      },
+      {
+        "foodId": "garlic",
+        "grams": 8
+      },
+      {
+        "foodId": "oil",
+        "grams": 8
+      }
+    ],
+    "steps": [
+      "Brown the tofu in the oil.",
+      "Add the garlic, then the vegetables and soy sauce.",
+      "Toss until hot and share into two portions."
+    ],
+    "english": "Greens with tofu",
+    "image": "gulay-na-may-tokwa"
+  },
+  {
+    "id": "adobong-kangkong",
+    "name": "Adobong kangkong",
+    "description": "Water spinach in a quick garlic, soy and vinegar glaze.",
+    "category": "Sides",
+    "cuisine": "filipino",
+    "minutes": 10,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "kangkong",
+        "grams": 240
+      },
+      {
+        "foodId": "garlic",
+        "grams": 10
+      },
+      {
+        "foodId": "soy",
+        "grams": 12
+      },
+      {
+        "foodId": "vinegar",
+        "grams": 10
+      },
+      {
+        "foodId": "oil",
+        "grams": 8
+      }
+    ],
+    "steps": [
+      "Warm the garlic in oil.",
+      "Add the kangkong, soy sauce and vinegar.",
+      "Toss briefly and divide between two side plates."
+    ],
+    "english": "Water spinach adobo",
+    "image": "adobong-kangkong"
+  },
+  {
+    "id": "sinangag",
+    "name": "Sinangag",
+    "description": "Day-old rice fried with plenty of toasted garlic: the base of every silog.",
+    "category": "Sides",
+    "cuisine": "filipino",
+    "minutes": 15,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "rice",
+        "grams": 316
+      },
+      {
+        "foodId": "garlic",
+        "grams": 12
+      },
+      {
+        "foodId": "oil",
+        "grams": 10
+      }
+    ],
+    "steps": ["Toast the garlic in oil until golden.", "Add the rice and fry until hot and fragrant.", "Serves two."],
+    "english": "Garlic fried rice",
+    "image": "sinangag"
+  },
+  {
+    "id": "banana-cue",
+    "name": "Banana cue",
+    "description": "Ripe plantain fried and glazed in brown sugar, on a skewer.",
+    "category": "Snacks",
+    "cuisine": "filipino",
+    "minutes": 20,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "plantain",
+        "grams": 240
+      },
+      {
+        "foodId": "brown-sugar",
+        "grams": 30
+      },
+      {
+        "foodId": "oil",
+        "grams": 12
+      }
+    ],
+    "steps": [
+      "Fry the peeled plantains in the oil.",
+      "Add the sugar and turn until it caramelises around them.",
+      "Skewer and share between two."
+    ],
+    "english": "Caramelised plantain skewers",
+    "image": "banana-cue"
+  },
+  {
+    "id": "peanut-butter-oatmeal",
+    "name": "Peanut butter banana oatmeal",
+    "description": "Warm oats, banana and a spoon of peanut butter.",
+    "category": "Breakfast",
+    "cuisine": "international",
+    "minutes": 10,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "oats",
+        "grams": 234
+      },
+      {
+        "foodId": "banana",
+        "grams": 60
+      },
+      {
+        "foodId": "peanut-butter",
+        "grams": 16
+      },
+      {
+        "foodId": "milk",
+        "grams": 60
+      }
+    ],
+    "steps": ["Cook the oats in water.", "Stir in the milk.", "Top with banana and peanut butter."],
+    "image": "peanut-butter-oatmeal"
+  },
+  {
+    "id": "berry-yogurt-bowl",
+    "name": "Yogurt with berries",
+    "description": "Greek yogurt, two kinds of berries, almonds and honey.",
+    "category": "Breakfast",
+    "cuisine": "international",
+    "minutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "greek-yogurt",
+        "grams": 170
+      },
+      {
+        "foodId": "blueberries",
+        "grams": 75
+      },
+      {
+        "foodId": "strawberries",
+        "grams": 60
+      },
+      {
+        "foodId": "almonds",
+        "grams": 15
+      },
+      {
+        "foodId": "honey",
+        "grams": 10
+      }
+    ],
+    "steps": ["Spoon the yogurt into a bowl.", "Top with the berries and almonds, then drizzle the honey."],
+    "image": "berry-yogurt-bowl"
+  },
+  {
+    "id": "eggs-on-toast",
+    "name": "Scrambled eggs on toast",
+    "description": "Soft eggs and spinach on buttered whole-wheat toast.",
+    "category": "Breakfast",
+    "cuisine": "international",
+    "minutes": 10,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "wheat-bread",
+        "grams": 64
+      },
+      {
+        "foodId": "egg-scrambled",
+        "grams": 120
+      },
+      {
+        "foodId": "spinach",
+        "grams": 30
+      },
+      {
+        "foodId": "butter",
+        "grams": 5
+      }
+    ],
+    "steps": [
+      "Toast and butter the bread.",
+      "Wilt the spinach, then fold it into the scrambled eggs.",
+      "Pile onto the toast."
+    ],
+    "image": "eggs-on-toast"
+  },
+  {
+    "id": "spaghetti-bolognese",
+    "name": "Spaghetti bolognese",
+    "description": "Beef and tomato sauce over pasta, finished with parmesan.",
+    "category": "Noodles & pasta",
+    "cuisine": "international",
+    "minutes": 40,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "pasta",
+        "grams": 280
+      },
+      {
+        "foodId": "beef-ground",
+        "grams": 180
+      },
+      {
+        "foodId": "tomato",
+        "grams": 240
+      },
+      {
+        "foodId": "onion",
+        "grams": 60
+      },
+      {
+        "foodId": "garlic",
+        "grams": 8
+      },
+      {
+        "foodId": "olive-oil",
+        "grams": 10
+      },
+      {
+        "foodId": "parmesan",
+        "grams": 16
+      }
+    ],
+    "steps": [
+      "Soften the onion and garlic in olive oil.",
+      "Add the browned beef and tomato; simmer.",
+      "Serve over the pasta with parmesan. Serves two."
+    ],
+    "image": "spaghetti-bolognese"
+  },
+  {
+    "id": "salmon-rice-bowl",
+    "name": "Salmon rice bowl",
+    "description": "Salmon over rice with cucumber, avocado and soy.",
+    "category": "Bowls",
+    "cuisine": "international",
+    "minutes": 20,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "salmon",
+        "grams": 120
+      },
+      {
+        "foodId": "rice",
+        "grams": 158
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 60
+      },
+      {
+        "foodId": "avocado",
+        "grams": 50
+      },
+      {
+        "foodId": "soy",
+        "grams": 10
+      }
+    ],
+    "steps": ["Flake the cooked salmon over the rice.", "Add sliced cucumber and avocado.", "Finish with soy sauce."],
+    "image": "salmon-rice-bowl"
+  },
+  {
+    "id": "chicken-romaine-salad",
+    "name": "Chicken romaine salad",
+    "description": "Crisp romaine, chicken, parmesan and toasted bread.",
+    "category": "Salads",
+    "cuisine": "international",
+    "minutes": 15,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "chicken",
+        "grams": 120
+      },
+      {
+        "foodId": "lettuce",
+        "grams": 120
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 50
+      },
+      {
+        "foodId": "parmesan",
+        "grams": 10
+      },
+      {
+        "foodId": "white-bread",
+        "grams": 20
+      },
+      {
+        "foodId": "mayonnaise",
+        "grams": 12
+      }
+    ],
+    "steps": [
+      "Toast the bread and cut it into cubes.",
+      "Toss the lettuce and cucumber with the mayonnaise.",
+      "Top with the chicken, croutons and parmesan."
+    ],
+    "image": "chicken-romaine-salad"
+  },
+  {
+    "id": "black-bean-tacos",
+    "name": "Black bean tacos",
+    "description": "Corn tortillas with black beans, pepper, avocado and cheddar.",
+    "category": "Mains",
+    "cuisine": "international",
+    "minutes": 15,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "corn-tortilla",
+        "grams": 52
+      },
+      {
+        "foodId": "black-beans",
+        "grams": 120
+      },
+      {
+        "foodId": "bell-pepper",
+        "grams": 40
+      },
+      {
+        "foodId": "avocado",
+        "grams": 40
+      },
+      {
+        "foodId": "cheddar",
+        "grams": 15
+      }
+    ],
+    "steps": ["Warm the tortillas.", "Fill with the beans and sliced pepper.", "Top with avocado and cheddar."],
+    "image": "black-bean-tacos"
+  },
+  {
+    "id": "couscous-lentil-salad",
+    "name": "Couscous and lentil salad",
+    "description": "Couscous, lentils and crisp vegetables.",
+    "category": "Bowls",
+    "cuisine": "international",
+    "minutes": 15,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "couscous",
+        "grams": 160
+      },
+      {
+        "foodId": "lentils",
+        "grams": 100
+      },
+      {
+        "foodId": "bell-pepper",
+        "grams": 50
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 50
+      },
+      {
+        "foodId": "olive-oil",
+        "grams": 8
+      }
+    ],
+    "steps": [
+      "Fluff the couscous with the olive oil.",
+      "Fold in the lentils and the chopped vegetables.",
+      "Serve at room temperature."
+    ],
+    "image": "couscous-lentil-salad"
+  },
+  {
+    "id": "shrimp-broccoli-noodles",
+    "name": "Shrimp and broccoli noodles",
+    "description": "Egg noodles, shrimp and greens in oyster sauce.",
+    "category": "Noodles & pasta",
+    "cuisine": "international",
+    "minutes": 20,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "egg-noodles",
+        "grams": 160
+      },
+      {
+        "foodId": "shrimp",
+        "grams": 100
+      },
+      {
+        "foodId": "broccoli",
+        "grams": 80
+      },
+      {
+        "foodId": "carrots",
+        "grams": 40
+      },
+      {
+        "foodId": "oyster-sauce",
+        "grams": 15
+      },
+      {
+        "foodId": "olive-oil",
+        "grams": 5
+      }
+    ],
+    "steps": [
+      "Stir-fry the carrots and broccoli in oil.",
+      "Add the shrimp and oyster sauce.",
+      "Toss through the cooked noodles."
+    ],
+    "image": "shrimp-broccoli-noodles"
+  },
+  {
+    "id": "lentil-tomato-soup",
+    "name": "Lentil and tomato soup",
+    "description": "A thick, warming pot of lentils, carrots and tomato.",
+    "category": "Soup",
+    "cuisine": "international",
+    "minutes": 35,
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "lentils",
+        "grams": 300
+      },
+      {
+        "foodId": "carrots",
+        "grams": 80
+      },
+      {
+        "foodId": "onion",
+        "grams": 50
+      },
+      {
+        "foodId": "tomato",
+        "grams": 160
+      },
+      {
+        "foodId": "garlic",
+        "grams": 6
+      },
+      {
+        "foodId": "olive-oil",
+        "grams": 10
+      }
+    ],
+    "steps": [
+      "Soften the onion, garlic and carrots in olive oil.",
+      "Add the tomato, lentils and water; simmer.",
+      "Blend half for body if you like. Serves two."
+    ],
+    "image": "lentil-tomato-soup"
+  },
+  {
+    "id": "steak-and-potatoes",
+    "name": "Sirloin, potatoes and broccoli",
+    "description": "Grilled sirloin with boiled potatoes and greens.",
+    "category": "Mains",
+    "cuisine": "international",
+    "minutes": 25,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "beef-sirloin",
+        "grams": 140
+      },
+      {
+        "foodId": "potato",
+        "grams": 200
+      },
+      {
+        "foodId": "broccoli",
+        "grams": 100
+      },
+      {
+        "foodId": "butter",
+        "grams": 8
+      }
+    ],
+    "steps": [
+      "Grill the steak to your liking and rest it.",
+      "Toss the potatoes and broccoli with butter.",
+      "Slice the steak and plate together."
+    ],
+    "image": "steak-and-potatoes"
+  },
+  {
+    "id": "tuna-sandwich",
+    "name": "Tuna salad sandwich",
+    "description": "Tuna, mayonnaise and crisp lettuce on whole-wheat bread.",
+    "category": "Snacks",
+    "cuisine": "international",
+    "minutes": 10,
+    "servings": 1,
+    "ingredients": [
+      {
+        "foodId": "wheat-bread",
+        "grams": 64
+      },
+      {
+        "foodId": "tuna",
+        "grams": 85
+      },
+      {
+        "foodId": "mayonnaise",
+        "grams": 14
+      },
+      {
+        "foodId": "lettuce",
+        "grams": 20
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 30
+      }
+    ],
+    "steps": ["Mix the tuna with the mayonnaise.", "Layer on the bread with lettuce and cucumber."],
+    "image": "tuna-sandwich"
+  }
+]
